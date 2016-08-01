@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@mipmap/wei1" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei2" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei3" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei4" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei5" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei6" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei7" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei8" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei9" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei10" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei11" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei12" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei13" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei14" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei15" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei16" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei17" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei18" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei19" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei20" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei21" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei22" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei23" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei24" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei25" android:duration="100"></item>
+    <item android:drawable="@mipmap/wei26" android:duration="100"></item>
+
+</animation-list>

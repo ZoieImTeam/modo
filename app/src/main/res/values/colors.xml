@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tab_page_color_normal">#ff88888d</color>
+    <color name="tab_page_color_selector">#ffff4683</color>
+    <color name="app_main_color">#48bcff</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="tab_text_unselected">#aaa9e1f7</color>
+    <color name="dividedline">#eae2e4</color>
+    <color name="dividedline_plaza">#dfdfdf</color>
+    <color name="background_normal">#f7f3f2</color>
+    <color name="line_gray">#959595</color>
+    <color name="line_gray_1">#E5E5E5</color>
+    <color name="text_color_gray">#b29e9e</color>
+    <color name="text_color_black">#444444</color>
+    <color name="text_color_gray3">#b9b9b9</color>
+    <color name="text_color_gray4">#bcbcbc</color>
+    <color name="text_color_gray5">#7e7e7e</color>
+    <color name="text_color_gray6">#7b7b7b</color>
+    <color name="text_color_gray7">#5B5B5B</color>
+    <color name="text_color_gray_time">#525050</color>
+    <color name="text_color_gray_item">#303030</color>
+    <color name="line_black">#424342</color>
+    <color name="text_color_black_name">#1E1D1D</color>
+    <color name="app_main_color_other">#fa9b98</color>
+    <color name="text_color_gray2">#cdc1c1</color>
+    <color name="line_recyclerview_1px">#ded1d5</color>
+    <color name="transparent_curtain_black">#99000000</color>
+    <color name="bg_pink">#E76F9F</color>
+    <color name="bg_gray">#CCCCCC</color>
+    <!-- TabIndicator的颜色 -->
+    <color name="accent">#ffffff</color>
+    <!-- TabIndicator的颜色 -->
+    <color name="accent_3399ff">#3399ff</color>
+    <color name="text_blue">#4CAAE0</color>
+    <!-- chen-->
+
+    <color name="actionbar_bg">#a9e1f7</color>
+    <color name="hui_bg">#f7f3f2</color>
+    <color name="hui_tbg">#33f7f3f2</color>
+    <color name="setting_actionbar_title">#444444</color>
+    <color name="actionbar_title">#444444</color>
+
+    <color name="setting_no_logout_bg">#c0c0c0</color>
+    <color name="setting_selector_logout_bg">#00ff00</color>
+    <color name="setting_noselector_logout_bg">#a9e1f7</color>
+
+    <color name="touming" >#00000000</color>
+    <!-- 我的页面-->
+    <color name="my_text">#444444</color>
+    <color name="my_text_dan">#AAAAAA</color>
+    <color name="my_layout_bg">#ffffff</color>
+    <color name="theme_color">#fa9b98</color>
+    <color name="theme_textcolor">#444444</color>
+    <!-- 243,72,66-->
+    <color name="theme_color_blue">#a9e1f7</color>
+    <color name="theme_color_blue_tt">#99a9e1f7</color>
+    <color name="theme_line">#eae2e4</color>
+
+    <color name="my_line">#eae2e4</color>
+    <!-- 安全页面-->
+    <color name="safe_text_bindphone">#A7A7A7</color>
+    <color name="safe_text_phone">#fa9b98</color>
+    <color name="safe_text_binduser">#B29E9E</color>
+
+    <!-- 我关注的人，粉丝，黑名单item-->
+    <color name="follow_textcolor_info">#7B7B7B</color>
+
+    <!-- 我的钱包明细-->
+    <color name="wallet_detail_tv_timee">#B29E9E</color>
+
+    <color name="first_withdra_name_hint">#A7A7A7</color>
+    <color name="chen_tv_btn">#ffffff</color>
+    <color name="first_withdra_tv_next_bg">#a9e1f7</color>
+    
+    <color name="enter_money_tv_balance">#DED1D5</color>
+    
+    <color name="select_bankcard_item_text">#ff0004</color>
+
+    <color name="tv_btn_textcolor">#ffffff</color>
+    <color name="suc_withdra_btn_bg_noselect">#ffc000</color>
+    <color name="zhexian_topbom">#f78d7b</color>
+
+    <!-- 通用-->
+    <color name="btn_tv_bg_red">#a9e1f7</color>
+    <color name="btn_tv_bg_hui">#a7a7a7</color>
+    <color name="line_color">#eae2e4</color>
+    <drawable name="theme_red">#a9e1f7</drawable>
+    <color name="gray_num_color">#777777</color>
+    <color name="bg_gray_color">#F2F2F2</color>
+
+    <!-- 个人主页-->
+    <color name="psnhome_tv_tab_s">#AAAAAA</color>
+    <color name="psnhome_send_bg">#e6a9e1f7</color>
+    <color name="login_text_tip_color">#787878</color>
+    <color name="login_input_bg">#E4E4E4</color>
+
+    <!--zantop-->
+    <color name="zan_top_title_text_color">#fff6e7</color>
+    <color name="zan_top_title_lilne">#ffb034</color>
+    <color name="zan_top_list_text">#ffaa4e</color>
+
+    <color name="dialog_line">#424342</color>
+
+    <color name="gray_background">#eeeeee</color>
+    <drawable name="actionbar_bg">#a9e1f7</drawable>
+    <color name="ijk_transparent_dark">#77000000</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="edit_hint_color">#abaaaa</color>
+    <color name="transparent30">#77000000</color>
+</resources>

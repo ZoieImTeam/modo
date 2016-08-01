@@ -1,0 +1,366 @@
+<resources>
+
+    <string name="app_name">MoDo</string>
+
+    <!-- 基础 -->
+    <string name="base_activity_not_data">暂无数据</string>
+    <string name="send">发送</string>
+    <string name="cancel">取消</string>
+    <string name="pass">跳过</string>
+    <string name="next_step">下一步</string>
+    <string name="finish">完成</string>
+    <string name="pay">支付</string>
+    <string name="str_game_find_marked_words">正在努力加载，请稍等…… </string>
+    <string name="str_game_cant_connect">无法连接到网络，请检查网络！</string>
+    <!-- 对话框 -->
+    <string name="dialog_btn_text_confirm">确定</string>
+    <string name="dialog_btn_text_cancel">取消</string>
+    <string name="dialog_btn_text_pass">跳过</string>
+    <string name="dialog_content_delete">确定删除？</string>
+    <string name="dialog_titile_kindly_reminder">温馨提示</string>
+    <string name="dialog_title_input_sms_code">请输入验证码</string>
+
+    <!-- 文件上传 -->
+    <string name="upload_file_upload_success">文件上传成功</string>
+    <string name="upload_file_uploading">正在上传…</string>
+    <string name="upload_file_please_upload_all">请上传全部图片</string>
+
+    <!-- 导航 -->
+    <string name="navi_home">首页</string>
+    <string name="navi_scene">现场</string>
+    <string name="navi_girlfriend">女朋友</string>
+    <string name="navi_myself">我</string>
+
+    <string name="navi_square">主页</string>
+    <string name="navi_publish">发布</string>
+    <string name="navi_attention">发泄</string>
+    <string name="navi_message">活动</string>
+    <string name="navi_usercenter">消息</string>
+
+    <!-- Strings for share -->
+    <string name="sms">短信</string>
+    <string name="propt_share_cancel">您取消了%1$s分享</string>
+    <string name="propt_share_complete">成功分享到%1$s</string>
+    <string name="prevent_duplicate">请稍后发送</string>
+    <string name="share_failed_error">分享失败</string>
+    <string name="share">分享</string>
+    <string name="share_text_format">我在#乐玩游戏#里发现了一款超好玩的游戏！《%1$s》是一款相当不错的#安卓游戏#！快来试试吧！%2$s</string>
+    <string name="share_titile">我在#乐玩游戏#里发现了一款超好玩的游戏！</string>
+
+
+    <string name="title_activity_conversation">ConversationActivity</string>
+    <string name="title_activity_topics_category">TopicsCategoryActivity</string>
+    <string name="title_activity_topics">TopicsActivity</string>
+    <string name="title_activity_leaderboard">LeaderboardActivity</string>
+    <string name="title_activity_dynamic">DynamicActivity</string>
+    <string name="dynamic_title">动态详情</string>
+    <string name="title_activity_people_nearby">PeopleNearbyActivity</string>
+
+    <string name="title_activity_feedbac">FeedbackActivity</string>
+    <string name="title_activity_feedba">FeedbackActivity</string>
+
+    <!-- chen-->
+    <!-- 设置界面dialog-->
+    <string name="myself_clean_dialog_title">根据缓存文件的大小，清理时间从几秒到几分钟不等，请耐心等待。</string>
+    <string name="setting_clean_end">缓存清理已完成</string>
+    <string name="setting_dialog_btnleft">取消</string>
+    <string name="setting_dialog_btnright">清除</string>
+    <string name="setting_dialog_title">根据缓存文件的大小，清理时间从几秒到几分钟不等，请耐心等待。</string>
+    <string name="title_activity_follow">FollowActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_me">MeActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_blacklist">BlacklistActivity</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="title_activity_my_wallet">MyWalletActivity</string>
+    <string name="title_activity_with_drawals">WithDrawalsActivity</string>
+
+    <!-- 第一次提现-->
+    <string name="first_withdra_chika">持卡人</string>
+    <string name="first_withdra_name">填写持卡人姓名</string>
+    <string name="first_withdra_bankname">请输入开户银行</string>
+    <string name="first_withdra_idcard">身份证</string>
+    <string name="first_withdra_idcard_hint">填写持卡人身份证</string>
+    <string name="first_withdra_idnumber">卡号</string>
+    <string name="first_withdra_idnumber_hint">填写卡号</string>
+    <string name="first_withdra_bank">银行</string>
+    <string name="firstwithdra_agree">同意</string>
+    <string name="firstwithdra_agree2">《用户协议》</string>
+    <string name="title_activity_agreement">AgreementActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 提现-->
+    <string name="switchdra_dialog">设置提现密码 </string>
+
+
+    <string name="title_activity_release">ReleaseActivity</string>
+    <string name="title_activity_enter_money">EnterMoneyActivity</string>
+    <string name="title_activity_success_withdra">SuccessWithdraActivity</string>
+
+
+    <string name="release_custom_text_num">%d/8</string>
+    <string name="ac_release_edit_num">%d/600</string>
+    <string name="item_dynamic_detail_img_num">%d张</string>
+    <string name="title_activity_my_key">MyKeyActivity</string>
+    <string name="title_activity_forget_pwd">ForgetPwdActivity</string>
+    <string name="title_activity_psn_home">PsnHomeActivity</string>
+    <string name="title_activity_edit_pers">EditPersActivity</string>
+    <string name="title_activity_modify_nickname">ModifyNicknameActivity</string>
+    <string name="title_activity_modify_company">ModifyCompanyActivity</string>
+    <string name="title_activity_modify_job">ModifyJobActivity</string>
+    <string name="title_activity_modify_university">ModifyUniversityActivity</string>
+    <string name="title_activity_modify_signature">ModifySignatureActivity</string>
+    <string name="title_activity_select_album">SelectAlbumActivity</string>
+    <string name="ac_select_album_num">%d/9</string>
+    <string name="title_activity_sms">SMSActivity</string>
+    <string name="title_activity_edit_photo">EditPhotoActivity</string>
+    <string name="title_activity_photo_big">PhotoBigActivity</string>
+    <string name="title_activity_contribute2_topics">Contribute2TopicsActivity</string>
+
+    <string name="gravity_left">left</string>
+    <string name="gravity_center">center</string>
+    <string name="gravity_right">right</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_sub_conversation_list_activtiy">SubConversationListActivtiy
+    </string>
+    <string name="title_activity_authenticate">AuthenticateActivity</string>
+    <string name="title_activity_preview">PreviewActivity</string>
+    <string name="title_activity_location">LocationActivity</string>
+    <string name="ac_choose_location_gone_location">不显示位置</string>
+    <string name="title_activity_release2_topics">Release2TopicsActivity</string>
+    <string name="already_attention_topics">已订阅专题</string>
+    <string name="add_new_topics">添加为新专题</string>
+
+    <string name="attention_topics_id">ID：%d</string>
+    <string name="title_activity_topics_management">TopicsManagementActivity</string>
+    <string name="zan">赞</string>
+    <string name="user_does_not_speak">该用户没有发言</string>
+    <string name="zan_user_num">%d人点赞</string>
+    <string name="title_activity_register_success">RegisterSuccessActivity</string>
+    <string name="look_num">%d人看过</string>
+    <string name="secrecy">保密</string>
+    <string name="up_loading_more">上划加载更多</string>
+    <string name="no_more">暂无更多</string>
+    <string name="review_hint_text">说点什么吧</string>
+    <string name="nearby_dialog_look_all">查看全部</string>
+    <string name="nearby_dialog_look_man">只看男</string>
+    <string name="nearby_dialog_look_woman">只看女</string>
+    <string name="release_dynamic_image_tips">最少要上传一张图片</string>
+    <string name="release_dynamic_text_tips">多写点吧</string>
+    <string name="release_dynamic_text_exceed">超过字数限制</string>
+    <string name="release_success">发布成功</string>
+    <string name="delete_success">删除成功</string>
+    <string name="cancel_attention">取消关注</string>
+    <string name="attention">关注</string>
+    <string name="all_topics">所有专题</string>
+    <string name="topics_category_people_number">已有%d人参与</string>
+    <string name="title_activity_set_pwd_success">SetPwdSuccessActivity</string>
+    <string name="title_activity_zan_top">ZanTopActivity</string>
+    <string name="zan_top_title_text">赞赏排行榜</string>
+    <string name="zantop_my_no_zan">您还未赞赏该动态～</string>
+    <string name="zantop_no_people">虚位以待</string>
+    <string name="create_topics">创建专题</string>
+    <string name="search_more">搜索更多专题</string>
+    <string name="ac_topicsnmg_new_subscription">昨日新增订阅人数</string>
+    <string name="ac_topicmng_total_subscription">总订阅数</string>
+    <string name="ac_topicmng_dealwith_report">处理举报内容</string>
+    <string name="ac_topicmng_edit_topics">编辑专题信息</string>
+    <string name="ac_topicmng_edit_mng">编辑管理员</string>
+    <string name="topics_management">专题管理</string>
+    <string name="title_activity_edit_topics">EditTopicsActivity</string>
+    <string name="edit_topics">编辑专题</string>
+    <string name="save">保存</string>
+    <string name="replace_cover">更换封面</string>
+    <string name="edit_topics_dateil">点击编辑专题详情描述</string>
+    <string name="topics_name">专题名称</string>
+    <string name="location_message">位置信息</string>
+    <string name="invisiable_location">不在附近显示</string>
+    <string name="settings_secret">设为私密专题</string>
+    <string name="title_activity_edit_topics_detail">EditTopicsDetailActivity</string>
+    <string name="update">更新</string>
+    <string name="edit_topics_detail">编辑专题描述</string>
+    <string name="enter_detail_hint">输入详情描述</string>
+    <string name="title_activity_subscriber">SubscriberActivity</string>
+    <string name="subscriber_list">订阅者列表</string>
+    <string name="topics_maneger">管理员</string>
+    <string name="topics_subscriber">订阅者</string>
+    <string name="topics_search_subscriber">搜索订阅者</string>
+    <string name="subscriber_change_manager">设为管理员</string>
+    <string name="subscriber_change_manager_cancel">取消管理员</string>
+    <string name="subscriber_change_manager_exit">退出管理员</string>
+    <string name="title_activity_deal_with">DealWithActivity</string>
+    <string name="reason">原因</string>
+    <string name="shield_report_content">处理举报内容</string>
+    <string name="title_activity_report_dynamic">ReportDynamicActivity</string>
+    <string name="report_dynamic">举报%s</string>
+    <string name="report_reason">请告诉我您举报该%s的理由</string>
+    <string name="search_friend">搜索好友</string>
+    <string name="friends_find_contacts">发现通讯录好友</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <string name="phone_contacts">手机通讯录</string>
+    <string name="has_joined">已加入NEW</string>
+    <string name="request2join">邀请加入NEW</string>
+    <string name="contacts_invite">邀请</string>
+    <string name="loading">加载中</string>
+    <string name="conversation_title_text">陌生人</string>
+    <string name="report">举报</string>
+
+    <!--主页 -->
+    <string name="person_dialog_isaddblacklist_title">加入黑名单后，TA将不能与你进行关注 发消息 评论 赞互动。</string>
+    <string name="title_activity_set_cachpwd_success">SetCachpwdSuccessActivity</string>
+    <string name="friend_unlock_text">相互关注的人</string>
+    <string name="repeatedly_zan_tip">不能多次点赞</string>
+    <string name="zan_failed">点赞失败</string>
+    <string name="zan_success">点赞成功</string>
+    <string name="title_activity_my_topics">ac</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_release_topic">ReleaseTopicActivity</string>
+    <string name="title_activity_hello">HelloActivity</string>
+    <string name="map_send_my_location">发送我的位置</string>
+    <string name="create_new_topics">创建新专题</string>
+    <string name="release_zan_default_text">点个赞吧</string>
+    <string name="title_activity_topics2">Topics2Activity</string>
+    <string name="bottom_menu_set_cream">设为精华</string>
+    <string name="bottom_menu_not_interested">不感兴趣</string>
+    <string name="set_essence_success">设为精华成功</string>
+    <string name="set_essence_failLoad">设为精华失败</string>
+    <string name="server_exception">服务器异常</string>
+    <string name="search_topics">搜索专题</string>
+    <string name="attention_success">关注成功</string>
+    <string name="cancel_attention_success">取消关注成功</string>
+    <string name="search_wait">搜索中，请稍后</string>
+    <string name="loading_wait">加载中，请稍后</string>
+    <string name="title_activity_system_notice">SystemNoticeActivity</string>
+    <string name="dynamic_notice">动态通知</string>
+    <string name="system_notice">系统通知</string>
+    <string name="greet_notice">打招呼</string>
+    <string name="newzan_notice">新的赞赏</string>
+    <string name="item_dynamic_notice_text">评论了你</string>
+    <string name="sina">新浪微博</string>
+    <string name="weixinfriendscircle">微信朋友圈</string>
+    <string name="weixinfriends">微信好友</string>
+    <string name="share_content_to">分享该内容到</string>
+    <string name="title_activity_edit_label">EditLabelActivity</string>
+    <string name="no_topics_desc">暂无专题描述</string>
+    <string name="no_zan_myself_tips">不能给自己点赞打赏哦~</string>
+    <string name="release_loading_tips">正在发布中..</string>
+    <string name="ac_release2topics_text">已订阅专题</string>
+    <string name="topics_catetory_nearby">附近</string>
+    <string name="offline_tip_text">您的账号在其他设备登录\n请重新登录</string>
+    <string name="notice_hello_tip_text">我使用key跟你聊天，快来跟我私聊吧~</string>
+    <string name="no_data_tip_text">暂无数据</string>
+    <string name="system_message_text">系统消息</string>
+    <string name="newzan_message_text">新的赞赏</string>
+    <string name="dynamic_message_text">动态通知</string>
+    <string name="greet_messaget_text">打招呼</string>
+    <string name="title_activity_my_ticket">MyTicketActivity</string>
+    <string name="title_activity_atts">AttsActivity</string>
+    <string name="home_channel">频道</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_guide">GuideActivity</string>
+    <!--XRecyclerview-->
+    <string name="xrecyclerview_header_hint_normal">pull to refresh</string>
+    <string name="xrecyclerview_header_hint_release">release to start refresh</string>
+    <string name="xrecyclerview_loading">加载中..</string>
+    <string name="nomore_loading">没有更多了.</string>
+    <string name="refreshing">refreshing...</string>
+    <string name="refresh_done">refresh done</string>
+    <string name="xrecyclerview_header_last_time">last update：</string>
+    <string name="private_letter">勾搭</string>
+    <string name="test_text">评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</string>
+    <string name="look">查看</string>
+    <string name="title_activity_fans">FansActivity</string>
+    <string name="title_activity_my_res">MyResActivity</string>
+    <string name="title_activity_create_res">CreateResActivity</string>
+    <string name="choose_systype_title">点击选择</string>
+    <string name="title_activity_edit_psn">EditPsnActivity</string>
+    <!--end-->
+
+
+    <!-- 登录 -->
+    <string name="account_login_input_phone">请输入手机号码</string>
+    <string name="account_password_input_phone">请输入6-20位登录密码</string>
+    <string name="account_sms_code_input_phone">请输入6位验证码</string>
+    <string name="account_register">注册</string>
+    <string name="account_title_login">登录</string>
+    <string name="account_forget_password">忘记密码</string>
+    <string name="account_complete_information">完善资料</string>
+    <string name="account_sended_sms_code_tip">已发送短信验证码至%1$s****%2$s</string>
+    <string name="account_forget_password_input_phone_tip">使用注册时的手机号找回</string>
+    <string name="account_set_head_tip">点击设置头像</string>
+    <string name="account_nick_input_hint">请输入昵称</string>
+    <string name="account_upload_head_tip">请上传头像</string>
+
+    <!-- 个人中心 -->
+    <string name="user_center_attention">关注（%s）</string>
+    <string name="user_center_fans">粉丝（%s）</string>
+    <string name="user_sex_man">男</string>
+    <string name="user_sex_woman">女</string>
+    <string name="user_sex_unknow">未知</string>
+    <string name="title_user_center_edit_info">编辑资料</string>
+    <string name="title_user_center">个人中心</string>
+    <string name="user_edit_success_tip">已更新资料</string>
+
+    <string name="home_recommend_hot_tip">热门</string>
+    <string name="user_attention_false">关注</string>
+    <string name="user_attention_true">取消关注</string>
+    <string name="title_attention_user_list">我关注的人</string>
+    <string name="title_fans_user_list">我的粉丝</string>
+    <string name="text_comment_space">评论空间</string>
+
+    <!-- 专题详情-->
+    <string name="subject_original">原著：%s</string>
+    <string name="subject_roleinfo">角色：%s</string>
+    <string name="subject_cameraman">摄影师：%s</string>
+    <string name="content_page_num">%1$s/%2$s</string>
+    <string name="last_page_tip">这是第一页</string>
+    <string name="next_page_tip">已经是最后一页了</string>
+
+
+    <!-- 活动 -->
+    <string name="title_user_ticket_list">我的购票记录</string>
+    <string name="title_activity_detail">活动详情</string>
+    <string name="activity_host_name">主办方：%s</string>
+    <string name="activity_address">活动地址：%s</string>
+    <string name="activity_start_time">开始时间：%s</string>
+    <string name="activity_end_time">结束时间：%s</string>
+    <string name="text_send">发送</string>
+    <string name="text_comment_hint">输入你想说的话</string>
+    <string name="text_comment_success">评论成功</string>
+    <string name="tv_test">测试测试测试测试测试测试测试测试测试测试</string>
+    <string name="addsubscription">订阅</string>
+    <string name="story_title">【%s】</string>
+    <string name="username_null">该用户已去火星...</string>
+    <string name="already_zan">已点赞过</string>
+<string name="text_already_account">已经帐号,直接登录</string>
+    <string name="text_ac_choose_register">立即注册</string>
+    <string name="text_choose_other">使用社交帐号登录</string>
+    <string name="text_forget_pwd">忘记密码？</string>
+    <string name="text_next_step">下一步</string>
+    <string name="text_register1_tips">使用注册时手机号找回</string>
+    <string name="text_register1_tips2">使用手机号注册</string>
+    <string name="text_send_tip">已发送验证码至:%s</string>
+    <string name="text_qq_friends">QQ好友</string>
+    <string name="text_cancel">取 消</string>
+ <string name="text_release_my">发布我的作品</string>
+    <string name="text_hint_4code">请输入4位验证码</string>
+    <string name="attention_num">关注（%s）</string>
+    <string name="fans_num">粉丝（%s）</string>
+    <string name="erweima">二维码</string>
+    <string name="text_praised">我赞过的</string>
+    <string name="text_attentioned">我关注的</string>
+    <string name="log_out">退出登录</string>
+<string name="text_see_detail">查看活动详情</string>
+    <string name="text_activity_title_text">【%1$s】 %2$s</string>
+    <string name="text_buy">我要购票</string>
+    <string name="text_surplus_tic">剩余票数:99</string>
+    <string name="title_release">发布%s</string>
+    <string name="text_type">类型</string>
+    <string name="not_login">请先登录</string>
+    <string name="have_null">多多少少输点嘛...</string>
+    <string name="title">标题：</string>
+    <string name="navi_activity">活动</string>
+    <string name="activity_time">时间：%s</string>
+</resources>

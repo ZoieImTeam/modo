@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dialog_select_sex_other">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hui_bg"
+        android:layout_alignParentBottom="true"
+        >
+
+        <TextView
+            android:text="男"
+            style="@style/dialog_select_sex_textview"
+            android:id="@+id/dialog_select_sex_boy" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/hui_bg"/>
+
+        <TextView
+            android:text="女"
+            style="@style/dialog_select_sex_textview"
+            android:id="@+id/dialog_select_sex_girl" />
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:text="取消"
+            style="@style/dialog_select_sex_textview"
+            android:id="@+id/dialog_select_sex_cancel" />
+    </LinearLayout>
+</RelativeLayout>

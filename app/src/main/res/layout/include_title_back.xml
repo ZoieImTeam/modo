@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionbar_height"
+                android:id="@+id/rl_back_title"
+                app:layout_scrollFlags="scroll|enterAlways"
+    >
+
+    <View
+        android:id="@+id/rl_ac_navi_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_main_color"
+        />
+
+    <ImageView
+        android:id="@+id/btn_title_back"
+        android:layout_width="@dimen/spacing_lv8"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/btn_back"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_title_24"
+        tools:text="title"
+        />
+
+    <ImageView
+        android:id="@+id/iv_title_more"
+        android:layout_width="@dimen/spacing_lv8"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:src="@drawable/btn_more"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

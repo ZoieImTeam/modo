@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/base_bg_color">
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="54dip"
+        android:layout_alignParentBottom="true"
+        android:background="@color/base_bg_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_navi_square"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_navi_square"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/btn_home_selector" />
+
+            <TextView
+                android:id="@+id/tv_navi_square"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_navi_square"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:text="@string/navi_square"
+                android:textColor="@color/theme_color_blue"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <!-- <ImageView -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="fill_parent" -->
+        <!-- android:background="@drawable/game_main_bottomline" /> -->
+
+
+        <RelativeLayout
+            android:id="@+id/rl_navi_sendstate"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_navi_sendstate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:src="@drawable/btn_publish_selector" />
+
+            <TextView
+                android:id="@+id/tv_navi_sendstate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_navi_sendstate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:text="@string/navi_publish"
+                android:textColor="@color/game_select_text_color"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_navi_activity"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_navi_activity"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/btn_activity_selector" />
+
+            <TextView
+                android:id="@+id/tv_navi_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_navi_activity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:text="@string/navi_activity"
+                android:textColor="@color/game_select_text_color"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_navi_message"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_navi_message"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/btn_message_selector" />
+
+            <TextView
+                android:id="@+id/tv_navi_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_navi_message"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:text="@string/navi_usercenter"
+                android:textColor="@color/game_select_text_color"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/ll_bottom_tab"
+        android:background="@drawable/bottom_shadow" />
+
+    <!--<android.support.v4.widget.DrawerLayout-->
+    <!--android:id="@+id/dl_drawer"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_above="@id/iv_shadow" >-->
+    <include layout="@layout/include_title"/>
+
+    <FrameLayout
+        android:id="@+id/game_replace_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/iv_shadow"
+        android:layout_below="@+id/rl_ac_navi_title"
+        android:background="@color/base_bg_color" />
+
+    <!--<ListView-->
+    <!--android:id="@+id/lv_left_drawer"-->
+    <!--android:layout_width="240dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="start"-->
+    <!--android:background="@color/white"-->
+    <!--android:divider="@android:color/transparent"-->
+    <!--android:dividerHeight="1dp" />-->
+    <!--</android.support.v4.widget.DrawerLayout>-->
+
+</RelativeLayout>

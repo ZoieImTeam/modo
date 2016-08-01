@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.binvshe.binvshe.binvsheui.me.EditPsnActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionbar_height"
+                android:background="@color/theme_color_blue">
+
+                <TextView
+                    style="@style/actionbar_tv_title"
+                    android:text="个人资料" />
+
+                <TextView
+                    android:id="@+id/edit_psn_tv_save"
+                    android:text="保存"
+                    style="@style/actionbar_tv_right_click" />
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView style="@style/activity_edit_cardview">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/edit_psn_layout_head"
+                        style="@style/activity_edit_psn_layout"
+                        android:layout_height="70dp">
+
+                        <org.srr.dev.view.CircleImageView
+                            android:id="@+id/edit_psn_image_head"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/touxiang" />
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="修改头像" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="昵称" />
+
+                        <EditText
+                            android:id="@+id/edit_psn_edit_nickname"
+                            style="@style/activity_edit_psn_edit"
+                            android:layout_alignParentRight="true"
+                             />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView style="@style/activity_edit_cardview">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="性别" />
+
+                        <TextView
+                            android:id="@+id/edit_psn_tv_sex"
+                            style="@style/activity_edit_psn_tv"
+                            android:layout_alignParentRight="true"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="生日" />
+
+                        <TextView
+                            android:id="@+id/edit_psn_tv_birthday"
+                            style="@style/activity_edit_psn_tv"
+                            android:layout_alignParentRight="true"
+                            android:text="1992-11-06" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                    <RelativeLayout
+                        style="@style/activity_edit_psn_layout"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="16.5dp"
+                        android:paddingTop="16.5dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            style="@style/activity_edit_psn_tv"
+                            android:layout_centerVertical="false"
+                            android:text="个性签名" />
+
+                        <EditText
+                            android:id="@+id/edit_psn_edit_sign"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_toRightOf="@+id/textView2"
+                            android:background="@null"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/theme_textcolor"
+                            android:textSize="@dimen/theme_textsize" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView style="@style/activity_edit_cardview">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="职业" />
+
+                        <EditText
+                            android:id="@+id/edit_psn_edit_job"
+                            style="@style/activity_edit_psn_edit"
+                            android:layout_alignParentRight="true"
+                             />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="公司" />
+
+                        <EditText
+                            android:id="@+id/edit_psn_edit_company"
+                            style="@style/activity_edit_psn_edit"
+                            android:layout_alignParentRight="true"
+                             />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="大学" />
+
+                        <EditText
+                            android:id="@+id/edit_psn_edit_university"
+                            style="@style/activity_edit_psn_edit"
+                            android:layout_alignParentRight="true"
+                             />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                    <RelativeLayout style="@style/activity_edit_psn_layout">
+
+                        <TextView
+                            style="@style/activity_edit_psn_tv"
+                            android:text="城市" />
+
+                        <EditText
+                            android:id="@+id/edit_psn_edit_city"
+                            style="@style/activity_edit_psn_edit"
+                            android:layout_alignParentRight="true"
+                             />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/line_color" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/app_main_color_other">
+
+    <ImageView
+        android:id="@+id/customer_notitfication_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp" />
+
+    <TextView
+        android:id="@+id/customer_notitfication_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/customer_notitfication_icon"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/newapp_text_size" />
+
+    <TextView
+        android:id="@+id/customer_notitfication_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/customer_notitfication_title"
+        android:layout_alignStart="@+id/customer_notitfication_title"
+        android:layout_below="@+id/customer_notitfication_title"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_small" />
+</RelativeLayout>

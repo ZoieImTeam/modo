@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_normal"
+    tools:context="com.zhishenghuoguan.zanplusapp.ui.message.FriendsFragment">
+
+    <TextView
+        android:id="@+id/fr_friends_search_friend"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_biankuang_edit_wihte"
+        android:gravity="center"
+        android:text="@string/search_friend"
+        android:textColor="@color/safe_text_bindphone"
+        android:textSize="@dimen/newapp_text_size" />
+
+    <View
+        android:id="@+id/android.support.v7.widget.RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/fr_friends_search_friend"
+        android:background="@color/dividedline" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fr_friends_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/android.support.v7.widget.RecyclerView">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fr_friends_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fr_friends_search_friend"
+            android:background="@color/white" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

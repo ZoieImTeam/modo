@@ -1,0 +1,118 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 普通的大号文字 -->
+    <dimen name="text_big">18dp</dimen>
+    <!-- 普通的中号文字 -->
+    <dimen name="text_normal">16dp</dimen>
+    <!-- 普通的小号文字 -->
+    <dimen name="text_small">14dp</dimen>
+    <!-- 普通的最小号文字 -->
+    <dimen name="text_tiny">12dp</dimen>
+    <dimen name="text_tiny_10">10dp</dimen>
+    <dimen name="font_dialog_text">18dip</dimen>
+    <dimen name="text_title_24">24dp</dimen>
+
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_dynamic_card_img_width">200dp</dimen>
+    <dimen name="item_dynamic_card_img_hight">300dp</dimen>
+    <dimen name="circleimage_avater">40dp</dimen>
+    <dimen name="circleimage_avater_min">20dp</dimen>
+    <dimen name="spacing_lv">4dp</dimen>
+    <dimen name="spacing_lv1">8dp</dimen>
+    <dimen name="spacing_lv2">16dp</dimen>
+    <dimen name="spacing_lv3">24dp</dimen>
+    <dimen name="spacing_lv4">32dp</dimen>
+    <dimen name="spacing_lv5">40dp</dimen>
+    <dimen name="spacing_lv6">48dp</dimen>
+    <dimen name="spacing_lv7">56dp</dimen>
+    <dimen name="spacing_lv8">64dp</dimen>
+    <dimen name="spacing_lv9">72dp</dimen>
+    <dimen name="spacing_lv10">80dp</dimen>
+    <dimen name="spacing_lv11">88dp</dimen>
+    <dimen name="spacing_lv12">96dp</dimen>
+    <dimen name="spacing_lv13">104dp</dimen>
+    <dimen name="item_leaderboard_slide_dynamiclist_img_hight">100dp</dimen>
+    <dimen name="item_leaderboard_slide_dynamiclist_img_width">100dp</dimen>
+    <dimen name="titlebar_hight">48dp</dimen>
+    <dimen name="circle_icon_width_hight">40dp</dimen>
+    <dimen name="circle_icon_width_hight_friend">50dp</dimen>
+    <dimen name="ac_dynamic_address_line_hight">43dp</dimen>
+    <!--ui标准 px 转dp-->
+    <dimen name="cir_size_big">48dp</dimen>
+    <dimen name="cir_size_45">45dp</dimen>
+    <dimen name="newapp_spacing_lv1">12dp</dimen>
+    <dimen name="newapp_text_size">15dp</dimen>
+    <dimen name="newapp_text_size_title">17dp</dimen>
+    <dimen name="actionbar_hight">48dp</dimen>
+    <dimen name="dialog_radius">10dp</dimen>
+    <dimen name="item_ac_location_hight">60dp</dimen>
+    <dimen name="fr_attention_item_hight">50dp</dimen>
+
+
+    <!-- chen-->
+    <!-- 通用-->
+    <dimen name="image_next_marright">16dp</dimen>
+    <dimen name="my_image__head">60dp</dimen>
+    <dimen name="my_image_head_marleft">15dp</dimen>
+    <dimen name="my_image_head_martop">12dp</dimen>
+
+    <dimen name="theme_textsize">15dp</dimen>
+    <dimen name="theme_textsize_small">13dp</dimen>
+    <dimen name="theme_textsize_big">17dp</dimen>
+
+    <dimen name="actionbar">48dp</dimen>
+    <dimen name="actionbar_title">17dp</dimen>
+    <dimen name="actionbar_btn_marright">15dp</dimen>
+    <dimen name="actionbar_btn_textsize">15dp</dimen>
+
+    <dimen name="dialog_r">10dp</dimen>
+
+    <dimen name="my_next_marright">16dp</dimen>
+    <dimen name="tv_btn_bg_radius">5dp</dimen>
+    <dimen name="image_break_padleft">12dp</dimen>
+    <dimen name="image_break_padright">20dp</dimen>
+
+    <dimen name="emoji_hight_width">21dp</dimen>
+    <dimen name="topics_category_dynamic_img_width_hight">110dp</dimen>
+    <dimen name="home_attention_img_size">115dp</dimen>
+    <dimen name="zan_top_hight">250dp</dimen>
+    <dimen name="zantop_mid_hight">40dp</dimen>
+    <dimen name="fragment_plaza_title_btn_hight">8dp</dimen>
+    <dimen name="edit_pers_line_marleft">14dp</dimen>
+    <dimen name="banner_hight">160dp</dimen>
+    <dimen name="attention_item_text_size">12dp</dimen>
+    <dimen name="map_send_button_hight">40dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="dialog_twobtn_width">243dp</dimen>
+    <dimen name="suc_image_martop">104dp</dimen>
+
+    <dimen name="actionbar_height">48dp</dimen>
+    <dimen name="me_image_head">60dp</dimen>
+    <dimen name="me_marleft">15dp</dimen>
+    <dimen name="me_layout_height">50dp</dimen>
+    <dimen name="item_activity_tvdrawable_padding">8dp</dimen>
+    <dimen name="home_item_user_icon_size">40dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="login_edit_radius">5dp</dimen>
+    <dimen name="xrecyclerview_textmargin">10dp</dimen>
+    <dimen name="user_icon_size">60dp</dimen>
+    <dimen name="item_atts_bg_height">180dp</dimen>
+    <dimen name="item_atts_head_marlr">8dp</dimen>
+    <dimen name="item_atts_cardview_r">10dp</dimen>
+    <dimen name="ac_select_album_bottom_hight">50dp</dimen>
+    <dimen name="release_img_size">78dp</dimen>
+    <dimen name="flexible_space_image_height">310dp</dimen>
+    <dimen name="flexible_space_show_fab_offset">120dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="ac_choose_button_height">47dp</dimen>
+    <dimen name="ac_choose_button_width">282dp</dimen>
+    <dimen name="ac_choose_icon_size">60dp</dimen>
+    <dimen name="btn_attention_height">75dp</dimen>
+    <dimen name="btn_share_ci_radius">44dp</dimen>
+</resources>

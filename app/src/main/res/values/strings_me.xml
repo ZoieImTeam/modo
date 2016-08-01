@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="me_tv_score">积分：%s</string>
+    <string name="me_tv_atts">关注： %s</string>
+    <string name="me_tv_fans">粉丝： %s</string>
+    <string name="item_activity_tv_time">时间：%s</string>
+    <string name="item_activity_tv_address">地址：%s</string>
+    <string name="item_activity_tv_info">活动简介：%s</string>
+    <string name="item_activity_tv_number">剩余%s张</string>
+    <string name="exception">请求超时！</string>
+    <string name="err_login">请先登录！</string>
+    <string name="item_atts_clicknumber">点击数：</string>
+    <string name="item_atts_commentnumber">评论数：</string>
+</resources>

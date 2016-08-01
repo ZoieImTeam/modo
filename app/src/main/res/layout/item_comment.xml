@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tool="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/civ_item_comment"
+        android:layout_width="@dimen/cir_size_45"
+        android:layout_height="@dimen/cir_size_45"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginStart="@dimen/spacing_lv2"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/text_avator"
+        />
+
+    <TextView
+        android:id="@+id/tv_item_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:layout_toRightOf="@+id/civ_item_comment"
+        android:ellipsize="end"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_normal"
+        tool:text="@string/test_text"
+        />
+
+    <TextView
+        android:id="@+id/tv_item_comment_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/spacing_lv3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="@dimen/spacing_lv3"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:text="Time"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_normal"
+        />
+
+    <TextView
+        android:id="@+id/tv_item_comment_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_item_comment"
+        android:layout_alignStart="@+id/tv_item_comment"
+        android:layout_below="@+id/tv_item_comment"
+        android:layout_marginBottom="@dimen/spacing_lv1"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:ellipsize="end"
+        android:maxEms="2000"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_small"
+        tool:text="@string/test_text"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tv_item_comment_content"
+        android:background="@color/base_bg_color"/>
+
+</RelativeLayout>

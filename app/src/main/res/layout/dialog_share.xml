@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_dialog_share_other"
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:background="#00000000">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="245dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginRight="53dp"
+        android:background="@drawable/bg_dialog"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dialog_share_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_lv8"
+            android:gravity="center"
+            android:text="分享给好友"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal"/>
+
+        <LinearLayout
+            android:id="@+id/ll_dialog_share"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_lv10"
+            android:layout_below="@+id/tv_dialog_share_title"
+            android:layout_marginLeft="@dimen/spacing_lv1"
+            android:layout_marginRight="@dimen/spacing_lv1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_dialog_share_friends"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/icon_weixin_friends"
+                android:gravity="center_horizontal"
+                android:text="@string/weixinfriendscircle"
+                android:textSize="@dimen/text_tiny"/>
+
+            <TextView
+                android:id="@+id/tv_dialog_share_weixin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/icon_weixin"
+                android:gravity="center_horizontal"
+                android:text="@string/weixinfriends"
+                android:textSize="@dimen/text_tiny"/>
+
+            <TextView
+                android:id="@+id/tv_dialog_share_qq"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/icon_qq"
+                android:gravity="center_horizontal"
+                android:text="@string/text_qq_friends"
+                android:textSize="@dimen/text_tiny"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_dialog_share_cancel"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/spacing_lv1"
+            android:layout_marginLeft="@dimen/spacing_lv1"
+            android:layout_height="@dimen/spacing_lv5"
+            android:layout_below="@+id/ll_dialog_share"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_lv5"
+            android:background="@drawable/bg_man"
+            android:gravity="center"
+            android:text="@string/text_cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"/>
+    </RelativeLayout>
+</RelativeLayout>

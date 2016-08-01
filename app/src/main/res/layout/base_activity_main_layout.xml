@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/book_ground_list_normal_bg" >
+
+    <FrameLayout
+        android:id="@+id/title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp" >
+
+        <RelativeLayout
+            android:id="@+id/game_tittle_root"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@color/heragency_base_red_color" >
+            
+			<RelativeLayout 
+			    android:id="@+id/rl_back"
+			    android:layout_height="fill_parent"
+			    android:layout_width="wrap_content"
+			    >
+	            <ImageView
+	                android:id="@+id/iv_back"
+	                android:layout_width="48dp"
+	                android:layout_height="48dp"
+	                android:scaleType="center"
+	                android:layout_centerVertical="true"
+	                android:src="@drawable/ic_back_white" />
+	            
+	            <TextView
+	                android:id="@+id/tv_left_title"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@id/iv_back"
+	                android:ellipsize="end"
+	                android:lines="1"
+	                android:text="123"
+	                android:layout_centerVertical="true"
+	                android:textColor="@color/white"
+	                android:textSize="@dimen/text_normal"
+	                android:visibility="gone" />
+            
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal" />
+
+            <TextView
+                android:id="@+id/tv_center_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_big"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:ellipsize="end"
+                android:lines="1"
+                android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_bar" >
+    </FrameLayout>
+    
+    <ImageView 
+        android:layout_height="4dp"
+        android:layout_width="fill_parent"
+        android:background="@drawable/ico_top"
+        android:layout_below="@id/title_bar"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/fl_no_data_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_bar"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/base_activity_not_data"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

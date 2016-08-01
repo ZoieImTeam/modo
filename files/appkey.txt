@@ -1,0 +1,68 @@
+ Mob短信平台的账号（appKey，appSecret）http://www.mob.com/#/index 
+
+ 
+  账号：kfz@new2u.cn  密码：Yoyo6709394
+  已添加应用
+
+2.高德地图开放平台 http://lbs.amap.com/
+  账号：Ziyao_Huang@139.com   密码：Yoyo6709394
+  已添加
+
+3.支付宝支付https://openhome.alipay.com
+  账号：kfz@new2u.cn  密码：Yoyo6709394
+  支付已完成 即时到账需ICP备案
+
+4.新浪微博开放平台的账号信息（appkey,appsecret）http://open.weibo.com/
+  账号：boyhzy@163.com   密码：Yoyo6709394
+  文件审核中
+
+5.微信开放平台的账号信息（appkey,appsecret）https://open.weixin.qq.com/ 
+
+ 
+  账号：kfz@new2u.cn  密码：Yoyo6709394
+  微信支付需ICP备案，目前等客户ICP备案申请下来
+
+6.银联支付的账号信息（提现功能）http://mobile.unionpay.com/preference/
+  账号：zanplus_app 密码：Yoyo6709394
+  登录地址：https://merchant.unionpay.com/portal/login.jsp
+  银联的文件太复杂，客户正在申请中
+
+
+C:\Users\Administrator>keytool -list -v -keystore e:\binvshe.jks -storepass binv
+she100
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: binvshe
+创建日期: 2016-1-22
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=binvshe
+发布者: CN=binvshe
+序列号: 53b948f0
+有效期开始日期: Fri Jan 22 11:13:05 CST 2016, 截止日期: Tue Jan 15 11:13:05 CST
+2041
+证书指纹:
+         MD5: A1:33:38:19:A2:65:C3:23:B8:F5:8B:CB:5F:23:10:7A
+         SHA1: 90:4C:F0:AB:23:04:A9:80:3F:4E:2B:3C:6F:30:3F:7F:2B:32:B9:AC
+         SHA256: 85:8D:55:7E:09:83:3C:EE:87:D1:90:EF:EF:40:1E:22:DD:5E:BA:0A:4E:
+4F:67:0B:35:2E:16:0C:7E:78:0A:75
+         签名算法名称: SHA256withRSA
+         版本: 3
+
+扩展:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 16 6E D2 99 A2 16 65 8B   9B B9 C8 A7 D2 29 82 58  .n....e......).X
+0010: B1 00 7F 35                                        ...5
+]
+]
+
+*******************************************
+*******************************************

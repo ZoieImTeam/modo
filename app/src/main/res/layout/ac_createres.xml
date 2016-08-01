@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.binvshe.binvshe.binvsheui.release.CreateResActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/ac_createres_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize" />
+
+    <TextView
+        style="@style/text_title"
+        android:text="连载标题" />
+
+    <EditText
+        android:id="@+id/et_ac_createres_title"
+        style="@style/edit_release"
+        android:hint="输入标题(20字以内)" />
+
+    <TextView
+        style="@style/text_title"
+        android:text="连载简介" />
+
+    <EditText
+        android:id="@+id/et_ac_createres_desc"
+        style="@style/edit_release"
+        android:hint="输入简介(100字以内)"
+        android:maxEms="200" />
+
+    <TextView
+        style="@style/text_title"
+        android:text="选择分区" />
+
+    <TextView
+        android:id="@+id/tv_ac_release_edit_catetory"
+        style="@style/edit_release"
+        android:text="@string/choose_systype_title" />
+
+    <ImageView
+        android:id="@+id/iv_ac_release_img"
+        android:layout_width="@dimen/release_img_size"
+        android:layout_height="@dimen/release_img_size"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:src="@drawable/release_add_img" />
+
+    <Button
+        android:id="@+id/b_ac_createres_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:text="下一步" />
+
+</LinearLayout>

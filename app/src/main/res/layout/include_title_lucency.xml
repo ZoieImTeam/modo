@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/actionbar_height"
+    app:layout_scrollFlags="scroll|enterAlways"
+    >
+
+    <View
+        android:id="@+id/rl_ac_navi_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00FFFFFF"
+        />
+    <ImageView
+        android:layout_centerVertical="true"
+        android:id="@+id/iv_title_left"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/btn_back"/>
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_big"
+        tools:text="title"
+        />
+
+
+
+</RelativeLayout>

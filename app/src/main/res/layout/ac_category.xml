@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.binvshe.binvshe.binvsheui.home.CategoryActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_ac_categoryappbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+        <include layout="@layout/include_title" />
+
+        <org.srr.dev.view.PagerSlidingTabStrip
+            android:id="@+id/psts_ac_category_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_lv4"
+            app:SelectedTabTextColor="@color/app_main_color_other"
+            app:SelectedTabTextSize="12dp"
+            app:TabTextColor="@color/white"
+            app:TabTextSize="12dp"
+            app:pstsDividerColor="@color/transparent"
+            app:pstsIndicatorColor="@color/white"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsTabPaddingLeftRight="10dp"
+            app:pstsUnderlineColor="@color/app_main_color" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_ac_category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</android.support.design.widget.CoordinatorLayout>

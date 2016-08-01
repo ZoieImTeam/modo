@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg_color">
+
+    <RelativeLayout
+        android:id="@+id/test_rela"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/flexible_space_image_height">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_img_max" />
+
+        <TextView
+            android:id="@+id/tv_story_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            tools:text="@string/story_title"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_title_24" />
+
+        <View
+            android:id="@+id/view_cover"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_main_color" />
+    </RelativeLayout>
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/flexible_space_image_height"
+                 />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/base_bg_color">
+
+                <org.srr.dev.view.CircleImageView
+                    android:id="@+id/iv_user_head"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/touxiang" />
+                <TextView   
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:textSize="@dimen/text_big"
+                    tools:text="qloric"
+                    android:textColor="@color/text_color_black_name"
+                    android:layout_marginTop="@dimen/spacing_lv3"
+                   android:layout_marginLeft="@dimen/spacing_lv1"
+                    android:layout_toRightOf="@+id/iv_user_head"
+                    />
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_add_sub"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/addsubscription"
+                    android:layout_width="83dp"
+                    android:layout_height="38dp"
+                    android:layout_alignBottom="@+id/tv_role"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/btn_blue_shade"
+                    android:layout_marginRight="@dimen/spacing_lv2"/>
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_marginLeft="@dimen/spacing_lv1"
+                    android:layout_toRightOf="@+id/iv_user_head"
+                    android:textSize="@dimen/text_tiny"
+                    android:textColor="@color/text_color_gray_time"
+                    tools:text="1小时前"
+                    android:layout_marginTop="@dimen/spacing_lv1"
+                    android:layout_below="@+id/tv_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+                <View
+                    android:id="@+id/line1"
+                    style="@style/view_line"
+                    android:layout_below="@+id/iv_user_head"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"/>
+                <TextView
+                    android:id="@+id/tv_small_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_big"
+                    android:layout_marginLeft="@dimen/spacing_lv3"
+                    android:textColor="@color/text_color_black_name"
+                    android:layout_below="@+id/line1"
+                    android:layout_marginTop="@dimen/spacing_lv3"
+                    tools:text="【小说标题】"/>
+                <TextView
+                    tools:text="@string/subject_original"
+                    android:id="@+id/tv_original"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lv2"
+                    style="@style/tv_details_normal_stytle"
+                    android:layout_below="@+id/tv_small_title"/>
+                <TextView
+                    tools:text="@string/subject_roleinfo"
+                    android:id="@+id/tv_role"
+                    android:layout_marginTop="@dimen/spacing_lv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/tv_details_normal_stytle"
+                    android:layout_below="@+id/tv_original"/>
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_role"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    tools:text="评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/page_layout"
+                layout="@layout/filp_page_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+    <TextView
+        android:id="@+id/btn_add_attention"
+        android:layout_width="@dimen/btn_attention_height"
+        android:layout_height="@dimen/btn_attention_height"
+        android:background="@drawable/btn_circle"
+        android:gravity="center"
+        android:text="@string/user_attention_false"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_normal" />
+</FrameLayout>
+
+

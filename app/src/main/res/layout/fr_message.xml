@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/fr_message_pil"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="53dp"-->
+        <!--android:background="@drawable/line_gray_normal_bottom">-->
+
+
+        <!--<View-->
+            <!--android:id="@+id/fr_message_center"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_centerHorizontal="true" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/fr_message_indicator"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="1.5dp"-->
+            <!--android:layout_below="@+id/fr_message_tabs"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_marginLeft="90dp"-->
+            <!--android:src="@mipmap/nearby_indicator_line" />-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/fr_message_tabs"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:orientation="horizontal">-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/fr_message_message"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="right|center_vertical"-->
+                <!--android:paddingRight="41dp"-->
+                <!--android:text="消息"-->
+                <!--android:textColor="@color/app_main_color_other"-->
+                <!--android:textSize="15dp" />-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/fr_message_friend"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="left|center_vertical"-->
+                <!--android:paddingLeft="41dp"-->
+                <!--android:text="好友"-->
+                <!--android:textColor="@color/app_main_color_other"-->
+                <!--android:textSize="15dp" />-->
+
+
+        <!--</LinearLayout>-->
+
+
+    <!--</RelativeLayout>-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fr_message_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
+
+</RelativeLayout>

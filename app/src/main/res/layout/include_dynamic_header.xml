@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/app_main_color"
+    android:paddingBottom="@dimen/spacing_lv1"
+    android:paddingLeft="@dimen/spacing_lv3"
+    android:paddingRight="@dimen/spacing_lv3"
+    android:paddingTop="@dimen/spacing_lv5">
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/civ_ac_dynamic_header_user"
+        android:layout_width="@dimen/user_icon_size"
+        android:layout_height="@dimen/user_icon_size"
+        android:src="@drawable/text_avator" />
+
+    <TextView
+        android:id="@+id/tv_ac_dynamic_header_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:layout_toRightOf="@+id/civ_ac_dynamic_header_user"
+        android:text="昵称"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_ac_dynamic_header_usersign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_ac_dynamic_header_user"
+        android:layout_below="@+id/tv_ac_dynamic_header_user"
+        android:text="签名"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_ac_dynamic_header_attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:background="@drawable/bg_biankuang_white"
+        android:paddingLeft="@dimen/spacing_lv1"
+        android:paddingRight="@dimen/spacing_lv1"
+        android:text="@string/attention"
+        android:textColor="@color/app_main_color" />
+
+    <TextView
+        android:id="@+id/tv_ac_dynamic_header_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_ac_dynamic_header_attention"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:background="@drawable/bg_biankuang_white"
+        android:paddingLeft="@dimen/spacing_lv1"
+        android:paddingRight="@dimen/spacing_lv1"
+        android:text="@string/private_letter"
+        android:textColor="@color/app_main_color" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_ac_dynamic_header_tag"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_lv4"
+        android:layout_below="@+id/civ_ac_dynamic_header_user"
+        android:layout_marginTop="@dimen/spacing_lv1" />
+
+</RelativeLayout>

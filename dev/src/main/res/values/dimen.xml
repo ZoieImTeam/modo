@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_dialog_text">18dip</dimen>
+    <dimen name="xrecyclerview_textmargin">10dp</dimen>
+    <dimen name="emoji_hight_width">21dp</dimen>
+    <dimen name="dialog_radius">10dp</dimen>
+</resources>

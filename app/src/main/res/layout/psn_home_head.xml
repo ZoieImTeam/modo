@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/psnhome_image_headbg"
+                android:layout_width="match_parent"
+                android:layout_height="265dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/touxiang" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="265dp"
+                android:background="@mipmap/mengmeng">
+
+                <org.srr.dev.view.CircleImageView
+                    android:id="@+id/psnhome_image_head"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="60dp"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    android:id="@+id/psnhome_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/psnhome_tv_info"
+                    android:layout_alignLeft="@+id/psnhome_tv_info"
+                    android:layout_alignStart="@+id/psnhome_tv_info"
+                    android:layout_marginBottom="2dp"
+                    android:text="时崎狂三"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:id="@+id/psnhome_tv_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/psnhome_image_head"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/psnhome_image_head"
+                    android:text="我是个性签名"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/psnhome_tv_sixin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/psnhome_image_head"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/selector_setting_logout_bg"
+                    android:padding="2dp"
+                    android:text="私信私信"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/psnhome_tv_atts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/psnhome_tv_sixin"
+                    android:layout_alignLeft="@+id/psnhome_tv_sixin"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/selector_setting_logout_bg"
+                    android:padding="2dp"
+                    android:text="编辑资料"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@+id/psnhome_tv_sixin"
+                    android:layout_alignLeft="@+id/psnhome_image_head"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/psnhome_tv_sixin"
+                    android:layout_alignStart="@+id/psnhome_image_head"
+                    android:layout_below="@+id/psnhome_tv_info"
+                    android:layout_marginRight="30dp"
+                    android:background="@null"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon1"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/abdj" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon2"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/acos" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon3"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/adl" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon4"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/ach" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon5"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/ajsz" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon6"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/amh" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon7"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/aqxs" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon8"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/asz" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon9"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/ayinyue" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon10"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/agame" />
+
+                        <ImageView
+                            android:id="@+id/psnhome_image_icon11"
+                            style="@style/psnhome_image_icon"
+                            android:src="@mipmap/azaiwu" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@color/white">
+
+            <com.binvshe.binvshe.binvsheui.custom.Hexagon
+                android:id="@+id/me_layout_hexagon"
+                android:layout_width="303dp"
+                android:layout_height="350dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/me_tab1"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="漫画" />
+
+                <TextView
+                    android:id="@+id/me_tab2"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="视频" />
+
+                <TextView
+                    android:id="@+id/me_tab3"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="小说" />
+
+                <TextView
+                    android:id="@+id/me_tab4"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="唱歌" />
+
+                <TextView
+                    android:id="@+id/me_tab5"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="鬼畜" />
+
+                <TextView
+                    android:id="@+id/me_tab6"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="教学" />
+
+            </com.binvshe.binvshe.binvsheui.custom.Hexagon>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+</RelativeLayout>

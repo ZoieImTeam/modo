@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_dialog_release"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#00ffffff">
+
+    <LinearLayout
+        android:id="@+id/ll_dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/ll_dialog_top"
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/spacing_lv2">
+
+
+            <TextView
+                android:id="@+id/tv_dialog_manga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/weixin_wechat"
+                android:gravity="center"
+                android:text="漫画" />
+
+            <TextView
+                android:id="@+id/tv_dialog_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/weixin_friend"
+                android:gravity="center_horizontal"
+                android:text="文章" />
+
+            <TextView
+                android:id="@+id/tv_dialog_cos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/sina"
+                android:gravity="center_horizontal"
+                android:text="COS" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/background_normal" />
+
+
+        <TextView
+            android:id="@+id/tv_dialog_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="#444444"
+            android:textSize="19dp" />
+    </LinearLayout>
+</RelativeLayout>

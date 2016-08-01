@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/ac_choose_bg">
+
+    <ImageView
+        android:id="@+id/iv_ac_login_logo"
+        android:layout_width="146dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/ac_choose_logo" />
+
+    <EditText
+        android:id="@+id/et_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_below="@id/iv_ac_login_logo"
+        android:layout_marginLeft="@dimen/spacing_lv4"
+        android:layout_marginRight="@dimen/spacing_lv4"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/bg_white_transprent"
+        android:hint="@string/account_login_input_phone"
+        android:paddingLeft="@dimen/spacing_lv4"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/edit_hint_color"
+        android:textSize="@dimen/text_normal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_account"
+        android:layout_alignLeft="@+id/et_account"
+        android:layout_alignStart="@+id/et_account"
+        android:layout_alignTop="@+id/et_account"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginStart="@dimen/spacing_lv1"
+        android:src="@mipmap/edit_user_icon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_below="@id/et_account"
+        android:layout_marginLeft="@dimen/spacing_lv4"
+        android:layout_marginRight="@dimen/spacing_lv4"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:background="@drawable/bg_white_transprent"
+        android:hint="@string/account_password_input_phone"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/spacing_lv4"
+        android:singleLine="true"
+        android:textColor="@color/login_text_tip_color"
+        android:textColorHint="@color/edit_hint_color"
+        android:textSize="@dimen/text_normal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_password"
+        android:layout_alignLeft="@+id/et_password"
+        android:layout_alignStart="@+id/et_password"
+        android:layout_alignTop="@+id/et_password"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginStart="@dimen/spacing_lv1"
+        android:src="@mipmap/edit_pwd_icon" />
+
+    <TextView
+        android:id="@+id/tv_forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/et_password"
+        android:layout_marginEnd="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="8dp"
+        android:text="@string/text_forget_pwd"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_below="@id/tv_forget_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/spacing_lv4"
+        android:layout_marginRight="@dimen/spacing_lv4"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_man"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_big" />
+
+    <ImageView
+        android:layout_width="107dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/spacing_lv3"
+        android:layout_marginEnd="@dimen/spacing_lv3"
+        android:layout_marginRight="@dimen/spacing_lv3"
+        android:src="@mipmap/register_back_icon" />
+
+
+</RelativeLayout>

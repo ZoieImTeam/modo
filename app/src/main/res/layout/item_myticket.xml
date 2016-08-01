@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/theme_color_blue" >
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/item_myticket_image_QRcode"
+            android:src="@drawable/touxiang" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1234564547657"
+            android:id="@+id/item_myticket_tv_code"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="8dp"
+            android:layout_alignTop="@+id/item_myticket_image_QRcode"
+            android:layout_toRightOf="@+id/item_myticket_image_QRcode"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="活动名"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:textSize="17dp"
+            android:id="@+id/item_myticket_tv_name"
+            android:layout_below="@+id/item_myticket_tv_code"
+            android:layout_alignLeft="@+id/item_myticket_tv_code"
+            android:layout_alignStart="@+id/item_myticket_tv_code" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016-2-2"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:textSize="17dp"
+            android:id="@+id/item_myticket_tv_time"
+            android:layout_below="@+id/item_myticket_tv_name"
+            android:layout_alignLeft="@+id/item_myticket_tv_name"
+             />
+
+    </RelativeLayout>
+</RelativeLayout>

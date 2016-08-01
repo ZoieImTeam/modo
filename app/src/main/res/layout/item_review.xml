@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/item_review_icon"
+        android:layout_width="@dimen/circle_icon_width_hight_friend"
+        android:layout_height="@dimen/circle_icon_width_hight_friend"
+        android:layout_marginLeft="@dimen/spacing_lv3"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:src="@drawable/text_avator" />
+
+    <TextView
+        android:id="@+id/item_review_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/item_review_icon"
+        android:layout_toRightOf="@+id/item_review_icon"
+        android:text="名字"
+        android:textColor="@color/text_color_black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/item_review_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_review_name"
+        android:layout_alignStart="@+id/item_review_name"
+        android:layout_below="@+id/item_review_name"
+        android:layout_marginBottom="@dimen/spacing_lv3"
+        android:layout_marginRight="@dimen/spacing_lv3"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:text="@string/test_text"
+        android:textColor="@color/text_color_black"
+        android:textSize="13dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/item_review_content"
+        android:background="@color/dividedline" />
+
+    <TextView
+        android:id="@+id/item_review_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:text="34分钟前" />
+</RelativeLayout>

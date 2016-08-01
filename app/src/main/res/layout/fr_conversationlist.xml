@@ -1,0 +1,320 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/fr_conversation_list_hello_rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fr_conversation_list_hello_icon"
+            android:layout_width="@dimen/circle_icon_width_hight_friend"
+            android:layout_height="@dimen/circle_icon_width_hight_friend"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="7dp"
+            android:src="@mipmap/conversation_list_hello_icon" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_hello_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/fr_conversation_list_hello_icon"
+            android:layout_toRightOf="@+id/fr_conversation_list_hello_icon"
+            android:text="@string/greet_messaget_text"
+            android:textColor="@color/text_color_black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_hello_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fr_conversation_list_hello_title"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/fr_conversation_list_hello_title"
+            android:layout_marginBottom="13dp"
+            android:text="个性签名"
+            android:textColor="@color/text_color_gray6"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_hello_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="17dp"
+            android:text="00:00"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_hello_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@mipmap/bg_notify"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignLeft="@+id/fr_conversation_list_hello_title"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dividedline" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fr_conversation_list_dynamic_rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fr_conversation_list_dynamic_icon"
+            android:layout_width="@dimen/circle_icon_width_hight_friend"
+            android:layout_height="@dimen/circle_icon_width_hight_friend"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="7dp"
+            android:src="@mipmap/conversation_list_dynamic_icon" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_dynamic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/fr_conversation_list_dynamic_icon"
+            android:layout_toRightOf="@+id/fr_conversation_list_dynamic_icon"
+            android:text="@string/dynamic_message_text"
+            android:textColor="@color/text_color_black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_dynamic_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fr_conversation_list_dynamic_title"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/fr_conversation_list_dynamic_title"
+            android:layout_marginBottom="13dp"
+            android:text="个性签名"
+            android:textColor="@color/text_color_gray6"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_dynamic_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="17dp"
+            android:text="00:00"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_dynamic_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@mipmap/bg_notify"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignLeft="@+id/fr_conversation_list_dynamic_title"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dividedline" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fr_conversation_list_zan_rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fr_conversation_list_zan_icon"
+            android:layout_width="@dimen/circle_icon_width_hight_friend"
+            android:layout_height="@dimen/circle_icon_width_hight_friend"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="7dp"
+            android:src="@mipmap/conversation_list_zan_icon" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_zan_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/fr_conversation_list_zan_icon"
+            android:layout_toRightOf="@+id/fr_conversation_list_zan_icon"
+            android:text="@string/newzan_message_text"
+            android:textColor="@color/text_color_black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_zan_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fr_conversation_list_zan_title"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/fr_conversation_list_zan_title"
+            android:layout_marginBottom="13dp"
+            android:text="个性签名"
+            android:textColor="@color/text_color_gray6"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_zan_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="17dp"
+            android:text="00:00"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_zan_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@mipmap/bg_notify"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignLeft="@+id/fr_conversation_list_zan_title"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dividedline" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fr_conversation_list_system_rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fr_conversation_list_system_icon"
+            android:layout_width="@dimen/circle_icon_width_hight_friend"
+            android:layout_height="@dimen/circle_icon_width_hight_friend"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="7dp"
+            android:src="@mipmap/conversation_list_system_icon" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_system_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/fr_conversation_list_system_icon"
+            android:layout_toRightOf="@+id/fr_conversation_list_system_icon"
+            android:text="@string/system_message_text"
+            android:textColor="@color/text_color_black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_system_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fr_conversation_list_system_title"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/fr_conversation_list_system_title"
+            android:layout_marginBottom="13dp"
+            android:text="个性签名"
+            android:textColor="@color/text_color_gray6"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_system_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="17dp"
+            android:text="00:00"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/fr_conversation_list_system_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@mipmap/bg_notify"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignLeft="@+id/fr_conversation_list_system_title"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dividedline" />
+    </RelativeLayout>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="io.rong.imkit.fragment.ConversationListFragment"
+        android:id="@+id/conversationlist"
+         />
+
+</LinearLayout>

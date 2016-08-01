@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.binvshe.binvshe.binvsheui.widget.CanotSlidingViewpager
+    android:id="@+id/vp_ac_register"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/ac_choose_bg">
+
+</com.binvshe.binvshe.binvsheui.widget.CanotSlidingViewpager>

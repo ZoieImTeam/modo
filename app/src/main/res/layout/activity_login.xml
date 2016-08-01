@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.binvshe.binvshe.binvsheui.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_image_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+    <EditText
+        style="@style/login_edit_bi"
+        android:id="@+id/login_edit_user"
+        android:layout_below="@+id/login_image_logo"
+        android:hint="请输入手机号"
+        android:inputType="phone"
+        android:layout_marginTop="45dp" />
+
+    <EditText
+        style="@style/login_edit_bi"
+        android:id="@+id/login_edit_pwd"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:layout_below="@+id/login_edit_user"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bi_login_selector_edit" />
+
+    <TextView
+        android:id="@+id/login_tv_login"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/login_edit_pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_setting_logout_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        style="@style/login_tv_register"
+        android:text="忘记密码"
+        android:id="@+id/login_tv_forgetepwd"
+        android:layout_below="@+id/login_tv_login"
+        android:layout_alignLeft="@+id/login_tv_login"
+        android:layout_alignStart="@+id/login_tv_login" />
+
+    <TextView
+        style="@style/login_tv_register"
+        android:text="立即注册"
+        android:id="@+id/login_tv_register"
+        android:layout_below="@+id/login_tv_login"
+        android:layout_alignRight="@+id/login_tv_login"
+        android:layout_alignEnd="@+id/login_tv_login" />
+
+
+</RelativeLayout>

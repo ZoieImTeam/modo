@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/civ_head"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/title_layout"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        tools:src="@mipmap/btn_select_head" />
+
+    <TextView
+        android:id="@+id/tv_attention"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="取消关注"
+        android:textColor="@color/white"
+        tools:background="@drawable/btn_bg_luc" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@id/tv_attention"
+        android:layout_toRightOf="@id/civ_head"
+        android:gravity="bottom"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_normal"
+        tools:text="afasdf" />
+
+    <TextView
+        android:id="@+id/tv_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_name"
+        android:layout_toLeftOf="@id/tv_attention"
+        android:layout_toRightOf="@id/civ_head"
+        android:gravity="center_vertical"
+        android:paddingTop="2dp"
+        android:textColor="@color/text_color_gray7"
+        android:textSize="@dimen/text_tiny"
+        tools:text="afasdf" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_sign"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:background="@drawable/line_gray_normal" />
+
+</RelativeLayout>

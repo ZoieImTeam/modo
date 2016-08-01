@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/ac_choose_bg">
+
+    <ImageView
+        android:id="@+id/fr_register_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_lv6"
+        android:src="@mipmap/register_indicator_2"/>
+
+    <TextView
+        android:id="@+id/tv_fr_register_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fr_register_indicator"
+        android:layout_marginTop="@dimen/spacing_lv11"
+        android:gravity="center"
+        android:text="@string/text_register1_tips"
+        android:textColor="@color/edit_hint_color"/>
+
+    <EditText
+        android:id="@+id/et_fr_register"
+        android:layout_width="200dp"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_below="@id/fr_register_indicator"
+        android:layout_marginLeft="@dimen/spacing_lv4"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/bg_white_transprent"
+        android:hint="@string/text_hint_4code"
+        android:paddingLeft="@dimen/spacing_lv3"
+        android:layout_marginRight="@dimen/spacing_lv"
+        android:textColor="@color/white"
+        android:textColorHint="@color/edit_hint_color"
+        android:textSize="@dimen/text_normal"
+        />
+
+    <TextView
+        android:id="@+id/tv_fr_register_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_alignTop="@+id/et_fr_register"
+        android:layout_marginEnd="@dimen/spacing_lv4"
+        android:layout_marginRight="@dimen/spacing_lv4"
+        android:layout_toEndOf="@+id/et_fr_register"
+        android:layout_toRightOf="@+id/et_fr_register"
+        android:background="@drawable/bg_man"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_small"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_fr_register"
+        android:layout_alignLeft="@+id/et_fr_register"
+        android:layout_alignStart="@+id/et_fr_register"
+        android:layout_alignTop="@+id/et_fr_register"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginStart="@dimen/spacing_lv1"
+        android:src="@mipmap/edit_phone_icon"/>
+
+    <TextView
+        android:id="@+id/tv_fr_register_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_below="@id/et_fr_register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/spacing_lv4"
+        android:layout_marginRight="@dimen/spacing_lv4"
+        android:layout_marginTop="@dimen/spacing_lv4"
+        android:background="@drawable/bg_man"
+        android:gravity="center"
+        android:text="@string/text_next_step"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_big"
+        />
+
+    <ImageView
+        android:layout_width="107dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/spacing_lv3"
+        android:layout_marginEnd="@dimen/spacing_lv3"
+        android:layout_marginRight="@dimen/spacing_lv3"
+        android:src="@mipmap/register_back_icon"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="96dp"
+    android:padding="@dimen/spacing_lv1">
+
+    <ImageView
+        android:id="@+id/iv_item_channel_bg"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/text_avator" />
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/civ_iv_item_channel"
+        android:layout_width="@dimen/circle_icon_width_hight"
+        android:layout_height="@dimen/circle_icon_width_hight"
+        android:layout_alignBottom="@+id/iv_item_channel_bg"
+        android:layout_alignEnd="@+id/iv_item_channel_bg"
+        android:layout_alignRight="@+id/iv_item_channel_bg"
+        android:src="@drawable/text_avator" />
+
+    <TextView
+        android:id="@+id/tv_iv_item_channel_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/iv_item_channel_bg"
+        android:layout_toRightOf="@+id/iv_item_channel_bg"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:padding="@dimen/spacing_lv1" />
+
+    <TextView
+        android:id="@+id/tv_iv_item_channel_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_iv_item_channel_title"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_toEndOf="@+id/iv_item_channel_bg"
+        android:layout_toRightOf="@+id/iv_item_channel_bg"
+        android:lines="1"
+        android:textColor="@color/text_color_gray"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/tv_iv_item_channel_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginStart="@dimen/spacing_lv1"
+        android:layout_toEndOf="@+id/iv_item_channel_bg"
+        android:layout_toRightOf="@+id/iv_item_channel_bg"
+        android:ems="6"
+        android:lines="1"
+        android:textColor="@color/text_color_gray"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/tv_iv_item_channel_look"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_lv4"
+        android:layout_marginStart="@dimen/spacing_lv4"
+        android:layout_toEndOf="@+id/iv_item_channel_bg"
+        android:layout_toRightOf="@+id/tv_iv_item_channel_like"
+        android:ems="6"
+        android:lines="1"
+        android:textColor="@color/text_color_gray"
+        android:textSize="11dp" />
+
+</RelativeLayout>

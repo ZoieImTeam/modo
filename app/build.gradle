@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+def AAVersion = '3.3.2'
+android {
+
+    signingConfigs {
+        debug {
+            keyAlias 'binvshe'
+            keyPassword 'binvshe100'
+            storeFile file('../files/binvshe.jks')
+            storePassword 'binvshe100'
+        }
+    }
+
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+        defaultConfig {
+            applicationId "com.binvshe.binvshe"
+            minSdkVersion 16
+            targetSdkVersion 22
+            versionCode 1
+            versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    productFlavors {
+//        all32 { minSdkVersion 16 }
+//        all64 { minSdkVersion 21 }
+//    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    compile files('libs/httpmime-4.1.3.jar')
+    compile files('libs/org.apache.http.legacy.jar')
+    compile files('libs/ormlite-android-4.49-SNAPSHOT.jar')
+    compile files('libs/ormlite-core-4.49-SNAPSHOT.jar')
+    compile files('libs/alipaySdk-20151215.jar')
+    compile files('libs/libammsdk.jar')
+    compile files('libs/core-3.2.1.jar')
+    compile project(':IMKit')
+    compile project(':amap_lib')
+    compile project(':smssdk')
+    compile project(':pickerViewLib')
+    compile project(':jpush')
+    compile project(':dev')
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    //    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    //    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    //ijkplayer danmuku
+    //    compile 'com.github.ctiao:dfm:0.4.1'
+    //    all32Compile 'tv.danmaku.ijk.media:ijkplayer-java:0.4.5.1'
+    //    all32Compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.4.5.1'
+    //    all32Compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.4.5.1'
+    //    all64Compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.4.5.1'
+    //    all32Compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.4.5.1'
+    //    all32Compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.4.5.1'
+
+    compile 'com.melnykov:floatingactionbutton:1.3.0'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
+    compile 'com.android.support:support-v4:23.4.0'
+}
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}

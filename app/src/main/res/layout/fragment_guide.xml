@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guide_bg"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.binvshe.binvshe.binvsheui.login.GuideFragment">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/guide_image"
+        />
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="53dp"
+        android:src="@mipmap/tobinvshe"
+        android:id="@+id/guide_tv_ok"
+        android:textSize="15dp"
+        android:scaleType="centerCrop"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
+
+</RelativeLayout>

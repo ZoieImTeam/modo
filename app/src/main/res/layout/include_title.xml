@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_ac_navi_title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/actionbar_height"
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:background="@color/app_main_color">
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/civ_user_icon"
+        android:layout_width="@dimen/circle_icon_width_hight"
+        android:layout_height="@dimen/circle_icon_width_hight"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="8dp"
+        />
+
+    <View
+        android:id="@+id/v_ac_title_search"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/spacing_lv1"
+        android:layout_marginLeft="@dimen/spacing_lv9"
+        android:layout_marginRight="@dimen/spacing_lv3"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:background="@drawable/bg_biankuang_white"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_ac_title_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.binvshe.binvshe.binvsheui.login.RegisterActivity">
+
+    <EditText
+        android:id="@+id/register_edit_user"
+        style="@style/login_edit_bi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:hint="请输入手机号"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/register_edit_smscode"
+        style="@style/login_edit_bi"
+        android:layout_below="@+id/register_edit_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <TextView
+        android:id="@+id/tv_register_getcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/register_edit_smscode"
+        android:layout_alignRight="@+id/register_edit_user"
+        android:layout_alignTop="@+id/register_edit_smscode"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="获取验证码"
+        android:textColor="@color/theme_color_blue"
+        android:textSize="@dimen/theme_textsize" />
+
+    <EditText
+        android:id="@+id/register_edit_pwd1"
+        style="@style/login_edit_bi"
+        android:layout_below="@+id/register_edit_smscode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="请输入密码"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/register_edit_pwd2"
+        style="@style/login_edit_bi"
+        android:layout_below="@+id/register_edit_pwd1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="请再次输入密码"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/register_tv_regiter"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/register_edit_pwd2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_setting_logout_bg"
+        android:gravity="center"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:textSize="@dimen/theme_textsize" />
+</RelativeLayout>

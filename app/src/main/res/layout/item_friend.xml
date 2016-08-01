@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@color/white">
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/item_friend_list_icon"
+        android:layout_width="@dimen/circle_icon_width_hight_friend"
+        android:layout_height="@dimen/circle_icon_width_hight_friend"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/text_avator" />
+
+    <TextView
+        android:id="@+id/item_friend_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/item_friend_list_icon"
+        android:layout_toRightOf="@+id/item_friend_list_icon"
+        android:text="名字"
+        android:textColor="@color/text_color_black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/item_friend_list_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_friend_list_name"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/item_friend_list_name"
+        android:layout_marginBottom="13dp"
+        android:layout_toLeftOf="@+id/item_friend_list_status"
+        android:singleLine="true"
+        android:text="个性签名"
+        android:textColor="@color/text_color_gray6"
+        android:textSize="11dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignLeft="@+id/item_friend_list_name"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dividedline" />
+
+    <ImageView
+        android:id="@+id/item_friend_list_status"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/friend_list_key_icon" />
+</RelativeLayout>

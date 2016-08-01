@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                tools:context="com.binvshe.binvshe.binvsheui.activity.DetailActivityActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/detail_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/abl_detail_activity_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rl_detail_activity_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_detail_activity_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transparent30"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transparent30"
+                        />
+
+                    <TextView
+                        android:id="@+id/detail_activity_tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="91dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/text_activity_title_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_title_24"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/ll_detail_activity_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detail_activity_tv_name"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/spacing_lv5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="￥"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_small"/>
+
+                        <TextView
+                            android:id="@+id/detail_activity_tv_nowmoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="96"
+                            android:textColor="#f75964"
+                            android:textSize="24dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="@string/text_surplus_tic"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_small"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/detail_activity_layout_buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_detail_activity_top"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/spacing_lv2"
+                        android:background="@mipmap/activity_bg_blue"
+                        android:gravity="center"
+                        android:text="@string/text_buy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_small"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="83dp"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/spacing_lv2"
+                    android:paddingStart="@dimen/spacing_lv2"
+                    android:paddingTop="@dimen/spacing_lv1"
+                    >
+
+                    <TextView
+                        android:id="@+id/detail_activity_tv_host"
+                        style="@style/theme_text"
+                        android:drawableLeft="@mipmap/icon_activity_user"
+                        android:drawablePadding="@dimen/spacing_lv1"
+                        android:drawableStart="@mipmap/icon_activity_user"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_normal"
+                        tools:text="主办方：%s"/>
+
+                    <TextView
+                        android:id="@+id/detail_activity_tv_address"
+                        style="@style/theme_text"
+                        android:layout_below="@id/detail_activity_tv_host"
+                        android:layout_marginTop="@dimen/spacing_lv"
+                        android:drawableLeft="@mipmap/icon_activity_location"
+                        android:drawablePadding="@dimen/spacing_lv1"
+                        android:drawableStart="@mipmap/icon_activity_location"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_normal"
+                        tools:text="活动地址：%s"/>
+
+                    <TextView
+                        android:id="@+id/detail_activity_tv_start_time"
+                        style="@style/theme_text"
+                        android:layout_below="@id/detail_activity_tv_address"
+                        android:layout_marginTop="@dimen/spacing_lv"
+                        android:drawableLeft="@mipmap/icon_activity_time"
+                        android:drawablePadding="@dimen/spacing_lv1"
+                        android:drawableStart="@mipmap/icon_activity_time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_normal"
+                        tools:text="@string/activity_time"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/line_gray"/>
+            </LinearLayout>
+
+            <org.srr.dev.view.PagerSlidingTabStrip
+                android:id="@+id/psts_actvity_detail_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_lv5"
+                android:background="@color/white"
+                app:SelectedTabTextColor="@color/app_main_color"
+                app:SelectedTabTextSize="@dimen/text_normal"
+                app:TabTextColor="@color/text_color_black"
+                app:TabTextSize="@dimen/text_normal"
+                app:pstsDividerColor="@color/line_gray"
+                app:pstsDividerPadding="@dimen/spacing_lv1"
+                app:pstsIndicatorColor="@color/app_main_color"
+                app:pstsIndicatorHeight="3dp"
+                app:pstsShouldExpand="true"
+                app:pstsTextAllCaps="true"
+                app:pstsUnderlineColor="@color/white"
+                />
+
+            <View
+                android:id="@+id/v_fr_web_div"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_lv1"
+                android:background="@color/gray_background"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_actvity_detail_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/include_title_back"/>
+
+
+</RelativeLayout>

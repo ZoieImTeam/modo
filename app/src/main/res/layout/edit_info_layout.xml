@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/title_text_btn_layout"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="206dp"
+        android:background="@color/white"
+        android:layout_below="@id/title_layout"
+        />
+
+    <View
+        android:id="@+id/view_head_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_gray"
+        android:layout_below="@id/title_layout"
+        />
+
+    <TextView
+        android:id="@+id/tv_head_tip"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="头像"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_below="@id/view_head_top_line"
+        android:gravity="center_vertical"
+        android:paddingLeft="24dp"
+        />
+
+
+    <View
+        android:id="@+id/view_head_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_gray"
+        android:layout_below="@id/tv_head_tip"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        />
+
+    <ImageView
+        android:id="@+id/iv_arrow_head"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/icon_arrow_right"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_above="@id/view_head_bottom_line"
+        android:layout_marginBottom="24dp"
+
+        />
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/civ_head"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/view_head_top_line"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/btn_select_head"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_toLeftOf="@id/iv_arrow_head"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="昵称"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_below="@id/view_head_bottom_line"
+        android:gravity="center_vertical"
+        android:paddingLeft="24dp"
+        />
+
+    <View
+        android:id="@+id/view_zan_code_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_gray"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        />
+
+    <ImageView
+        android:id="@+id/iv_arrow_name"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/icon_arrow_right"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_above="@id/view_zan_code_bottom_line"
+        android:layout_marginBottom="18dp"
+        />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_toRightOf="@id/tv_name"
+        android:layout_toLeftOf="@id/iv_arrow_name"
+        android:layout_below="@id/view_head_bottom_line"
+        android:background="@color/transparent"
+        android:textColor="@color/gray_num_color"
+        android:gravity="right|center_vertical"
+        android:paddingRight="@dimen/spacing_lv2"
+        android:maxLength="10"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_sex"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="性别"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_below="@id/view_zan_code_bottom_line"
+        android:gravity="center_vertical"
+        android:paddingLeft="24dp"
+        />
+
+    <View
+        android:id="@+id/view_attention_code_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_gray"
+        android:layout_below="@id/tv_sex"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        />
+
+    <ImageView
+        android:id="@+id/iv_arrow_sex"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/icon_arrow_right"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_above="@id/view_attention_code_bottom_line"
+        android:layout_marginBottom="18dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_user_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="男"
+        android:textColor="@color/gray_num_color"
+        android:background="@color/white"
+        android:layout_below="@id/view_zan_code_bottom_line"
+        android:layout_toLeftOf="@id/iv_arrow_sex"
+        android:gravity="center_vertical"
+        android:paddingLeft="24dp"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        />
+
+    <TextView
+        android:id="@+id/tv_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="个性签名"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_below="@id/view_attention_code_bottom_line"
+        android:gravity="center_vertical"
+        android:paddingLeft="24dp"
+        />
+
+    <View
+        android:id="@+id/view_sign_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_gray"
+        android:layout_below="@id/tv_sign"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        />
+
+    <ImageView
+        android:id="@+id/iv_arrow_sign"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/icon_arrow_right"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_above="@id/view_sign_bottom_line"
+        android:layout_marginBottom="18dp"
+        />
+
+    <EditText
+        android:id="@+id/et_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_toRightOf="@id/tv_sign"
+        android:layout_toLeftOf="@id/iv_arrow_sign"
+        android:layout_below="@id/view_attention_code_bottom_line"
+        android:background="@color/transparent"
+        android:textColor="@color/gray_num_color"
+        android:textSize="@dimen/text_small"
+        android:gravity="right|center_vertical"
+        android:paddingRight="@dimen/spacing_lv2"
+        android:maxLength="30"
+        android:singleLine="true"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.administrator.sociallyapp.ui.activity.ReleaseActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/ac_preview_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_hight"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/line_gray_normal_bottom">
+
+        <TextView
+            android:id="@+id/ac_release_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/newapp_spacing_lv1"
+            android:text="发布预览"
+            android:textSize="@dimen/newapp_text_size_title" />
+
+        <TextView
+            android:id="@+id/ac_release_title_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="取消"
+            android:textColor="@color/app_main_color_other"
+            android:textSize="@dimen/newapp_text_size" />
+
+        <TextView
+            android:id="@+id/ac_release_title_release"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="发布"
+            android:textColor="@color/app_main_color"
+            android:textSize="@dimen/newapp_text_size" />
+    </RelativeLayout>
+
+    <org.srr.dev.view.RecyclerViewScrollview
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ac_preview_title">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:id="@+id/ac_release_edit"
+                style="@style/edit_release"
+                android:hint="输入简介"
+                android:lines="5"
+                android:maxLength="1200"
+                android:paddingLeft="@dimen/spacing_lv2"
+                android:paddingRight="@dimen/spacing_lv2"
+                android:paddingTop="@dimen/spacing_lv2"
+                android:singleLine="false" />
+
+            <TextView
+                android:id="@+id/ac_release_edit_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ac_release_edit"
+                android:layout_marginRight="@dimen/newapp_spacing_lv1"
+                android:text="@string/ac_release_edit_num"
+                android:textColor="@color/app_main_color" />
+
+
+            <TextView
+                android:id="@+id/ac_release_edit_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ac_release_edit"
+                android:layout_marginLeft="@dimen/spacing_lv2"
+                android:layout_marginStart="@dimen/spacing_lv2"
+                android:layout_marginTop="@dimen/spacing_lv2"
+                android:text="点击图片进行编辑"
+                android:textColor="@color/text_color_gray"
+                android:textSize="12dp" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ac_release_img_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ac_release_edit_tip"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="@dimen/spacing_lv2" />
+
+
+            <EditText
+                android:id="@+id/et_ac_release_edit"
+                style="@style/edit_release"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/ac_release_edit"
+                android:background="@color/white"
+                android:hint="输入简介"
+                android:maxLength="1200"
+                android:minLines="10"
+                android:paddingLeft="@dimen/spacing_lv2"
+                android:paddingRight="@dimen/spacing_lv2"
+                android:paddingTop="@dimen/spacing_lv2"
+                android:visibility="gone"
+                android:singleLine="false" />
+
+        </RelativeLayout>
+
+    </org.srr.dev.view.RecyclerViewScrollview>
+
+
+</RelativeLayout>

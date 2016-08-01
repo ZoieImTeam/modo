@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rela_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/flexible_space_image_height">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            tools:src="@drawable/test_img_max" />
+
+        <View
+            android:id="@+id/view_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_main_color"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <org.srr.dev.view.CircleImageView
+        android:id="@+id/iv_user_head"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/rela_title"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        tools:src="@drawable/touxiang" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/rela_title"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginTop="@dimen/spacing_lv3"
+        android:layout_toRightOf="@+id/iv_user_head"
+        android:textColor="@color/text_color_black_name"
+        android:textSize="@dimen/text_big"
+        tools:text="qloric" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/tv_user_name"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:layout_toRightOf="@+id/iv_user_head"
+        android:textColor="@color/text_color_gray_time"
+        android:textSize="@dimen/text_tiny"
+        tools:text="1小时前" />
+
+    <View
+        android:id="@+id/line1"
+        style="@style/view_line"
+        android:layout_below="@+id/iv_user_head"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_small_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginLeft="@dimen/spacing_lv3"
+        android:layout_marginTop="@dimen/spacing_lv3"
+        android:textColor="@color/text_color_black_name"
+        android:textSize="@dimen/text_big"
+        tools:text="【小说标题】" />
+
+    <TextView
+        android:id="@+id/tv_original"
+        style="@style/tv_details_normal_stytle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_small_title"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        tools:text="原作 :VOCALOID" />
+
+    <TextView
+        android:id="@+id/tv_role"
+        style="@style/tv_details_normal_stytle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_original"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        tools:text="角色 :美国队长" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_role"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:textColor="@color/text_color_gray7"
+        android:textSize="@dimen/text_tiny" />
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".binvsheui.release.CpActivity"
+    android:background="@color/white">
+
+    <com.binvshe.binvshe.view.PbTopBar_
+        android:id="@+id/pb_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_hight" />
+
+    <TextView
+        android:id="@+id/tv_serialize_title"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pb_topbar"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/spacing_lv3"
+        android:textSize="@dimen/text_normal"
+        android:text="@string/title"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/edit_serialize_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/tv_serialize_title"
+        android:layout_toRightOf="@+id/tv_serialize_title"
+        android:background="@drawable/bg_white_transprent"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textSize="@dimen/text_normal"
+        android:hint="连载作品的标题，最多20字"
+        android:gravity="bottom"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_release_serialize"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/edit_serialize_title"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/base_blue"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/chen_tv_btn"
+        android:textSize="@dimen/text_normal"
+        android:visibility="gone" />
+
+    <org.srr.dev.view.xrecyclerview.XRecyclerView
+        android:id="@+id/rec_serialize_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_sure"
+        android:layout_below="@+id/pb_topbar"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"></org.srr.dev.view.xrecyclerview.XRecyclerView>
+
+    <TextView
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/btn_blue_bg"
+        android:gravity="center"
+        android:text="创建连载"
+        android:textColor="@color/chen_tv_btn"
+        android:textSize="@dimen/text_small" />
+</RelativeLayout>

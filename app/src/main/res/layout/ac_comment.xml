@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <include
+        android:id="@+id/ac_comment_title"
+        layout="@layout/include_title_back"
+        />
+
+    <RelativeLayout
+        android:id="@+id/ac_comment_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_lv4"
+        android:layout_below="@+id/ac_comment_title">
+
+        <TextView
+            android:id="@+id/tv_ac_comment_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_lv3"
+            android:layout_marginStart="@dimen/spacing_lv3"
+            android:gravity="center_vertical"
+            android:text="评论100"
+            android:textColor="@color/black"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignEnd="@+id/tv_ac_comment_comment"
+            android:layout_alignLeft="@+id/tv_ac_comment_comment"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_ac_comment_comment"
+            android:layout_alignStart="@+id/tv_ac_comment_comment"
+            android:background="@color/app_main_color"/>
+
+
+        <TextView
+            android:id="@+id/tv_ac_comment_share"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingEnd="@dimen/spacing_lv2"
+            android:paddingRight="@dimen/spacing_lv2"
+            android:text="@string/share"
+            android:textColor="@color/black"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_ac_comment_zan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/tv_ac_comment_share"
+            android:gravity="center"
+            android:paddingEnd="@dimen/spacing_lv3"
+            android:paddingLeft="@dimen/spacing_lv1"
+            android:paddingRight="@dimen/spacing_lv3"
+            android:paddingStart="@dimen/spacing_lv1"
+            android:text="赞 100"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_ac_comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ac_comment_top">
+
+        <org.srr.dev.view.xrecyclerview.XRecyclerView
+            android:id="@+id/xrv_ac_comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/base_bg_color"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ac_comment_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titlebar_hight"
+        android:layout_alignParentBottom="true"
+        android:background="#eeeeee">
+
+        <ImageView
+            android:id="@+id/iv_ac_comment_camare"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@mipmap/icon_camare"
+            android:layout_marginLeft="@dimen/spacing_lv1"
+            android:layout_marginStart="@dimen/spacing_lv1"
+            />
+
+        <EditText
+            android:id="@+id/et_ac_comment_review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/spacing_lv1"
+            android:layout_toEndOf="@+id/iv_ac_comment_camare"
+            android:layout_toRightOf="@+id/iv_ac_comment_camare"
+            android:background="@drawable/bg_biankuang_white"
+            android:hint="@string/text_comment_hint"
+            android:paddingEnd="@dimen/spacing_lv1"
+            android:paddingLeft="@dimen/spacing_lv1"
+            android:paddingRight="@dimen/spacing_lv1"
+            android:paddingStart="@dimen/spacing_lv1"
+            android:singleLine="true"
+            android:textCursorDrawable="@mipmap/edittext_color_cursor"
+            android:textSize="@dimen/text_normal"
+            android:imeOptions="actionSend"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

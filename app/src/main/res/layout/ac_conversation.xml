@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ac_conversation_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_hight"
+        android:background="@drawable/line_gray_normal_bottom">
+
+
+        <ImageView
+            android:id="@+id/ac_conversation_titlebar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@drawable/titlebar_back" />
+
+        <TextView
+            android:id="@+id/ac_conversation_titlebar_text"
+            style="@style/text_color_size_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/conversation_title_text" />
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/conversation"
+
+        android:name="io.rong.imkit.fragment.ConversationFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/ac_choose_bg"
+                android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_ac_choose_logo"
+        android:layout_width="146dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/ac_choose_logo"/>
+
+    <TextView
+        android:id="@+id/tv_ac_choose_login"
+        style="@style/ac_choose_textview"
+        android:layout_below="@+id/iv_ac_choose_logo"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/bg_man"
+        android:text="@string/text_already_account"/>
+
+    <TextView
+        android:id="@+id/tv_ac_choose_register"
+        style="@style/ac_choose_textview"
+        android:layout_below="@+id/tv_ac_choose_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:background="@drawable/bg_white_transprent"
+        android:text="@string/text_ac_choose_register"/>
+
+    <LinearLayout
+        android:id="@+id/ll_ac_choose_other"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/ac_choose_button_height"
+        android:layout_below="@+id/tv_ac_choose_register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_lv2">
+
+        <View
+            android:layout_width="@dimen/spacing_lv5"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:text="@string/text_choose_other"
+            />
+
+        <TextView
+            style="@style/ac_choose_textview"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_lv1"
+            android:layout_marginRight="@dimen/spacing_lv1"
+            android:text="@string/text_choose_other"
+            />
+
+        <View
+            android:layout_width="@dimen/spacing_lv5"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:text="@string/text_choose_other"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/ac_choose_icon_size"
+        android:layout_below="@+id/ll_ac_choose_other"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_lv3">
+
+        <ImageView
+            android:id="@+id/iv_ac_choose_qq"
+            android:layout_width="@dimen/ac_choose_icon_size"
+            android:layout_height="@dimen/ac_choose_icon_size"
+            android:layout_marginRight="@dimen/spacing_lv3"
+            android:src="@mipmap/icon_qq"/>
+
+        <ImageView
+            android:id="@+id/iv_ac_choose_weixin"
+            android:layout_width="@dimen/ac_choose_icon_size"
+            android:layout_height="@dimen/ac_choose_icon_size"
+            android:layout_marginRight="@dimen/spacing_lv3"
+            android:src="@mipmap/icon_weixin"/>
+
+        <ImageView
+            android:id="@+id/iv_ac_choose_weibo"
+            android:layout_width="@dimen/ac_choose_icon_size"
+            android:layout_height="@dimen/ac_choose_icon_size"
+            android:src="@mipmap/icon_weibo"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

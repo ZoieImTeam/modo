@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_dynamic_header" />
+
+    <TextView
+        android:id="@+id/tv_ac_dynamic_header_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_lv3"
+        android:text="发布内容发布内容发布内容发布发布内容发布内容发布内容发布内容发布内容发布内容发布内容发布内容发布内容发布内容发布内容内容发布内容发布内容发布内容发发布内容发布内容布内容" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_ac_dynamic_header_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_lv5"
+        android:background="@color/gray_background"
+        android:paddingLeft="@dimen/spacing_lv2"
+        android:paddingTop="@dimen/spacing_lv1"
+        android:text="最新评论" />
+</LinearLayout>

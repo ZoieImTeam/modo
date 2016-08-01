@@ -1,0 +1,294 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hui_tbg"
+    tools:context="com.binvshe.binvshe.binvsheui.me.MeActivity">
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/hui_tbg">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/me_layout_head"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_next_marright"
+                    android:src="@mipmap/my_next" />
+
+                <org.srr.dev.view.CircleImageView
+                    android:id="@+id/me_image_head"
+                    android:layout_width="@dimen/me_image_head"
+                    android:layout_height="@dimen/me_image_head"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/me_marleft"
+                    android:background="@color/white"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    android:id="@+id/me_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/me_image_head"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/me_image_head"
+                    android:layout_toRightOf="@+id/me_image_head"
+                    android:text="时崎狂三"
+                    android:textColor="@color/theme_textcolor"
+                    android:textSize="@dimen/theme_textsize" />
+
+                <TextView
+                    android:id="@+id/me_tv_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/me_image_head"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/me_image_head"
+                    android:layout_toRightOf="@+id/me_image_head"
+                    android:text="@string/me_tv_score"
+                    android:textColor="@color/theme_textcolor"
+                    android:textSize="@dimen/theme_textsize" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/me_layout_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/me_tv_atts"
+                    style="@style/me_attsfans"
+                    android:text="@string/me_tv_atts" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="@dimen/me_layout_height"
+                    android:background="@color/line_color" />
+
+                <TextView
+                    android:id="@+id/me_tv_fans"
+                    style="@style/me_attsfans"
+                    android:text="@string/me_tv_fans" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/line_color" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/hui_bg" />
+
+            <RelativeLayout
+                android:id="@+id/me_layout_myticket"
+                style="@style/me_layout"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/me_marleft"
+                    android:background="@color/line_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_next_marright"
+                    android:src="@mipmap/my_next" />
+
+                <ImageView
+                    android:id="@+id/me_image_ticket"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    style="@style/theme_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/me_image_ticket"
+                    android:text="我的门票" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/me_layout">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/me_marleft"
+                    android:background="@color/line_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_next_marright"
+                    android:src="@mipmap/my_next" />
+
+                <ImageView
+                    android:id="@+id/me_image_works"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    style="@style/theme_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/me_image_works"
+                    android:text="我的作品" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/me_layout">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/me_marleft"
+                    android:background="@color/line_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_next_marright"
+                    android:src="@mipmap/my_next" />
+
+                <ImageView
+                    android:id="@+id/me_image_mylove"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    style="@style/theme_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/me_image_mylove"
+                    android:text="我的收藏" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/me_layout_logout"
+                style="@style/me_layout">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/me_marleft"
+                    android:background="@color/line_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_next_marright"
+                    android:src="@mipmap/my_next" />
+
+                <ImageView
+                    android:id="@+id/me_image_logout"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    style="@style/theme_text"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/me_image_logout"
+                    android:text="退出登录" />
+
+            </RelativeLayout>
+
+            <com.binvshe.binvshe.binvsheui.custom.Hexagon
+                android:layout_gravity="center"
+                android:layout_width="303dp"
+                android:layout_height="350dp"
+                android:id="@+id/me_layout_hexagon"
+                android:background="#ffffff"
+                >
+
+                <TextView
+                    android:id="@+id/me_tab1"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="漫画"/>
+                <TextView
+                    android:id="@+id/me_tab2"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="视频"/>
+                <TextView
+                    android:id="@+id/me_tab3"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="小说"/>
+                <TextView
+                    android:id="@+id/me_tab4"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="唱歌"/>
+                <TextView
+                    android:id="@+id/me_tab5"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="鬼畜"/>
+                <TextView
+                    android:id="@+id/me_tab6"
+                    style="@style/Pentagon_tv"
+                    android:background="@drawable/shape_hexagon_tv_bg"
+                    android:text="教学"/>
+
+            </com.binvshe.binvshe.binvsheui.custom.Hexagon>
+
+
+        </LinearLayout>
+    <!--</ScrollView>-->
+
+</ScrollView>

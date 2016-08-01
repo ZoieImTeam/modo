@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="60dp">
+
+
+    <TextView
+        android:id="@+id/tv_zxing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/spacing_lv2"
+        tools:text="二维码"
+        android:textColor="@color/black" />
+
+    <View
+        android:id="@+id/view_zxing_code_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line_gray" />
+
+    <ImageView
+        android:id="@+id/iv_qr_code"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/iv_right"
+        android:layout_marginRight="@dimen/spacing_lv"
+        android:src="@mipmap/icon_erweima" />
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:src="@mipmap/icon_right" />
+
+
+</RelativeLayout>

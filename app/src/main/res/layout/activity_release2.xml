@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".binvsheui.release.CpActivity">
+    <com.binvshe.binvshe.view.PbTopBar_
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_hight"
+        android:id="@+id/pb_topbar"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pb_topbar"
+        android:id="@+id/relative_image">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择封面"
+        android:textColor="@color/text_color_black"
+        android:textSize="11dp"
+
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="29dp"
+        android:id="@+id/text_select_image"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:src="@drawable/btn_add_n"
+        android:layout_marginLeft="7dp"
+        android:layout_toRightOf="@+id/text_select_image"
+        android:layout_alignTop="@+id/text_select_image"
+        android:id="@+id/select_image"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_image"
+        android:layout_marginTop="67.5dp"
+        android:layout_marginLeft="20dp"
+        android:text="标题"
+        android:id="@+id/text_title"/>
+    <EditText
+        android:maxLength="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/text_title"
+        android:layout_toRightOf="@id/text_title"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:id="@+id/edit_title"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_title"
+        android:layout_marginTop="33dp"
+        android:layout_marginLeft="20dp"
+        android:text="原作"/>
+    <EditText
+        android:maxLength="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text_title"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/edit_title"
+        android:hint="cos作品的原出处，如：海贼王"
+        android:id="@+id/edit_real_author"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_real_author"
+        android:layout_marginTop="33dp"
+        android:layout_marginLeft="20dp"
+        android:text="角色cn"
+        android:id="@+id/cn_text"/>
+
+    <EditText
+        android:maxLength="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cn_text"
+        android:layout_marginLeft="13dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_alignBottom="@+id/cn_text"
+        android:hint="多个cn用逗号隔开.."
+        android:id="@+id/edit_cn"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cn_text"
+        android:layout_marginTop="33dp"
+        android:layout_marginLeft="20dp"
+        android:text="摄影师"
+        android:id="@+id/text_photo_author"/>
+    <EditText
+        android:maxLength="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cn_text"
+        android:layout_marginLeft="13dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_alignBottom="@+id/text_photo_author"
+        android:id="@+id/edit_photo_author"
+        />
+
+
+    <EditText
+        android:gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cn_text"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/text_photo_author"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentBottom="true"
+        android:hint="说点什么吧~"
+        android:id="@+id/edit_dec"
+        />
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/btn_add_n"-->
+        <!--android:layout_below="@+id/text_photo_author"-->
+        <!--android:layout_marginTop="77.9dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="20.5dp"/>-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_del_blue"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_alignBottom="@id/edit_cn"
+        android:id="@+id/btn_cn_del"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_add_blue"
+        android:layout_alignBottom="@id/edit_cn"
+        android:layout_toLeftOf="@id/btn_cn_del"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edit_photo_author"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/rec_select_image"></android.support.v7.widget.RecyclerView>
+
+
+
+
+</RelativeLayout>

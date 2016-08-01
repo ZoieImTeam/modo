@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@mipmap/bg_work"
+    >
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:gravity="center_vertical"
+        android:text="灌篮高手同人漫画"
+        android:layout_alignLeft="@+id/iv_item_home_img1"
+        android:layout_alignStart="@+id/iv_item_home_img1"
+        android:layout_below="@+id/iv_cover"
+        android:textColor="@color/black"
+        />
+
+    <ImageView
+        android:id="@+id/iv_see_num"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/btn_see_normal"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_see_num"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/iv_see_num"
+        android:gravity="center"
+        android:text="浏览数"
+        android:textColor="@color/gray_num_color"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tv_zan_num"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="浏览数"
+        android:textColor="@color/gray_num_color"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_zan"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@id/tv_zan_num"
+        android:src="@mipmap/btn_zan_small_normal"
+        android:layout_below="@id/tv_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        />
+</RelativeLayout>

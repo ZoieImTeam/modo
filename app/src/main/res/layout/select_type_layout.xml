@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EA000000">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/spacing_lv3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_lv7"
+        android:gravity="center"
+        android:text="@string/text_release_my"
+        android:textColor="@color/text_color_gray3"
+        android:textSize="@dimen/text_big"
+        />
+
+    <ImageView
+        android:id="@+id/iv_ac_select_type_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv2"
+        android:src="@mipmap/btn_close_x"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="@dimen/spacing_lv1"
+        android:layout_marginLeft="@dimen/spacing_lv3"
+        android:layout_marginRight="@dimen/spacing_lv1"
+        android:layout_marginStart="@dimen/spacing_lv3"
+        android:layout_marginTop="68dp"
+        android:layout_toLeftOf="@id/tv_name"
+        android:layout_toStartOf="@+id/tv_name"
+        android:background="@color/white"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="@dimen/spacing_lv3"
+        android:layout_marginLeft="@dimen/spacing_lv1"
+        android:layout_marginRight="@dimen/spacing_lv3"
+        android:layout_marginStart="@dimen/spacing_lv1"
+        android:layout_marginTop="68dp"
+        android:layout_toEndOf="@+id/tv_name"
+        android:layout_toRightOf="@id/tv_name"
+        android:background="@color/white"
+        />
+
+    <FrameLayout
+        android:id="@+id/game_replace_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv9"
+        />
+
+</RelativeLayout>

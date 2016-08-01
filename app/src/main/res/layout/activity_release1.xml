@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".binvsheui.release.CoserActivity">
+
+    <com.binvshe.binvshe.view.PbTopBar_
+        android:id="@+id/pb_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_hight" />
+
+    <RelativeLayout
+        android:id="@+id/relative_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pb_topbar">
+
+        <TextView
+            android:id="@+id/select_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="29dp"
+            android:text="选择封面"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_small" />
+
+        <ImageView
+            android:id="@+id/image_select_image"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_alignTop="@+id/select_image"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@+id/select_image"
+            android:src="@drawable/btn_add_n" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_image"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="标题"
+        android:textSize="@dimen/text_small" />
+
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/text_title"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/text_title"
+        android:background="@drawable/bg_white_transprent"
+        android:maxLength="15"
+        android:singleLine="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/text_title"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:background="@color/line_gray_1" />
+
+    <TextView
+        android:id="@+id/tv_original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="33dp"
+        android:text="原作" />
+
+    <EditText
+        android:id="@+id/real_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_original"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/text_title"
+        android:background="@drawable/bg_white_transprent"
+        android:hint="cos作品的原出处，如：海贼王"
+        android:maxLength="15"
+        android:singleLine="true" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/real_author"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:background="@color/line_gray_1" />
+
+    <TextView
+        android:id="@+id/cr_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/real_author"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="33dp"
+        android:text="角色cn" />
+
+    <EditText
+        android:id="@+id/cr_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cr_text"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/cr_text"
+        android:background="@drawable/bg_white_transprent"
+        android:maxLength="15" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/cr_text"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:background="@color/line_gray_1" />
+
+    <TextView
+        android:id="@+id/text_photo_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cr_edit"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="33dp"
+        android:text="摄影师" />
+
+    <EditText
+        android:layout_alignBottom="@+id/text_photo_author"
+        android:id="@+id/edit_photo_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/cr_text"
+        android:background="@drawable/bg_white_transprent"
+        android:maxLength="15" />
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/text_photo_author"
+        android:layout_marginLeft="@dimen/spacing_lv2"
+        android:layout_marginRight="@dimen/spacing_lv2"
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:background="@color/line_gray_1" />
+
+    <EditText
+        android:id="@+id/edit_dec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cr_text"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/text_photo_author"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/bg_white_transprent"
+        android:layout_toLeftOf="@+id/rec_select_image"
+        android:gravity="top"
+        android:hint="来点描述.." />
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@drawable/btn_add_n"-->
+    <!--android:layout_marginTop="77.9dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_marginRight="20.5dp"/>-->
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="@dimen/spacing_lv1"
+        android:id="@+id/rec_select_image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line3"
+        android:layout_alignParentRight="true"
+        ></android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
