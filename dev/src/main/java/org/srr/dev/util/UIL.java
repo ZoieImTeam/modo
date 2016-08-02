@@ -104,8 +104,8 @@ public class UIL {
 //        ImageLoader.getInstance().displayImage(url, imageView, options);
         Glide.with(BaseApplication.mContext)
                 .load(url)
-                .dontAnimate()
                 .placeholder(R.mipmap.uil_loading_icon)
+                .dontAnimate()
                 .centerCrop()
                 .into(imageView);
     }

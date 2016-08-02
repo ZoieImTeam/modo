@@ -1,1 +1,2 @@
-include ':app', ':amap_lib', ':smssdk', ':pickerViewLib', ':IMKit', ':jpush', ':dev'
+include ':app'
+include ':amap_lib', ':smssdk', ':pickerViewLib', ':IMKit', ':jpush', ':dev'

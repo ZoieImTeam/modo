@@ -133,7 +133,7 @@ public class LoginActivity extends BaseSwipeBackActivity implements IViewModelIn
             AccountManager.getInstance().setUserInfo(user);
             AccountManager.getInstance().setUserLogin(userLogin);
             AccountManager.getInstance().saveUserLoginToLocal(user);
-            RongLogin.getInstance().connect(user.getRongtoken());
+//            RongLogin.getInstance().connect(user.getRongtoken());
             if (toMe) {
                 startActivity(new Intent(LoginActivity.this, MeActivity.class));
             }else{
