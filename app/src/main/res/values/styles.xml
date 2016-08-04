@@ -318,7 +318,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/theme_textsize</item>
     </style>
-    
+
     <style name="tv_details_normal_stytle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:height">20dp</item>
@@ -326,6 +326,7 @@
         <item name="android:textColor">@color/text_color_gray7</item>
         <item name="android:layout_marginLeft">20dp</item>
     </style>
+
     <style name="edit_release">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -357,7 +358,7 @@
     </style>
 
 
-  <style name="ac_choose_textview">
+    <style name="ac_choose_textview">
         <item name="android:layout_width">@dimen/ac_choose_button_width</item>
         <item name="android:layout_height">@dimen/ac_choose_button_height</item>
         <item name="android:layout_centerHorizontal">true</item>
@@ -365,4 +366,29 @@
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="actSureIndentText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/spacing_lv2</item>
+    </style>
+
+    <style name="actIndentDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/line_gray</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_lv2</item>
+        <item name="android:layout_marginRight">@dimen/spacing_lv2</item>
+    </style>
+
+    <style name="actIndentTextContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+
 </resources>

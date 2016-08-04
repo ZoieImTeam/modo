@@ -334,7 +334,7 @@
     <string name="story_title">【%s】</string>
     <string name="username_null">该用户已去火星...</string>
     <string name="already_zan">已点赞过</string>
-<string name="text_already_account">已经帐号,直接登录</string>
+    <string name="text_already_account">已经帐号,直接登录</string>
     <string name="text_ac_choose_register">立即注册</string>
     <string name="text_choose_other">使用社交帐号登录</string>
     <string name="text_forget_pwd">忘记密码？</string>
@@ -344,7 +344,7 @@
     <string name="text_send_tip">已发送验证码至:%s</string>
     <string name="text_qq_friends">QQ好友</string>
     <string name="text_cancel">取 消</string>
- <string name="text_release_my">发布我的作品</string>
+    <string name="text_release_my">发布我的作品</string>
     <string name="text_hint_4code">请输入4位验证码</string>
     <string name="attention_num">关注（%s）</string>
     <string name="fans_num">粉丝（%s）</string>
@@ -352,7 +352,7 @@
     <string name="text_praised">我赞过的</string>
     <string name="text_attentioned">我关注的</string>
     <string name="log_out">退出登录</string>
-<string name="text_see_detail">查看活动详情</string>
+    <string name="text_see_detail">查看活动详情</string>
     <string name="text_activity_title_text">【%1$s】 %2$s</string>
     <string name="text_buy">我要购票</string>
     <string name="text_surplus_tic">剩余票数:99</string>
@@ -363,4 +363,12 @@
     <string name="title">标题：</string>
     <string name="navi_activity">活动</string>
     <string name="activity_time">时间：%s</string>
+
+    <string name="sure_indent_time">时间:<![CDATA[
+        <font color=\'#28b5f5\'>%1$s</font>
+        ]]></string>
+    <string name="sure_indent_addr">活动地址:<![CDATA[
+    <font color=\'#28b5f5\'>%1$s</font>
+    ]]></string>
+    <string name="remind">提示</string>
 </resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvNext"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_title_back"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvSelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择日期"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvSelectDate"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvSelectSession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择场次"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_session"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvSelectSession"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1.5">
+
+            <TextView
+                android:id="@+id/tvSelectPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择价格"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvSelectPrice"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="23dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="-"/>
+
+                <EditText
+                    android:layout_width="43dp"
+                    android:layout_height="35dp"
+                    android:textSize="@dimen/text_tiny"
+                    android:hint="22"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="23dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="+"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNext"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="下一步"/>
+</RelativeLayout>

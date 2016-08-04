@@ -194,15 +194,19 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         switch (id) {
 
             case R.id.detail_activity_layout_buy:
-                if (isBuyTicket) {
-                    Toast.makeText(DetailActivityActivity.this, "您已经购买了本次活动的票！", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (overTicketCount == 0) {
-                    Toast.makeText(DetailActivityActivity.this, "票已卖光了.../(ㄒoㄒ)/~~", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (isBuyTicket) {
+//                    Toast.makeText(DetailActivityActivity.this, "您已经购买了本次活动的票！", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                if (overTicketCount == 0) {
+//                    Toast.makeText(DetailActivityActivity.this, "票已卖光了.../(ㄒoㄒ)/~~", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+
+                SelectGoodsActivity.start(this);
+
 //                dialogBuy.show(getSupportFragmentManager(), "");
+                /*
                 if (SpUtils.isLogin()) {
                     String userID = AccountManager.getInstance().getUserInfo().getId() + "";
                     if (price == 0) {
@@ -213,7 +217,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
                 } else {
                     startActivity(new Intent(DetailActivityActivity.this, LoginActivity.class));
                     Toast.makeText(DetailActivityActivity.this, getString(R.string.err_login), Toast.LENGTH_SHORT).show();
-                }
+                }*/
                 break;
 
             case R.id.btn_title_back:

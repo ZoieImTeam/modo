@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context="com.example.chenjy.personal.myself.FollowActivity">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"

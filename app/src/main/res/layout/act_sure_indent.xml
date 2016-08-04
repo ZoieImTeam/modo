@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include
+            android:id="@+id/title"
+            layout="@layout/include_title_back"/>
+
+        <RelativeLayout
+            android:id="@+id/rlyt_top"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_below="@+id/title"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tvActTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/spacing_lv2"
+                android:text="title"
+                />
+
+            <TextView
+                android:id="@+id/tvActTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvActTitle"
+                android:paddingLeft="@dimen/spacing_lv2"
+                android:text="@string/sure_indent_time"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvActTime"
+                android:paddingLeft="@dimen/spacing_lv2"
+                android:text="@string/sure_indent_addr"/>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llyt_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlyt_top"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/actSureIndentText"
+                android:text="订单明细"/>
+
+            <View style="@style/actIndentDivider"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    style="@style/actSureIndentText"
+                    android:text="票种"/>
+
+                <TextView
+                    android:id="@+id/tvTickType"
+                    style="@style/actIndentTextContent"
+                    android:text="xxx"
+                    />
+            </RelativeLayout>
+
+            <View style="@style/actIndentDivider"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    style="@style/actSureIndentText"
+                    android:text="单价"/>
+
+                <TextView
+                    android:id="@+id/tvTickPrice"
+                    style="@style/actIndentTextContent"
+                    android:text="xxx"
+                    />
+
+            </RelativeLayout>
+
+            <View style="@style/actIndentDivider"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    style="@style/actSureIndentText"
+                    android:text="数量"/>
+                <TextView
+                    android:id="@+id/tvTickNum"
+                    style="@style/actIndentTextContent"
+                    android:text="xxx"
+                    />
+
+            </RelativeLayout>
+
+            <View style="@style/actIndentDivider"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+            <TextView
+                style="@style/actSureIndentText"
+                android:text="订单总价"/>
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    style="@style/actIndentTextContent"
+                    android:text="xxx"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnCommit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/llyt_mid"
+            android:layout_marginLeft="@dimen/spacing_lv3"
+            android:layout_marginRight="@dimen/spacing_lv3"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="提交订单"/>
+
+    </RelativeLayout>
+
+</ScrollView>

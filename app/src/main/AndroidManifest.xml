@@ -649,6 +649,12 @@
         <activity android:name=".binvsheui.login.ChooseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".binvsheui.activity.SelectGoodsActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".binvsheui.activity.IndentSureActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

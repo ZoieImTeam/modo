@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_biankuan_gray"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="10月1日%s\n星期六%s"
+        />
+
+</RelativeLayout>
