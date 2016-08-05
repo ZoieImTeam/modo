@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
 
     public static Context mContext;
     public static DisplayMetrics dm;

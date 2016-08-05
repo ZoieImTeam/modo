@@ -1,11 +1,15 @@
 package com.binvshe.binvshe.entity.subject;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 系统分类
  */
-public class SysTypeEntitiy {
+public class SysTypeEntitiy implements Parcelable {
     private String id;
     private String name;
     private String pid;
@@ -69,4 +73,44 @@ public class SysTypeEntitiy {
     public void setList(ArrayList<SubjectEntity> list) {
         this.list = list;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
+        dest.writeString(this.name);
+        dest.writeString(this.pid);
+        dest.writeString(this.photos);
+        dest.writeString(this.is_del);
+        dest.writeString(this.createdate);
+        dest.writeList(this.list);
+    }
+
+    public SysTypeEntitiy() {
+    }
+
+    protected SysTypeEntitiy(Parcel in) {
+        this.id = in.readString();
+        this.name = in.readString();
+        this.pid = in.readString();
+        this.photos = in.readString();
+        this.is_del = in.readString();
+        this.createdate = in.readString();
+        this.list = new ArrayList<SubjectEntity>();
+        in.readList(this.list, List.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<SysTypeEntitiy> CREATOR = new Parcelable.Creator<SysTypeEntitiy>() {
+        public SysTypeEntitiy createFromParcel(Parcel source) {
+            return new SysTypeEntitiy(source);
+        }
+
+        public SysTypeEntitiy[] newArray(int size) {
+            return new SysTypeEntitiy[size];
+        }
+    };
 }

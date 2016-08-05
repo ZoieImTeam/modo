@@ -1,6 +1,7 @@
 package com.binvshe.binvshe.binvsheui.find;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -74,7 +75,7 @@ public class ContentDetailActivity1 extends BaseActivity implements ContentCallB
     private AddLikeModel mAddLikeModel;
     private CancelLikeModel mCancelLikeModel;
 
-    public static void newInstance(Activity activity, SubjectEntity entity) {
+    public static void newInstance(Context activity, SubjectEntity entity) {
         Intent intent = new Intent(activity, ContentDetailActivity1.class);
         intent.putExtra(GlobalConfig.EXTRA_OBJECT, entity);
         activity.startActivity(intent);

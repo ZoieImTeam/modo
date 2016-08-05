@@ -45,7 +45,9 @@ public class BannerItemFragment extends Fragment {
                     Intent it = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(it);
                 } else {
-                    Toast.makeText(getActivity(), "地址为空", Toast.LENGTH_SHORT).show();
+                    GamePopupwindow popupwindow=new GamePopupwindow(getContext(),v);
+                    popupwindow.show();
+//                    Toast.makeText(getActivity(), "地址为空", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -1,5 +1,6 @@
 package com.binvshe.binvshe.binvsheui.home;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,12 +8,17 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import com.binvshe.binvshe.R;
+import com.binvshe.binvshe.binvsheui.find.ContentDetailActivity1;
+import com.binvshe.binvshe.binvsheui.find.SubjectListActivity;
+import com.binvshe.binvshe.binvsheui.usercenter.AnotherUserInfoActivity;
+import com.binvshe.binvshe.binvsheui.usercenter.UserInfoActivity;
+import com.binvshe.binvshe.constants.GlobalConfig;
 import com.binvshe.binvshe.entity.Banner;
 import com.binvshe.binvshe.entity.subject.SubjectEntity;
+import com.binvshe.binvshe.entity.subject.SubjectTypeEntity;
 import com.binvshe.binvshe.entity.subject.SysTypeEntitiy;
 import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.GetHomeRecModel;
@@ -45,8 +51,6 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
     private boolean isDrag;
     private Boolean mStatBool = true;
 
-    private ArrayList<SubjectEntity> mContentList;
-    private ArrayList<SysTypeEntitiy> mTitleList;
     private ArrayList<HomeBean> mAdapterData;
     private ArrayList<Banner> mBanners = new ArrayList<>();
     private GetHomeRecModel mHomeRecModel;
@@ -108,18 +112,50 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
         };
         mQuickAdapter = new QuickAdapter<HomeBean>(getContext(), multiItemTypeSupport) {
             @Override
-            protected void convert(BaseAdapterHelper helper, HomeBean item) {
+            protected void convert(BaseAdapterHelper helper, final HomeBean item) {
                 if (helper.getItemViewType() == ViewType.title.ordinal()) {
+                    final SubjectTypeEntity entity = new SubjectTypeEntity();
+                    entity.setName(item.getTitleEntly().getName());
+                    entity.setId(item.getTitleEntly().getId());
+                    entity.setPid(item.getTitleEntly().getPid());
                     helper.setText(R.id.tv_item_type_name, item.getTitleEntly().getName());
+                    helper.setOnClickListener(R.id.tv_item_home_more, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity(), SubjectListActivity.class);
+                            intent.putExtra(GlobalConfig.EXTRA_OBJECT, entity);
+                            getContext().startActivity(intent);
+                        }
+                    });
                 } else if (helper.getItemViewType() == ViewType.content.ordinal()) {
+                    final String iconId=item.getSubjectEntity().getUser();
                     helper
                             .setImage(R.id.iv_cover, item.getSubjectEntity().getPhotos())
+                            .setOnClickListener(R.id.iv_cover, new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    ContentDetailActivity1.newInstance(getContext(), item.getSubjectEntity());
+                                }
+                            })
                             .setText(R.id.tv_see_num, item.getSubjectEntity().getBrowsenumber())
                             .setText(R.id.tv_zan_num, item.getSubjectEntity().getLikeCount())
                             .setText(R.id.tv_content, item.getSubjectEntity().getName())
-                            .setImage(R.id.civ_home, item.getSubjectEntity().getHead());
-                }else {
-                    ViewPager banner=helper.getView(R.id.banner_viewpager);
+                            .setImage(R.id.civ_home, item.getSubjectEntity().getHead())
+                            .setOnClickListener(R.id.civ_home, new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    if (iconId.equals(id)) {
+                                        Intent intent = new Intent(getActivity(), UserInfoActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Intent intent = new Intent(getActivity(), AnotherUserInfoActivity.class);
+                                        intent.putExtra("userid", iconId);
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
+                } else {
+                    ViewPager banner = helper.getView(R.id.banner_viewpager);
                     startBanner(banner);
                 }
             }
@@ -149,8 +185,6 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
 
     @Override
     protected void initData() {
-        mTitleList = new ArrayList<>();
-        mContentList = new ArrayList<>();
         mAdapterData = new ArrayList<>();
         initRec();
         if (AccountManager.getInstance().getUserInfo() != null) {
@@ -187,19 +221,13 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
     public void onSuccessLoad(int tag, Object result) {
         if (tag == mHomeRecModel.getTag()) {
             HomeRecResponse response = (HomeRecResponse) result;
-            mContentList.clear();
-            mTitleList.clear();
             mAdapterData.clear();
             mBanners.clear();
             mQuickAdapter.clear();
             ArrayList<Banner> bannerList = response.getData().getBanner();
-            ArrayList<SubjectEntity> subjectEntityList = response.getData().getHot();
             ArrayList<SysTypeEntitiy> sysTypeEntitiys = response.getData().getDatas();
             mBanners.addAll(bannerList);
-            mContentList.addAll(subjectEntityList);
-            mTitleList.addAll(sysTypeEntitiys);
             setHomeBeanList(sysTypeEntitiys);
-//            adapter.notifyDataSetChanged();
             mQuickAdapter.addAll(mAdapterData);
         }
         mSrlFrLinearList.setRefreshing(false);
@@ -208,6 +236,7 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
 
     /**
      * 数据类型转成adapter 需要的类型
+     *
      * @param sysTypeEntitiys
      */
     private void setHomeBeanList(ArrayList<SysTypeEntitiy> sysTypeEntitiys) {
@@ -237,6 +266,7 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
 
     /**
      * banner 启动
+     *
      * @param banner
      */
     private void startBanner(final ViewPager banner) {

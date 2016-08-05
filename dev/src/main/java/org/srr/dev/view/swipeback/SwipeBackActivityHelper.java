@@ -8,8 +8,11 @@ import android.view.View;
 
 import org.srr.dev.R;
 
+
 /**
- * @author Yrom
+ * Created by Zoi.
+ * E-mail：KyluZoi@gmail.com
+ * 2016/6/8
  */
 public class SwipeBackActivityHelper {
     private Activity mActivity;

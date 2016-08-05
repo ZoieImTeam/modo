@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.binvsheui.base.AbsFragmentActivity;
+import com.binvshe.binvshe.binvsheui.home.GamePopupwindow;
 import com.binvshe.binvshe.binvsheui.login.ChooseActivity;
 import com.binvshe.binvshe.binvsheui.login.LoginActivity;
 import com.binvshe.binvshe.binvsheui.utils.SpUtils;
@@ -120,8 +121,10 @@ public class UserCenterActivity extends AbsFragmentActivity implements IViewMode
         Intent intent = null;
         switch (id) {
             case R.id.tv_zxing:
-                intent = new Intent(this, MyTicketActivity.class);
-                startActivity(intent);
+//                intent = new Intent(this, MyTicketActivity.class);
+//                startActivity(intent);
+                GamePopupwindow popupwindow=new GamePopupwindow(this,view);
+                popupwindow.show();
                 break;
             case R.id.tv_zan:
                 MyLikeSpecialActivity.newInstance(this);
