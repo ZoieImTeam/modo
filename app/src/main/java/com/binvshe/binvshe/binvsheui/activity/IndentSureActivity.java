@@ -22,6 +22,7 @@ import butterknife.OnClick;
  * Created by Zoi.
  * E-mail：KyluZoi@gmail.com
  * 2016/8/3
+ * 确认订单界面
  */
 public class IndentSureActivity extends BaseActivity {
 

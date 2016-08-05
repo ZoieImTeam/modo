@@ -24,6 +24,7 @@ import butterknife.OnClick;
  * Created by Zoi.
  * E-mail：KyluZoi@gmail.com
  * 2016/8/3
+ * 商品选择界面
  */
 public class SelectGoodsActivity extends BaseActivity {
     @Bind(R.id.tv_title)

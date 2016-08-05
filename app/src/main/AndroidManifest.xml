@@ -655,6 +655,9 @@
         <activity android:name=".binvsheui.activity.IndentSureActivity"
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".binvsheui.activity.PaySuccessActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

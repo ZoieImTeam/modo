@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
+                android:padding="@dimen/spacing_lv2"
                 android:layout_width="match_parent"
                 android:layout_height="192dp"
-                android:background="@mipmap/bg_work"
+                android:background="@color/white"
     >
 
     <ImageView

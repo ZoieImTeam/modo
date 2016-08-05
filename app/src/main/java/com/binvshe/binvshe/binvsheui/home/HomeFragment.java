@@ -80,7 +80,8 @@ public class HomeFragment extends BaseFragment {
         listTitle.add("推荐");
         listTitle.add("关注");
         listTitle.add(getString(R.string.home_channel));
-        listFragment.add(new HomeRecommendFragment());
+//        listFragment.add(new HomeRecommendFragment());
+        listFragment.add(new HomeRecommendFragment1());
         listFragment.add(new HomeAttentionFragment());
         listFragment.add(mFragment);
 
