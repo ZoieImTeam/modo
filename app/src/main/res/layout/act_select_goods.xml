@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -81,34 +82,45 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/btnSub"
                     android:layout_width="23dp"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:background="@drawable/bg_biankuan_gray"
                     android:gravity="center"
                     android:text="-"/>
 
-                <EditText
+                <TextView
+                    android:id="@+id/tvTicketNum"
                     android:layout_width="43dp"
-                    android:layout_height="35dp"
-                    android:textSize="@dimen/text_tiny"
-                    android:hint="22"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_biankuan_gray"
                     android:gravity="center"
-                    android:layout_gravity="center"/>
+                    android:text="1"
+                    android:textSize="@dimen/text_tiny"/>
 
                 <TextView
+                    android:id="@+id/btnAdd"
                     android:layout_width="23dp"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:background="@drawable/bg_biankuan_gray"
                     android:gravity="center"
                     android:text="+"/>
-
-
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                tools:text="@string/sure_indent_time"/>
 
         </RelativeLayout>
 

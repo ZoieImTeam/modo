@@ -370,5 +370,10 @@
     <string name="sure_indent_addr">活动地址:<![CDATA[
     <font color=\'#28b5f5\'>%1$s</font>
     ]]></string>
+    <string name="ticket_total_pr">¥<![CDATA[
+    <font color=\'#FE3131\'>%1$s</font>
+    ]]></string>
     <string name="remind">提示</string>
+    <string name="item_activity">%1$s\n%2$s</string>
+    <string name="activity_tick_msg">%1$s %2$s元</string>
 </resources>

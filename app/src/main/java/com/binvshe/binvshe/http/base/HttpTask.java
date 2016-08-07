@@ -28,6 +28,8 @@ import com.binvshe.binvshe.http.response.GetAttentionListResponse;
 import com.binvshe.binvshe.http.response.GetFansResponse;
 import com.binvshe.binvshe.http.response.GetOrderResponse;
 import com.binvshe.binvshe.http.response.GetPsnhomeResponse;
+import com.binvshe.binvshe.http.response.GetSelectDateFirnResponse;
+import com.binvshe.binvshe.http.response.GetSelectTicketResponse;
 import com.binvshe.binvshe.http.response.GetTicketListResponse;
 import com.binvshe.binvshe.http.response.GetUserCenterResponse;
 import com.binvshe.binvshe.http.response.GetUserHomeResponse;
@@ -617,7 +619,7 @@ public class HttpTask implements IHttpTaskInterface {
      * 请求支付宝支付信息接口 type = 0; 门票
      */
     @Override
-    public void postAliPayInfo(BaseModel model, String userid, String money, String type, String activityid,String discount) {
+    public void postAliPayInfo(BaseModel model, String userid, String money, String type, String activityid, String discount) {
         RequestEntity entity = new RequestEntity();
         entity.url = HttpConstanst.POST.POST_ALIPAYINFO;
         entity.requestType = Method.POST;
@@ -626,7 +628,7 @@ public class HttpTask implements IHttpTaskInterface {
         params.put("total_fee", money);
         params.put("purpose", type);
         params.put("activityid", activityid);
-        params.put("discount",discount);
+        params.put("discount", discount);
         entity.requestMap = params;
         commonJsonParseHandle(AliPayInfoResponse.class, entity, model);
     }
@@ -635,7 +637,7 @@ public class HttpTask implements IHttpTaskInterface {
      * 请求微信支付信息接口
      */
     @Override
-    public void postWPayInfo(BaseModel model, String userid, String money, String type, String activityid,String discount) {
+    public void postWPayInfo(BaseModel model, String userid, String money, String type, String activityid, String discount) {
         RequestEntity entity = new RequestEntity();
         entity.url = HttpConstanst.POST.POST_WPAYINFO;
         entity.requestType = Method.POST;
@@ -644,7 +646,7 @@ public class HttpTask implements IHttpTaskInterface {
         params.put("total_fee", money);
         params.put("purpose", type);
         params.put("activityid", activityid);
-        params.put("discount",discount);
+        params.put("discount", discount);
         entity.requestMap = params;
         commonJsonParseHandle(WechatPayResponse.class, entity, model);
     }
@@ -768,16 +770,16 @@ public class HttpTask implements IHttpTaskInterface {
         entity.requestType = Method.POST;
         HashMap<String, String> params = new HashMap<>();
         params.put("id", ids);
-        if(!TextUtils.isEmpty(head)){
+        if (!TextUtils.isEmpty(head)) {
             params.put("head", head);
         }
-        if(!TextUtils.isEmpty(name)){
+        if (!TextUtils.isEmpty(name)) {
             params.put("name", name);
         }
-        if(!TextUtils.isEmpty(sex)){
+        if (!TextUtils.isEmpty(sex)) {
             params.put("sex", sex);
         }
-        if(!TextUtils.isEmpty(sign)){
+        if (!TextUtils.isEmpty(sign)) {
             params.put("sign", sign);
         }
 
@@ -809,14 +811,12 @@ public class HttpTask implements IHttpTaskInterface {
         entity.requestType = Method.GET;
         HashMap<String, String> params = new HashMap<>();
         params.put("id", id);
-        if(!TextUtils.isEmpty(myid)){
+        if (!TextUtils.isEmpty(myid)) {
             params.put("myid", myid);
         }
         entity.requestMap = params;
         commonParseHandle(GetUserCenterResponse.class, entity, model);
     }
-
-
 
 
     @Override
@@ -918,14 +918,13 @@ public class HttpTask implements IHttpTaskInterface {
         if (!TextUtils.isEmpty(showtype)) {
             params.put("showtype", showtype);
         }
-        if(!TextUtils.isEmpty(serialid))
-        {
-            params.put("serialid",serialid);
+        if (!TextUtils.isEmpty(serialid)) {
+            params.put("serialid", serialid);
         }
         entity.requestMap = params;
-        if(files == null){
+        if (files == null) {
             commonJsonParseHandle(BaseResponse.class, entity, model);
-        }else{
+        } else {
 
             commonParseMultiFileHandle(BaseResponse.class, entity, "userPhoto", files, model);
         }
@@ -938,10 +937,10 @@ public class HttpTask implements IHttpTaskInterface {
         entity.url = HttpConstanst.GET_USER_SERIAL;
         entity.requestType = Method.GET;
         HashMap<String, String> params = new HashMap<>();
-        params.put("id",id);
-        params.put("typeId",typeId);
-        params.put("pageNo",pageNo);
-        params.put("pageSize",pageSize);
+        params.put("id", id);
+        params.put("typeId", typeId);
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
 
         entity.requestMap = params;
         commonParseHandle(GetUserSerialResponse.class, entity, model);
@@ -970,17 +969,17 @@ public class HttpTask implements IHttpTaskInterface {
     }
 
     @Override
-    public void getDynamic(String id, String uid,String pageSize, String pageNo, BaseModel model) {
+    public void getDynamic(String id, String uid, String pageSize, String pageNo, BaseModel model) {
         RequestEntity entity = new RequestEntity();
         entity.url = HttpConstanst.GET_RESOURCE_DETAIL;
         entity.requestType = Method.GET;
         HashMap<String, String> params = new HashMap<>();
         params.put("id", id);
-        params.put("uid",uid);
-        if(!TextUtils.isEmpty(pageNo)){
+        params.put("uid", uid);
+        if (!TextUtils.isEmpty(pageNo)) {
             params.put("pageNo", pageNo);
         }
-        if(!TextUtils.isEmpty(pageSize)){
+        if (!TextUtils.isEmpty(pageSize)) {
             params.put("pageSize", pageSize);
         }
         entity.requestMap = params;
@@ -1006,49 +1005,73 @@ public class HttpTask implements IHttpTaskInterface {
     @Override
     public void getAttenMor(BaseModel model, String id, String pageNo) {
         RequestEntity entity = new RequestEntity();
-        entity.url=HttpConstanst.Get_AttenMore;
-        entity.requestType=Method.GET;
-        HashMap<String,String> params=new HashMap<>();
-        params.put("id",id);
-        params.put("pageNo",pageNo);
+        entity.url = HttpConstanst.Get_AttenMore;
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("id", id);
+        params.put("pageNo", pageNo);
         entity.requestMap = params;
-        commonParseHandle(GetAttentionListResponse.class,entity,model);
+        commonParseHandle(GetAttentionListResponse.class, entity, model);
     }
 
     @Override
     public void addSerial(String title, String user, String typeId, BaseModel model) {
         RequestEntity entity = new RequestEntity();
-        entity.url=HttpConstanst.ADD_SERIAL;
-        entity.requestType=Method.POST;
-        HashMap<String,String> params=new HashMap<>();
-        params.put("title",title);
-        params.put("user",user);
-        params.put("typeId",typeId);
+        entity.url = HttpConstanst.ADD_SERIAL;
+        entity.requestType = Method.POST;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("title", title);
+        params.put("user", user);
+        params.put("typeId", typeId);
         entity.requestMap = params;
-        commonJsonParseHandle(BaseResponse.class,entity,model);
+        commonJsonParseHandle(BaseResponse.class, entity, model);
     }
 
     @Override
-    public void myLikeSpecial(String id,String pageNo, BaseModel model) {
+    public void myLikeSpecial(String id, String pageNo, BaseModel model) {
         RequestEntity entity = new RequestEntity();
-        entity.url=HttpConstanst.MY_LIKE_SERIAL;
-        entity.requestType=Method.GET;
-        HashMap<String,String> params=new HashMap<>();
-        params.put("id",id);
-        params.put("pageNo",pageNo);
+        entity.url = HttpConstanst.MY_LIKE_SERIAL;
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("id", id);
+        params.put("pageNo", pageNo);
         entity.requestMap = params;
-        commonParseHandle(MyLikeSpecialResponse.class,entity,model);
+        commonParseHandle(MyLikeSpecialResponse.class, entity, model);
     }
 
     @Override
     public void getVersion(String type, BaseModel model) {
         RequestEntity entity = new RequestEntity();
-        entity.url=HttpConstanst. CHECK_VERSION;
-        entity.requestType=Method.GET;
-        HashMap<String,String> params=new HashMap<>();
-        params.put("type",type);
+        entity.url = HttpConstanst.CHECK_VERSION;
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("type", type);
         entity.requestMap = params;
-        commonParseHandle(GetVersionResponse.class,entity,model);
+        commonParseHandle(GetVersionResponse.class, entity, model);
+    }
+
+    @Override
+    public void getDateFirn(String activityID, BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url = HttpConstanst.GET_DATE_FIRN;
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+//        params.put("activityId",activityID);
+        entity.requestMap = params;
+        commonParseHandle(GetSelectDateFirnResponse.class, entity, model);
+    }
+
+    @Override
+    public void getTickType(String activityID, String lifecycle, String games,BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url = HttpConstanst.GET_TICKET_MSG;
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("activityId",activityID);
+        params.put("lifecycle",lifecycle);
+        params.put("games",games);
+        entity.requestMap = params;
+        commonParseHandle(GetSelectTicketResponse.class, entity, model);
     }
 
 
@@ -1157,7 +1180,7 @@ public class HttpTask implements IHttpTaskInterface {
         commonJsonParseHandle(BaseResponse.class, entity, model);
     }
 
-    public void postAddComment(String usera_id,String userb_id,  String specialid, String content,BaseModel model) {
+    public void postAddComment(String usera_id, String userb_id, String specialid, String content, BaseModel model) {
         RequestEntity entity = new RequestEntity();
         entity.url = HttpConstanst.POST_ADD_COMMENT;
         entity.requestType = Method.POST;
@@ -1182,7 +1205,7 @@ public class HttpTask implements IHttpTaskInterface {
         commonJsonParseHandle(BaseResponse.class, entity, model);
     }
 
-    public void getComment(String id,String pageSize,String pageNo, BaseModel model) {
+    public void getComment(String id, String pageSize, String pageNo, BaseModel model) {
         RequestEntity entity = new RequestEntity();
         entity.url = HttpConstanst.GET_COMMENT;
         entity.requestType = Method.GET;

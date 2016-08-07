@@ -195,6 +195,13 @@ public interface IHttpTaskInterface {
     /**
      * 检测版本号
      */
-    public void getVersion(String type,BaseModel model);
+    void getVersion(String type,BaseModel model);
 
+    /**
+     * 获得选择活动日期以及场次
+     * @param activityID
+     */
+    void getDateFirn(String activityID, BaseModel model);
+
+    void getTickType(String activityID,String lifecycle,String games,BaseModel model);
 }

@@ -7,7 +7,7 @@ public class HttpConstanst {
      * 基础url
      */
 
-    public static final String BASE_URL = "http://114.215.119.51/";
+    public static final String BASE_URL = "http://114.215.119.51:8888/";
    //public static final String BASE_URL = "http://192.168. 23.1/";
     //public static final String BASE_URL = "http://192.168.5.119/";    // 192.168.1.5   114.215.119.51  192.168.0.124:80
 
@@ -174,5 +174,11 @@ public class HttpConstanst {
      */
     public static final String CHECK_VERSION=BASE_URL+"binvsheApp/app/getVersion";
 
+    /**
+     * 获得活动的场次以及日期
+     */
+    public static final String GET_DATE_FIRN=BASE_URL+"binvsheApp/app/categories/activity/90";
+
+    public static final String GET_TICKET_MSG=BASE_URL+"binvsheApp/app/products/list";
 
 }
