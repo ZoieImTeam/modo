@@ -161,7 +161,7 @@ public class ActivityFragment extends Fragment implements IViewModelInterface {
         @Override
         public void onItemClick(RecyclerView.ViewHolder viewHolder, int position) {
             Intent intent = new Intent(mActivity, DetailActivityActivity.class);
-            intent.putExtra(DetailActivityActivity.ACTIVITYID, listActivity.get(position).getId() + "");
+            intent.putExtra(DetailActivityActivity.ACTIVITYID, listActivity.get(position).getId());
             startActivity(intent);
         }
     }

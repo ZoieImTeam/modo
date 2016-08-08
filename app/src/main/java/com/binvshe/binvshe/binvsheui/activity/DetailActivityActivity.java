@@ -41,6 +41,8 @@ import com.binvshe.binvshe.http.response.AliPayInfoResponse;
 import com.binvshe.binvshe.http.response.GetActivityDetailResponse;
 import com.binvshe.binvshe.http.response.GetOrderResponse;
 import com.binvshe.binvshe.http.response.WechatPayResponse;
+import com.f2prateek.dart.Dart;
+import com.f2prateek.dart.InjectExtra;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
@@ -77,7 +79,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     private DialogSelect dialogSelectPay;
     private DialogSelect dialogisCoupon;
     private PayReceiver payReceiver;
-    private String activityID;
+    int activityID=0;
     private int overTicketCount;
     private boolean isBuyTicket;
     private ImageView topBg;
@@ -101,6 +103,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
     @Override
     protected void initGetIntent() {
+        activityID= (int) getIntent().getExtras().get(ACTIVITYID);
         msgApi = WXAPIFactory.createWXAPI(this, null);
         // 将该app注册到微信
         msgApi.registerApp(Constants.WETHAR_APPID);
@@ -108,7 +111,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
         payReceiver = new PayReceiver();
         registerReceiver(payReceiver, new IntentFilter(Constants.INTENT_BROAD.WECHAR_PAY));
-
+        // 请求活动详情数据
         userID = SpUtils.getUserID();
     }
 
@@ -203,7 +206,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 //                    return;
 //                }
 
-                SelectGoodsActivity.start(this);
+                SelectGoodsActivity.start(this,activityID);
 
 //                dialogBuy.show(getSupportFragmentManager(), "");
                 /*
@@ -378,11 +381,10 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     }
 
     private void initModel() {
-        // 请求活动详情数据
-        activityID = getIntent().getStringExtra(ACTIVITYID);
+
         getActivityDetailModel = new GetActivityDetailModel();
         getActivityDetailModel.setViewModelInterface(this);
-        getActivityDetailModel.start(userID, activityID);
+        getActivityDetailModel.start(userID, activityID+"");
 
         freeBuyModel = new PostFreeBuyModel();
         freeBuyModel.setViewModelInterface(this);
@@ -437,13 +439,13 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
             @Override
             public void onClickFirst(String str1, String tag) {
                 // 支付宝支付
-                postAliPayInfoModel.start(userID, price + "", "0", activityID, discount);
+                postAliPayInfoModel.start(userID, price + "", "0", activityID+"", discount);
             }
 
             @Override
             public void onClickSecond(String str2, String tag) {
                 // 微信支付
-                postWPayInfoModel.start(userID, price + "", "0", activityID, discount);
+                postWPayInfoModel.start(userID, price + "", "0", activityID+"", discount);
             }
 
             @Override

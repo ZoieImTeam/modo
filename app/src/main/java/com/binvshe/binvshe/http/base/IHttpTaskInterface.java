@@ -203,5 +203,21 @@ public interface IHttpTaskInterface {
      */
     void getDateFirn(String activityID, BaseModel model);
 
+    /**
+     * 获取各种类型的票
+     * @param activityID
+     * @param lifecycle
+     * @param games
+     * @param model
+     */
     void getTickType(String activityID,String lifecycle,String games,BaseModel model);
+
+    /**
+     * 生成订单接口
+     * @param activityID
+     * @param num
+     * @param useraid
+     * @param productId
+     */
+    void postProOrder(String activityID,String num,String useraid,String productId,BaseModel model);
 }

@@ -70,6 +70,12 @@ public class HttpConstanst {
      * 获取订单情况
      */
     public static final String GET_ORDER = BASE_URL + "binvsheApp/app/getOrder";
+
+    /**
+     * 生成订单
+     */
+    public static final String POST_PRO_ORDER=BASE_URL+"binvsheApp/app/orders";
+
     /**
      * 获取购买的活动的票
      */
@@ -177,7 +183,7 @@ public class HttpConstanst {
     /**
      * 获得活动的场次以及日期
      */
-    public static final String GET_DATE_FIRN=BASE_URL+"binvsheApp/app/categories/activity/90";
+    public static final String GET_DATE_FIRN=BASE_URL+"binvsheApp/app/categories/activity/%1$s";
 
     public static final String GET_TICKET_MSG=BASE_URL+"binvsheApp/app/products/list";
 

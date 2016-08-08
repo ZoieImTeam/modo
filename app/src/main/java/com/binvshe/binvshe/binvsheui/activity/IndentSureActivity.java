@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.binvsheui.dialog.TipDialog;
+import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
+import com.f2prateek.dart.Dart;
+import com.f2prateek.dart.InjectExtra;
 
 import org.srr.dev.base.BaseActivity;
 
@@ -26,6 +29,7 @@ import butterknife.OnClick;
  */
 public class IndentSureActivity extends BaseActivity {
 
+    private static final String KEY_ORDER_MSG = "ORDER_MSG";
     @Bind(R.id.btn_title_back)
     ImageView mBtnTitleBack;
     @Bind(R.id.tv_title)
@@ -37,14 +41,21 @@ public class IndentSureActivity extends BaseActivity {
     @Bind(R.id.btnCommit)
     TextView mBtnCommit;
 
-    public static void start(Context context) {
+
+    @InjectExtra(KEY_ORDER_MSG)
+    CreateOrderEntity mOrderMsg;
+
+
+
+    public static void start(Context context, CreateOrderEntity orderMsg) {
         Intent starter = new Intent(context, IndentSureActivity.class);
+        starter.putExtra(KEY_ORDER_MSG,orderMsg);
         context.startActivity(starter);
     }
 
     @Override
     protected void initGetIntent() {
-
+        Dart.inject(this);
     }
 
     @Override
@@ -54,6 +65,7 @@ public class IndentSureActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        ButterKnife.bind(this);
         mTvActTime.setText(Html.fromHtml(getResources().getString(R.string.sure_indent_time, "2000000")));
     }
 
@@ -67,12 +79,6 @@ public class IndentSureActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.btn_title_back, R.id.btnCommit})
     public void onClick(View view) {
@@ -81,7 +87,7 @@ public class IndentSureActivity extends BaseActivity {
                 this.finish();
                 break;
             case R.id.btnCommit:
-                final TipDialog tipDialog=TipDialog.newInstance("是否取消订单","继续购买","是");
+                final TipDialog tipDialog = TipDialog.newInstance("是否取消订单", "继续购买", "是");
                 tipDialog.setmOnClickable(new TipDialog.TipDialogClickable() {
                     @Override
                     public void btnSureCick() {
@@ -93,7 +99,7 @@ public class IndentSureActivity extends BaseActivity {
                         tipDialog.dismiss();
                     }
                 });
-                tipDialog.show(getFragmentManager(),"tag");
+                tipDialog.show(getFragmentManager(), "tag");
                 break;
         }
     }

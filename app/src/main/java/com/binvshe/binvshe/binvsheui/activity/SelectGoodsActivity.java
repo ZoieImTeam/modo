@@ -12,13 +12,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.binvshe.binvshe.R;
+import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
 import com.binvshe.binvshe.entity.ActivityList.SelectDateFirnData;
 import com.binvshe.binvshe.entity.ActivityList.TicketTypeEntity;
+import com.binvshe.binvshe.http.model.CreateOrderModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
 import com.binvshe.binvshe.http.model.SelectDateFirnModel;
 import com.binvshe.binvshe.http.model.SelectTickMsgModel;
+import com.binvshe.binvshe.http.response.BaseResponse;
+import com.binvshe.binvshe.http.response.CreateOrederResponse;
 import com.binvshe.binvshe.http.response.GetSelectDateFirnResponse;
 import com.binvshe.binvshe.http.response.GetSelectTicketResponse;
+import com.f2prateek.dart.Dart;
+import com.f2prateek.dart.InjectExtra;
 
 import org.srr.dev.adapter.RecyclerViewDataAdapter;
 import org.srr.dev.base.BaseActivity;
@@ -37,6 +43,8 @@ import butterknife.OnClick;
  * 商品选择界面
  */
 public class SelectGoodsActivity extends BaseActivity implements IViewModelInterface {
+    private static final String KEY_ACTIVITY_ID = "ACTIVITY_ID";
+
     @Bind(R.id.tv_title)
     TextView mTvTitle;
     @Bind(R.id.rl_back_title)
@@ -57,6 +65,8 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     TextView mBtnAdd;
     @Bind(R.id.tvTotalPrice)
     TextView mTvTotalPrice;
+    //    @InjectExtra(KEY_ACTIVITY_ID)
+    int mActivityId = 90;
 
     private ArrayList<SelectDateFirnData.ChildrenEntity> mGoodDatas = new ArrayList<>();
     private ArrayList<SelectDateFirnData.ChildrenEntity> mFirnDatas = new ArrayList<>();
@@ -72,14 +82,17 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
 
     SelectDateFirnModel mDateFirnModel = new SelectDateFirnModel();
     SelectTickMsgModel mSelectTickMsgModel = new SelectTickMsgModel();
+    CreateOrderModel mCreateOrderModel = new CreateOrderModel();
 
-    public static void start(Context context) {
+    public static void start(Context context, int activityID) {
         Intent starter = new Intent(context, SelectGoodsActivity.class);
+        starter.putExtra(KEY_ACTIVITY_ID, activityID);
         context.startActivity(starter);
     }
 
     @Override
     protected void initGetIntent() {
+        Dart.inject(this);
     }
 
     @Override
@@ -170,8 +183,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
         });
         mDateFirnModel.setViewModelInterface(this);
         mSelectTickMsgModel.setViewModelInterface(this);
-        mDateFirnModel.start("90");
-
+        mDateFirnModel.start(mActivityId + "");
     }
 
     @Override
@@ -187,7 +199,8 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
                 this.finish();
                 break;
             case R.id.tvNext:
-                IndentSureActivity.start(this);
+                // TODO: 2016/8/8 调用生成订单接口 成功后调到下个界面
+                mCreateOrderModel.start(mActivityId + "", mTotalNum + "", "157", "8");
                 break;
             case R.id.btnSub:
                 if (mTotalNum - 1 >= 1) {
@@ -234,6 +247,11 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
             mTickMsgDatas.get(0).setSelected(true);
             mTickMsgAdapter.notifyDataSetChanged();
             refreshPriceTotal(0);
+        } else if (tag == mCreateOrderModel.getTag()) {
+            CreateOrederResponse response = (CreateOrederResponse) result;
+            CreateOrderEntity entity = response.getData();
+            IndentSureActivity.start(this,entity);
+
         }
     }
 
@@ -343,7 +361,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
 
     public void refreshTicket() {
         if (mGames != -1 && mLifecycle != -1) {
-            mSelectTickMsgModel.start("90", mGoodDatas.get(mLifecycle).getId() + "", mFirnDatas.get(mGames).getId() + "");
+            mSelectTickMsgModel.start(mActivityId + "", mGoodDatas.get(mLifecycle).getId() + "", mFirnDatas.get(mGames).getId() + "");
         }
     }
 

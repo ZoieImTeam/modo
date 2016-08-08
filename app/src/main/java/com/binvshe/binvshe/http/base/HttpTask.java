@@ -21,6 +21,7 @@ import com.binvshe.binvshe.http.response.BaseResponse;
 import com.binvshe.binvshe.http.response.ChannelHotResponse;
 import com.binvshe.binvshe.http.response.ChannelItemResponse;
 import com.binvshe.binvshe.http.response.CommentResponse;
+import com.binvshe.binvshe.http.response.CreateOrederResponse;
 import com.binvshe.binvshe.http.response.DynamicResponse;
 import com.binvshe.binvshe.http.response.GetActivityDetailResponse;
 import com.binvshe.binvshe.http.response.GetActivityListResponse;
@@ -1053,10 +1054,11 @@ public class HttpTask implements IHttpTaskInterface {
     @Override
     public void getDateFirn(String activityID, BaseModel model) {
         RequestEntity entity = new RequestEntity();
-        entity.url = HttpConstanst.GET_DATE_FIRN;
+        entity.url = String.format(HttpConstanst.GET_DATE_FIRN,activityID);
         entity.requestType = Method.GET;
         HashMap<String, String> params = new HashMap<>();
 //        params.put("activityId",activityID);
+
         entity.requestMap = params;
         commonParseHandle(GetSelectDateFirnResponse.class, entity, model);
     }
@@ -1072,6 +1074,20 @@ public class HttpTask implements IHttpTaskInterface {
         params.put("games",games);
         entity.requestMap = params;
         commonParseHandle(GetSelectTicketResponse.class, entity, model);
+    }
+
+    @Override
+    public void postProOrder(String activityID, String num, String useraid, String productId,BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url = HttpConstanst.POST_PRO_ORDER;
+        entity.requestType = Method.POST;
+        HashMap<String, String> params = new HashMap<>();
+        params.put("activityId", activityID);
+        params.put("num", num);
+        params.put("useraid", useraid);
+        params.put("productId", productId);
+        entity.requestMap = params;
+        commonJsonParseHandle(CreateOrederResponse.class, entity, model);
     }
 
 
