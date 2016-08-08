@@ -7,7 +7,7 @@ public class HttpConstanst {
      * 基础url
      */
 
-    public static final String BASE_URL = "http://114.215.119.51:8888/";
+    public static final String BASE_URL = "http://114.215.119.51/";
    //public static final String BASE_URL = "http://192.168. 23.1/";
     //public static final String BASE_URL = "http://192.168.5.119/";    // 192.168.1.5   114.215.119.51  192.168.0.124:80
 
@@ -21,6 +21,8 @@ public class HttpConstanst {
          * 支付宝支付
          */
         public static final String POST_ALIPAYINFO = BASE_URL + "binvsheApp/app/alipay";
+
+
         /**
          * 微信支付
          */
@@ -52,6 +54,10 @@ public class HttpConstanst {
         public static final String POST_ADDATTS = BASE_URL + "binvsheApp/app/addAtteationUser";
 
     }
+    /**
+     * 支付宝支付  新。
+     */
+    public static final String Get_ALIPAYINFO=BASE_URL+"binvsheApp/app/orders/alipay/%1$s";
 
     /**
      *

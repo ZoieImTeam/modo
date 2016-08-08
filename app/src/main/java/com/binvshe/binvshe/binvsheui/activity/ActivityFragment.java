@@ -160,9 +160,8 @@ public class ActivityFragment extends Fragment implements IViewModelInterface {
     private class MyRecyclerItemClickListener implements OnRecyclerItemClickListener {
         @Override
         public void onItemClick(RecyclerView.ViewHolder viewHolder, int position) {
-            Intent intent = new Intent(mActivity, DetailActivityActivity.class);
-            intent.putExtra(DetailActivityActivity.ACTIVITYID, listActivity.get(position).getId());
-            startActivity(intent);
+            int activityid=listActivity.get(position).getId();
+            DetailActivityActivity.start(mActivity, activityid);
         }
     }
 

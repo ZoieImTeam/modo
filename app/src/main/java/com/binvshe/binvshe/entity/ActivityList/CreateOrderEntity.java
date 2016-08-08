@@ -21,13 +21,13 @@ public class CreateOrderEntity implements Parcelable {
     private String name;
     private int num;
     private String orderNo;
-    private int price;
+    private double price;
     private int productId;
     private int purpose;
     private int status;
     private long timestamp;
+    private double totalFee;
     private String token;
-    private int totalFee;
     private String tradingNo;
     private int useraid;
     private int userbid;
@@ -102,11 +102,11 @@ public class CreateOrderEntity implements Parcelable {
         this.orderNo = orderNo;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -150,11 +150,11 @@ public class CreateOrderEntity implements Parcelable {
         this.token = token;
     }
 
-    public int getTotalFee() {
+    public double getTotalFee() {
         return totalFee;
     }
 
-    public void setTotalFee(int totalFee) {
+    public void setTotalFee(double totalFee) {
         this.totalFee = totalFee;
     }
 
@@ -205,13 +205,13 @@ public class CreateOrderEntity implements Parcelable {
         dest.writeString(this.name);
         dest.writeInt(this.num);
         dest.writeString(this.orderNo);
-        dest.writeInt(this.price);
+        dest.writeDouble(this.price);
         dest.writeInt(this.productId);
         dest.writeInt(this.purpose);
         dest.writeInt(this.status);
         dest.writeLong(this.timestamp);
         dest.writeString(this.token);
-        dest.writeInt(this.totalFee);
+        dest.writeDouble(this.totalFee);
         dest.writeString(this.tradingNo);
         dest.writeInt(this.useraid);
         dest.writeInt(this.userbid);
@@ -230,13 +230,13 @@ public class CreateOrderEntity implements Parcelable {
         this.name = in.readString();
         this.num = in.readInt();
         this.orderNo = in.readString();
-        this.price = in.readInt();
+        this.price = in.readDouble();
         this.productId = in.readInt();
         this.purpose = in.readInt();
         this.status = in.readInt();
         this.timestamp = in.readLong();
         this.token = in.readString();
-        this.totalFee = in.readInt();
+        this.totalFee = in.readDouble();
         this.tradingNo = in.readString();
         this.useraid = in.readInt();
         this.userbid = in.readInt();

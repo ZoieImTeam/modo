@@ -220,4 +220,11 @@ public interface IHttpTaskInterface {
      * @param productId
      */
     void postProOrder(String activityID,String num,String useraid,String productId,BaseModel model);
+
+    /**
+     * 新  获取阿里支付信息的接口
+     * @param orederNo
+     * @param model
+     */
+    void getAliPayInfo(String orederNo,BaseModel model);
 }

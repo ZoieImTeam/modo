@@ -2,20 +2,37 @@ package com.binvshe.binvshe.binvsheui.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alipay.sdk.app.PayTask;
 import com.binvshe.binvshe.R;
+import com.binvshe.binvshe.binvsheui.chen.Utils.Constants;
 import com.binvshe.binvshe.binvsheui.dialog.TipDialog;
+import com.binvshe.binvshe.binvsheui.utils.SpUtils;
 import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
+import com.binvshe.binvshe.entity.AliPayInfo;
+import com.binvshe.binvshe.http.model.AliPayInfoModel;
+import com.binvshe.binvshe.http.model.IViewModelInterface;
+import com.binvshe.binvshe.http.model.PostAliPayInfoModel;
+import com.binvshe.binvshe.http.response.AliPayInfoResponse;
 import com.f2prateek.dart.Dart;
 import com.f2prateek.dart.InjectExtra;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 import org.srr.dev.base.BaseActivity;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,7 +44,7 @@ import butterknife.OnClick;
  * 2016/8/3
  * 确认订单界面
  */
-public class IndentSureActivity extends BaseActivity {
+public class IndentSureActivity extends BaseActivity implements IViewModelInterface, DialogSelect.OnSelectLayout {
 
     private static final String KEY_ORDER_MSG = "ORDER_MSG";
     @Bind(R.id.btn_title_back)
@@ -40,22 +57,48 @@ public class IndentSureActivity extends BaseActivity {
     TextView mTvActTime;
     @Bind(R.id.btnCommit)
     TextView mBtnCommit;
+    @Bind(R.id.tvActPlace)
+    TextView mTvActPlace;
+    @Bind(R.id.tvTickType)
+    TextView mTvTickType;
+    @Bind(R.id.tvTickPrice)
+    TextView mTvTickPrice;
+    @Bind(R.id.tvTickNum)
+    TextView mTvTickNum;
+    @Bind(R.id.tvTotal)
+    TextView mTvTotal;
 
+    private DialogSelect dialogSelectPay;
+    private String orderNo;
 
     @InjectExtra(KEY_ORDER_MSG)
     CreateOrderEntity mOrderMsg;
 
 
+    AliPayInfoModel mAliPayInfoModel;
+
+
+    private PayTask alipay;
+    private IWXAPI msgApi;
+    private String userID;
 
     public static void start(Context context, CreateOrderEntity orderMsg) {
         Intent starter = new Intent(context, IndentSureActivity.class);
-        starter.putExtra(KEY_ORDER_MSG,orderMsg);
+        starter.putExtra(KEY_ORDER_MSG, orderMsg);
         context.startActivity(starter);
     }
 
     @Override
     protected void initGetIntent() {
         Dart.inject(this);
+        msgApi = WXAPIFactory.createWXAPI(this, null);
+        // 将该app注册到微信
+        msgApi.registerApp(Constants.WETHAR_APPID);
+        alipay = new PayTask(this);
+
+//        payReceiver = new PayReceiver();
+        // 请求活动详情数据
+        userID = SpUtils.getUserID();
     }
 
     @Override
@@ -67,11 +110,37 @@ public class IndentSureActivity extends BaseActivity {
     public void initView() {
         ButterKnife.bind(this);
         mTvActTime.setText(Html.fromHtml(getResources().getString(R.string.sure_indent_time, "2000000")));
+        initModel();
+    }
+
+    private void initModel() {
+        mAliPayInfoModel = new AliPayInfoModel();
+        mAliPayInfoModel.setViewModelInterface(this);
     }
 
     @Override
     public void initData() {
+        String title = mOrderMsg.getActivity().getName();
+        String place = mOrderMsg.getActivity().getGatherxy();
+        String time = dateForString(mOrderMsg.getActivity().getStartdate());
+        String tickName = mOrderMsg.getName();
+        String tickPrice = mOrderMsg.getPrice() + "";
+        String tickNum = mOrderMsg.getNum() + "";
+        double total = mOrderMsg.getNum() * mOrderMsg.getPrice();
 
+        mTvActTitle.setText(title);
+        mTvActTime.setText(time);
+        mTvActPlace.setText(place);
+        mTvTickType.setText(tickName);
+        mTvTickPrice.setText(tickPrice);
+        mTvTickNum.setText(tickNum);
+        mTvTotal.setText(total + "");
+        initBuyDialog();
+    }
+
+    private void initBuyDialog() {
+        dialogSelectPay = DialogSelect.newInstance("支付宝支付", "微信支付", "取消");
+        dialogSelectPay.setOnSelectLayout(this);
     }
 
     @Override
@@ -84,9 +153,6 @@ public class IndentSureActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_title_back:
-                this.finish();
-                break;
-            case R.id.btnCommit:
                 final TipDialog tipDialog = TipDialog.newInstance("是否取消订单", "继续购买", "是");
                 tipDialog.setmOnClickable(new TipDialog.TipDialogClickable() {
                     @Override
@@ -100,7 +166,111 @@ public class IndentSureActivity extends BaseActivity {
                     }
                 });
                 tipDialog.show(getFragmentManager(), "tag");
+//                this.finish();
+                break;
+            case R.id.btnCommit:
+                dialogSelectPay.show(getSupportFragmentManager(), "");
                 break;
         }
+    }
+
+    public String dateForString(long dateMill) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+        String date = sdf.format(new Date(dateMill));
+        return date;
+    }
+
+    @Override
+    public Handler getHandler() {
+        return null;
+    }
+
+    @Override
+    public void onPreLoad(int tag) {
+
+    }
+
+    @Override
+    public void onSuccessLoad(int tag, Object result) {
+        if (tag == mAliPayInfoModel.getTag()) {
+            AliPayInfoResponse response = (AliPayInfoResponse) result;
+            startAliPay(response.getData());
+        }
+    }
+
+    @Override
+    public void onFailLoad(int tag, int code, String codeMsg) {
+
+    }
+
+    @Override
+    public void onExceptionLoad(int tag, Exception exception) {
+
+    }
+
+
+    private AlipayHanlder alipayHanlder = new AlipayHanlder();
+
+    @Override
+    public void onClickFirst(String str1, String tag) {
+        mAliPayInfoModel.start(mOrderMsg.getOrderNo());
+    }
+
+    @Override
+    public void onClickSecond(String str2, String tag) {
+
+    }
+
+    @Override
+    public void onClickThird(String tag) {
+        dialogSelectPay.dismiss();
+    }
+
+    private class AlipayHanlder extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            PayResult payResult = new PayResult((String) msg.obj);
+            String resultStatus = payResult.getResultStatus();
+            String result = payResult.getResult();
+            if (TextUtils.equals(resultStatus, "9000")) {
+                Toast.makeText(_this, "支付成功", Toast.LENGTH_SHORT).show();
+            } else {
+                // 判断resultStatus 为非“9000”则代表可能支付失败
+                // “8000”代表支付结果因为支付渠道原因或者系统原因还在等待支付结果确认，最终交易是否成功以服务端异步通知为准（小概率状态）
+                if (TextUtils.equals(resultStatus, "8000")) {
+                    Toast.makeText(IndentSureActivity.this, "支付结果确认中",
+                            Toast.LENGTH_SHORT).show();
+
+                } else {
+                    // 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误
+                    Toast.makeText(IndentSureActivity.this, "支付失败",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        }
+    }
+
+    /**
+     * 调用阿里支付
+     */
+    public void startAliPay(final AliPayInfo info) {
+        orderNo = info.getOrderNo();
+        Runnable payRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                // 构造PayTask 对象
+                // 调用支付接口，获取支付结果
+                String result = alipay.pay(info.getLinek());
+                Message msg = new Message();
+                msg.what = 1;
+                msg.obj = result;
+                alipayHanlder.sendMessage(msg);
+            }
+        };
+        // 必须异步调用
+        Thread payThread = new Thread(payRunnable);
+        payThread.start();
     }
 }

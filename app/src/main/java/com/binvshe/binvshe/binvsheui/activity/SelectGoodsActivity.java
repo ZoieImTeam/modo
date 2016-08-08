@@ -199,7 +199,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
                 this.finish();
                 break;
             case R.id.tvNext:
-                // TODO: 2016/8/8 调用生成订单接口 成功后调到下个界面
+                mCreateOrderModel.setViewModelInterface(this);
                 mCreateOrderModel.start(mActivityId + "", mTotalNum + "", "157", "8");
                 break;
             case R.id.btnSub:
@@ -227,7 +227,6 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
 
     @Override
     public void onSuccessLoad(int tag, Object result) {
-        Log.d("SelectGoodsActivity", "成功");
         if (tag == mDateFirnModel.getTag()) {
             GetSelectDateFirnResponse response = (GetSelectDateFirnResponse) result;
             mGoodDatas.clear();
@@ -247,22 +246,20 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
             mTickMsgDatas.get(0).setSelected(true);
             mTickMsgAdapter.notifyDataSetChanged();
             refreshPriceTotal(0);
-        } else if (tag == mCreateOrderModel.getTag()) {
+        } if (tag == mCreateOrderModel.getTag()) {
             CreateOrederResponse response = (CreateOrederResponse) result;
             CreateOrderEntity entity = response.getData();
-            IndentSureActivity.start(this,entity);
+            IndentSureActivity.start(this, entity);
 
         }
     }
 
     @Override
     public void onFailLoad(int tag, int code, String codeMsg) {
-        Log.d("SelectGoodsActivity", codeMsg);
     }
 
     @Override
     public void onExceptionLoad(int tag, Exception exception) {
-        Log.d("SelectGoodsActivity", "失败");
     }
 
 

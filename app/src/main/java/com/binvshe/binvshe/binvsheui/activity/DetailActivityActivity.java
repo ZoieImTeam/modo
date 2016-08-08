@@ -100,6 +100,11 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         }
         super.onDestroy();
     }
+    public static void start(Context context,int activityID) {
+        Intent starter = new Intent(context, DetailActivityActivity.class);
+        starter.putExtra(ACTIVITYID,activityID);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void initGetIntent() {

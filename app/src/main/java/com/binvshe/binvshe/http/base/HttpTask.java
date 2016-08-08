@@ -1090,6 +1090,17 @@ public class HttpTask implements IHttpTaskInterface {
         commonJsonParseHandle(CreateOrederResponse.class, entity, model);
     }
 
+    @Override
+    public void getAliPayInfo(String orederNo, BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url =String.format(HttpConstanst.Get_ALIPAYINFO,orederNo);
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+//        params.put("order_no", orederNo);
+        entity.requestMap = params;
+        commonParseHandle(AliPayInfoResponse.class, entity, model);
+    }
+
 
     public void getSysType(String ids, BaseModel model) {
         RequestEntity entity = new RequestEntity();

@@ -83,7 +83,7 @@ public class ActivityAdapter extends ChenRecyclerBaseAdapter<ActivityAdapter.Hol
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, DetailActivityActivity.class);
-                intent.putExtra(DetailActivityActivity.ACTIVITYID, listActivity.get(position).getId() + "");
+                intent.putExtra(DetailActivityActivity.ACTIVITYID, listActivity.get(position).getId());
                 mActivity.startActivity(intent);
             }
         });
