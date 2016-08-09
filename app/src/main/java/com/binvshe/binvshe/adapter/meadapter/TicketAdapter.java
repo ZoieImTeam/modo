@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.binvsheui.activity.ActivityQrCodeDetailActivity;
 import com.binvshe.binvshe.constants.GlobalConfig;
+import com.binvshe.binvshe.entity.ActivityList.OrderListEntity;
 import com.binvshe.binvshe.entity.GetTicketList.TicketData;
 
 import org.srr.dev.adapter.RecyclerViewDataAdapter;
@@ -65,12 +66,12 @@ import butterknife.OnClick;
 //    }
 //
 //}
-public class TicketAdapter extends RecyclerViewDataAdapter<TicketData, TicketAdapter.Holder> {
+public class TicketAdapter extends RecyclerViewDataAdapter<OrderListEntity, TicketAdapter.Holder> {
 
 
     @Override
-    public void onBindHolder(Holder viewHolder, int i, TicketData ticketData) {
-        viewHolder.tvZxing.setText(ticketData.getActivityName()+"");
+    public void onBindHolder(Holder viewHolder, int i, OrderListEntity ticketData) {
+        viewHolder.tvZxing.setText(ticketData.getName()+"");
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.binvshe.binvshe.binvsheui.usercenter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,22 +12,18 @@ import android.widget.Toast;
 
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.adapter.meadapter.TicketAdapter;
-import com.binvshe.binvshe.adapter.myselfadapter.ChenRecyclerBaseAdapter;
 import com.binvshe.binvshe.binvsheui.activity.ActivityQrCodeDetailActivity;
 import com.binvshe.binvshe.binvsheui.base.AbsFragmentActivity;
-import com.binvshe.binvshe.constants.GlobalConfig;
 import com.binvshe.binvshe.db.dao.UserDao;
-import com.binvshe.binvshe.entity.GetTicketList.GetTicketList;
-import com.binvshe.binvshe.entity.GetTicketList.TicketData;
+import com.binvshe.binvshe.entity.ActivityList.OrderListEntity;
 import com.binvshe.binvshe.entity.UserLogin.User;
-import com.binvshe.binvshe.http.model.GetTicketListModel;
+import com.binvshe.binvshe.http.model.GetOrderListModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
-import com.binvshe.binvshe.http.response.GetTicketListResponse;
+import com.binvshe.binvshe.http.response.GetOrderListResponse;
 
 import org.srr.dev.adapter.RecyclerViewDataAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 获取门票列表
@@ -36,14 +33,19 @@ public class MyTicketActivity extends AbsFragmentActivity implements IViewModelI
     private String ids;
     private TextView tv_title;
 
-    private ArrayList<TicketData> listTicket = new ArrayList<>();
+    private ArrayList<OrderListEntity> listTicket = new ArrayList<>();
     private TicketAdapter ticketAdapter;
-    private GetTicketListModel getTicketListModel;
+    private GetOrderListModel mGetOrderListModel;
     private boolean hasNext;
     private boolean isGetMore;
     private boolean isRefresh;
     private int pageNo = 1;
     private SwipeRefreshLayout refresh;
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, MyTicketActivity.class);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void initGetIntent() {
@@ -88,17 +90,19 @@ public class MyTicketActivity extends AbsFragmentActivity implements IViewModelI
             public void onRefresh() {
                 isRefresh = true;
                 isGetMore = true;
-                getTicketListModel.start(ids, 1);
+                mGetOrderListModel.start();
             }
         });
     }
 
     @Override
     public void onItemClick(View views, int position) {
-        TicketData object = listTicket.get(position);
+
+        // TODO: 2016/8/9 跳转到二维码界面
+        OrderListEntity object = listTicket.get(position);
         Intent intent = new Intent(this, ActivityQrCodeDetailActivity.class);
-        intent.putExtra(GlobalConfig.EXTRA_OBJECT, object);
-        startActivity(intent);
+//        intent.putExtra(GlobalConfig.EXTRA_OBJECT, object);
+//        startActivity(intent);
     }
 
     @Override
@@ -120,16 +124,16 @@ public class MyTicketActivity extends AbsFragmentActivity implements IViewModelI
                     return;
                 }
                 isGetMore = true;
-                getTicketListModel.start(ids, pageNo);
+                mGetOrderListModel.start();
             }
         }
     }
 
     @Override
     public void initData() {
-        getTicketListModel = new GetTicketListModel();
-        getTicketListModel.setViewModelInterface(this);
-        getTicketListModel.start(ids, pageNo);
+        mGetOrderListModel = new GetOrderListModel();
+        mGetOrderListModel.setViewModelInterface(this);
+        mGetOrderListModel.start();
     }
 
     @Override
@@ -155,18 +159,18 @@ public class MyTicketActivity extends AbsFragmentActivity implements IViewModelI
 
     @Override
     public void onSuccessLoad(int tag, Object result) {
-        GetTicketListResponse response = (GetTicketListResponse) result;
-        GetTicketList data = response.getData();
+        GetOrderListResponse response = (GetOrderListResponse) result;
+        ArrayList<OrderListEntity> data = response.getData();
         if (isRefresh){
             listTicket.clear();
             pageNo = 1;
             isRefresh = false;
             refresh.setRefreshing(false);
         }
-        listTicket.addAll(data.getDatas());
+        listTicket.addAll(data);
         ticketAdapter.notifyDataSetChanged();
-        hasNext = data.getNext();
-        pageNo = data.getCurPage() + 1;
+//        hasNext = data.getNext();
+//        pageNo = data.getCurPage() + 1;
         isGetMore = false;
     }
 

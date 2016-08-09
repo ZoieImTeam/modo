@@ -288,6 +288,7 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
             if (TextUtils.equals(resultStatus, "9000")) {
                 Toast.makeText(_this, "支付成功", Toast.LENGTH_SHORT).show();
                 PaySuccessActivity.start(IndentSureActivity.this,mOrderMsg);
+                IndentSureActivity.this.finish();
 
             } else {
                 // 判断resultStatus 为非“9000”则代表可能支付失败

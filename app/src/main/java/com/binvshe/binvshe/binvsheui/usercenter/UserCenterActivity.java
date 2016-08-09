@@ -121,10 +121,10 @@ public class UserCenterActivity extends AbsFragmentActivity implements IViewMode
         Intent intent = null;
         switch (id) {
             case R.id.tv_zxing:
-//                intent = new Intent(this, MyTicketActivity.class);
-//                startActivity(intent);
-                GamePopupwindow popupwindow=new GamePopupwindow(this,view);
-                popupwindow.show();
+                intent = new Intent(this, MyTicketActivity.class);
+                startActivity(intent);
+//                GamePopupwindow popupwindow=new GamePopupwindow(this,view);
+//                popupwindow.show();
                 break;
             case R.id.tv_zan:
                 MyLikeSpecialActivity.newInstance(this);

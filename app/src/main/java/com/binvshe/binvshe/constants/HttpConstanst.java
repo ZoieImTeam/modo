@@ -92,10 +92,24 @@ public class HttpConstanst {
      */
     public static final String POST_PRO_ORDER=BASE_URL+"binvsheApp/app/orders";
 
+
+    /**
+     * 获取订单详情
+     */
+    public static final String GET_ORDER_MSG=BASE_URL+"binvsheApp/app/orders/%1$s";
+
+
     /**
      * 获取购买的活动的票
      */
     public static final String GET_TICKETLIST = BASE_URL + "binvsheApp/app/getTicketList";
+
+
+    /**
+     * 获取购买活动的票列表 新
+     */
+    public static final String GET_TICKLSIT_NEW=BASE_URL+"binvsheApp/app/orders/list/user/%1$s";
+
     /**
      * 主页 推荐 接口
      */

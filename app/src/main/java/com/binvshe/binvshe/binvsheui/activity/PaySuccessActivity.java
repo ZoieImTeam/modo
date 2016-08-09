@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.binvshe.binvshe.R;
+import com.binvshe.binvshe.binvsheui.usercenter.MyTicketActivity;
 import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
 import com.f2prateek.dart.Dart;
 import com.f2prateek.dart.InjectExtra;
@@ -74,12 +75,17 @@ public class PaySuccessActivity extends BaseActivity {
 
 
 
-    @OnClick({R.id.tv_title_more, R.id.btnShowCode})
+    @OnClick({R.id.tv_title_more, R.id.btnShowCode,R.id.btn_title_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_title_more:
                 break;
             case R.id.btnShowCode:
+                MyTicketActivity.start(this);
+                this.finish();
+                break;
+            case R.id.btn_title_back:
+                this.finish();
                 break;
         }
     }

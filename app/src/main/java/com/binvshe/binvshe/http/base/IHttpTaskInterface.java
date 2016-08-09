@@ -241,4 +241,18 @@ public interface IHttpTaskInterface {
      * @param model
      */
     void getCancelOrder(String orderID,BaseModel model);
+
+    /**
+     * 获取用户购买活动票列表（二维码列表）
+     * @param userID
+     * @param model
+     */
+    void getOrderList(String userID,BaseModel model);
+
+    /**
+     * 获取订单详情get请求
+     * @param orderID
+     * @param model
+     */
+    void getOrederMsg(String orderID,BaseModel model);
 }

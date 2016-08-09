@@ -27,6 +27,7 @@ import com.binvshe.binvshe.http.response.GetActivityDetailResponse;
 import com.binvshe.binvshe.http.response.GetActivityListResponse;
 import com.binvshe.binvshe.http.response.GetAttentionListResponse;
 import com.binvshe.binvshe.http.response.GetFansResponse;
+import com.binvshe.binvshe.http.response.GetOrderListResponse;
 import com.binvshe.binvshe.http.response.GetOrderResponse;
 import com.binvshe.binvshe.http.response.GetPsnhomeResponse;
 import com.binvshe.binvshe.http.response.GetSelectDateFirnResponse;
@@ -1120,6 +1121,26 @@ public class HttpTask implements IHttpTaskInterface {
         HashMap<String, String> params = new HashMap<>();
         entity.requestMap = params;
         commonParseHandle(BaseResponse.class, entity, model);
+    }
+
+    @Override
+    public void getOrderList(String userID, BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url =String.format(HttpConstanst.GET_TICKLSIT_NEW,userID);
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        entity.requestMap = params;
+        commonParseHandle(GetOrderListResponse.class, entity, model);
+    }
+
+    @Override
+    public void getOrederMsg(String orderID, BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url =String.format(HttpConstanst.GET_ORDER_MSG,orderID);
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        entity.requestMap = params;
+        commonParseHandle(CreateOrederResponse.class, entity, model);
     }
 
 
