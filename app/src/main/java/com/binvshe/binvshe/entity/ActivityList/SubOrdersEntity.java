@@ -61,7 +61,7 @@ public  class SubOrdersEntity {
         private String numcode;
         private int orderId;
         private String photos;
-        private int price;
+        private double price;
         private int productId;
         private String qrcodeId;
         private long timestamp;
@@ -158,11 +158,11 @@ public  class SubOrdersEntity {
             this.photos = photos;
         }
 
-        public int getPrice() {
+        public double getPrice() {
             return price;
         }
 
-        public void setPrice(int price) {
+        public void setPrice(double price) {
             this.price = price;
         }
 

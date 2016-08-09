@@ -27,6 +27,6 @@
         android:layout_marginBottom="16dp"
         android:text="不容错过"
         android:textColor="@color/black"
-        android:textSize="@dimen/spacing_lv3" />
+        android:textSize="@dimen/text_normal" />
 
 </RelativeLayout>

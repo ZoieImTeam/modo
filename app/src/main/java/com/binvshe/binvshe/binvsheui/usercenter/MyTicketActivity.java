@@ -100,9 +100,7 @@ public class MyTicketActivity extends AbsFragmentActivity implements IViewModelI
 
         // TODO: 2016/8/9 跳转到二维码界面
         OrderListEntity object = listTicket.get(position);
-        Intent intent = new Intent(this, ActivityQrCodeDetailActivity.class);
-//        intent.putExtra(GlobalConfig.EXTRA_OBJECT, object);
-//        startActivity(intent);
+        ActivityQrCodeDetailActivity.start(this,object.getId()+"");
     }
 
     @Override

@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <include
         android:id="@+id/title_layout"
-        layout="@layout/title_text_btn_layout" />
+        layout="@layout/include_title_back" />
 
     <FrameLayout
         android:id="@id/flyt_base"
