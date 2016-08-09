@@ -145,7 +145,7 @@ public class RegisterThreeFr extends BaseFragment implements IViewModelInterface
             AccountManager.getInstance().setUserInfo(user);
             AccountManager.getInstance().setUserLogin(userLogin);
             AccountManager.getInstance().saveUserLoginToLocal(user);
-//            RongLogin.getInstance().connect(user.getRongtoken());
+            RongLogin.getInstance().connect(user.getRongtoken());
             Toast.makeText(BaseApp.mContext, "注册成功！", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getActivity(), CompleteInformationActivity.class);
             startActivity(intent);

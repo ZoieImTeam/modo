@@ -285,7 +285,7 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
             User user = AccountManager.getInstance().getUserInfo();
             String headUrl = user.getHead();
             UIL.load(image_head, headUrl);
-//            RongIM.getInstance().setCurrentUserInfo(new UserInfo(user.getId()+"",user.getName(), Uri.parse(headUrl)));
+            RongIM.getInstance().setCurrentUserInfo(new UserInfo(user.getId()+"",user.getName(), Uri.parse(headUrl)));
         } else {
             UIL.load(image_head, "http://114.215.119.51:80//binvsheApp/resources/images/defauthead.png");
             Intent ii=new Intent(this,ChooseActivity.class);

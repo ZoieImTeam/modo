@@ -19,7 +19,7 @@ public class BaseApp extends BaseApplication {
             /**
              * IMKit SDK调用第一步 初始化
              */
-//            RongIM.init(this);
+            RongIM.init(this);
             /**
              * 检测内存泄漏
                     */

@@ -124,7 +124,7 @@ public class HelloActivity extends AbsFragmentActivity implements IViewModelInte
                 AccountManager.getInstance().setUserInfo(user);
                 AccountManager.getInstance().setUserLogin(userLogin);
                 AccountManager.getInstance().saveUserLoginToLocal(user);
-//                RongLogin.getInstance().connect(user.getRongtoken());
+                RongLogin.getInstance().connect(user.getRongtoken());
             }
 
         }
