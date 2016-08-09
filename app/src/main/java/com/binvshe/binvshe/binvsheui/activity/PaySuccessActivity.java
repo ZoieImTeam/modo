@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.binvshe.binvshe.R;
+import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
+import com.f2prateek.dart.Dart;
+import com.f2prateek.dart.InjectExtra;
 
 import org.srr.dev.base.BaseActivity;
 
@@ -21,6 +24,7 @@ import butterknife.OnClick;
  * 支付成功界面
  */
 public class PaySuccessActivity extends BaseActivity {
+    private static final String KEY_ORDER_MSG = "ORDER_MSG";
     @Bind(R.id.tv_title)
     TextView mTvTitle;
     @Bind(R.id.tv_title_more)
@@ -32,14 +36,18 @@ public class PaySuccessActivity extends BaseActivity {
     @Bind(R.id.btnShowCode)
     TextView mBtnShowCode;
 
-    public static void start(Context context) {
+    @InjectExtra(KEY_ORDER_MSG)
+    CreateOrderEntity mOrderEntity;
+
+    public static void start(Context context, CreateOrderEntity orderMsg) {
         Intent starter = new Intent(context, PaySuccessActivity.class);
+        starter.putExtra(KEY_ORDER_MSG,orderMsg);
         context.startActivity(starter);
     }
 
     @Override
     protected void initGetIntent() {
-
+        Dart.inject(this);
     }
 
     @Override
@@ -54,7 +62,9 @@ public class PaySuccessActivity extends BaseActivity {
 
     @Override
     public void initData() {
-
+        mTvTitle.setText("支付成功");
+        mTvAcitvityContent.setText(mOrderEntity.getName());
+        mTvPrice.setText(mOrderEntity.getTotalFee()+"");
     }
 
     @Override

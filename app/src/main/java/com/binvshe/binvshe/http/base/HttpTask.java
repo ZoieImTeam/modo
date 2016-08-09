@@ -1101,6 +1101,27 @@ public class HttpTask implements IHttpTaskInterface {
         commonParseHandle(AliPayInfoResponse.class, entity, model);
     }
 
+    @Override
+    public void getWpayInfo(String orederNo, BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url =String.format(HttpConstanst.Get_WECHAT_PayINFO,orederNo);
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+//        params.put("order_no", orederNo);
+        entity.requestMap = params;
+        commonParseHandle(WechatPayResponse.class, entity, model);
+    }
+
+    @Override
+    public void getCancelOrder(String orderID, BaseModel model) {
+        RequestEntity entity = new RequestEntity();
+        entity.url =String.format(HttpConstanst.GET_CANCEL_ORDER,orderID);
+        entity.requestType = Method.GET;
+        HashMap<String, String> params = new HashMap<>();
+        entity.requestMap = params;
+        commonParseHandle(BaseResponse.class, entity, model);
+    }
+
 
     public void getSysType(String ids, BaseModel model) {
         RequestEntity entity = new RequestEntity();

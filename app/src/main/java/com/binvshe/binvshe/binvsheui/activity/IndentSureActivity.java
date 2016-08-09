@@ -1,8 +1,10 @@
 package com.binvshe.binvshe.binvsheui.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.tv.TvContract;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,12 +22,17 @@ import com.binvshe.binvshe.binvsheui.dialog.TipDialog;
 import com.binvshe.binvshe.binvsheui.utils.SpUtils;
 import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
 import com.binvshe.binvshe.entity.AliPayInfo;
+import com.binvshe.binvshe.entity.WechatPay;
 import com.binvshe.binvshe.http.model.AliPayInfoModel;
+import com.binvshe.binvshe.http.model.CancelOrderModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
 import com.binvshe.binvshe.http.model.PostAliPayInfoModel;
+import com.binvshe.binvshe.http.model.WeChatPayModel;
 import com.binvshe.binvshe.http.response.AliPayInfoResponse;
+import com.binvshe.binvshe.http.response.WechatPayResponse;
 import com.f2prateek.dart.Dart;
 import com.f2prateek.dart.InjectExtra;
+import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
@@ -70,17 +77,34 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
 
     private DialogSelect dialogSelectPay;
     private String orderNo;
+    private PayReceiver payReceiver;
 
     @InjectExtra(KEY_ORDER_MSG)
     CreateOrderEntity mOrderMsg;
 
 
     AliPayInfoModel mAliPayInfoModel;
+    WeChatPayModel mWeChatPayModel;
+    CancelOrderModel mCancelOrderModel;
 
 
     private PayTask alipay;
     private IWXAPI msgApi;
     private String userID;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dismissLoadingDialog();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (payReceiver != null) {
+            unregisterReceiver(payReceiver);
+        }
+        super.onDestroy();
+    }
 
     public static void start(Context context, CreateOrderEntity orderMsg) {
         Intent starter = new Intent(context, IndentSureActivity.class);
@@ -95,6 +119,8 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
         // 将该app注册到微信
         msgApi.registerApp(Constants.WETHAR_APPID);
         alipay = new PayTask(this);
+        payReceiver = new PayReceiver();
+        registerReceiver(payReceiver, new IntentFilter(Constants.INTENT_BROAD.WECHAR_PAY));
 
 //        payReceiver = new PayReceiver();
         // 请求活动详情数据
@@ -116,6 +142,10 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
     private void initModel() {
         mAliPayInfoModel = new AliPayInfoModel();
         mAliPayInfoModel.setViewModelInterface(this);
+        mWeChatPayModel = new WeChatPayModel();
+        mWeChatPayModel.setViewModelInterface(this);
+        mCancelOrderModel = new CancelOrderModel();
+        mCancelOrderModel.setViewModelInterface(this);
     }
 
     @Override
@@ -157,11 +187,12 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
                 tipDialog.setmOnClickable(new TipDialog.TipDialogClickable() {
                     @Override
                     public void btnSureCick() {
-                        Toast.makeText(_this, "确定", Toast.LENGTH_SHORT).show();
+                        tipDialog.dismiss();
                     }
 
                     @Override
                     public void btnCancleClick() {
+                        mCancelOrderModel.start(mOrderMsg.getId()+"");
                         tipDialog.dismiss();
                     }
                 });
@@ -195,6 +226,28 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
         if (tag == mAliPayInfoModel.getTag()) {
             AliPayInfoResponse response = (AliPayInfoResponse) result;
             startAliPay(response.getData());
+        } else if (tag == mWeChatPayModel.getTag()) {
+            showLoadingDialog();
+            WechatPayResponse response = (WechatPayResponse) result;
+            WechatPay data = response.getData();
+            PayReq request = new PayReq();
+            //微信分配的公众账号ID
+            request.appId = data.getAppid();
+            //微信支付分配的商户号
+            request.partnerId = data.getPartnerid();
+            //微信返回的支付交易会话ID
+            request.prepayId = data.getPrepayid();
+            //暂填写固定值Sign=WXPay
+            request.packageValue = data.getPackage_();
+            //随机字符串，不长于32位。推荐随机数生成算法
+            request.nonceStr = data.getNoncestr();
+            //时间戳，请见接口规则-参数规定
+            request.timeStamp = data.getTimestamp();
+            //签名，详见签名生成算法
+            request.sign = data.getSign();
+            msgApi.sendReq(request);
+        } else if (tag == mCancelOrderModel.getTag()) {
+            this.finish();
         }
     }
 
@@ -218,7 +271,7 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
 
     @Override
     public void onClickSecond(String str2, String tag) {
-
+        mWeChatPayModel.start(mOrderMsg.getOrderNo());
     }
 
     @Override
@@ -234,6 +287,8 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
             String result = payResult.getResult();
             if (TextUtils.equals(resultStatus, "9000")) {
                 Toast.makeText(_this, "支付成功", Toast.LENGTH_SHORT).show();
+                PaySuccessActivity.start(IndentSureActivity.this,mOrderMsg);
+
             } else {
                 // 判断resultStatus 为非“9000”则代表可能支付失败
                 // “8000”代表支付结果因为支付渠道原因或者系统原因还在等待支付结果确认，最终交易是否成功以服务端异步通知为准（小概率状态）
@@ -272,5 +327,14 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
         // 必须异步调用
         Thread payThread = new Thread(payRunnable);
         payThread.start();
+    }
+
+    private class PayReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            PaySuccessActivity.start(IndentSureActivity.this,mOrderMsg);
+            IndentSureActivity.this.finish();
+        }
     }
 }

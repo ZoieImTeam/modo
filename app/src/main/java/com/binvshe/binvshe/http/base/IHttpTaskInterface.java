@@ -227,4 +227,18 @@ public interface IHttpTaskInterface {
      * @param model
      */
     void getAliPayInfo(String orederNo,BaseModel model);
+
+    /**
+     * 新 获取微信支付信息的接口
+     * @param orederNo
+     * @param model
+     */
+    void getWpayInfo(String orederNo,BaseModel model);
+
+    /**
+     * 取消订单接口
+     * @param orderID
+     * @param model
+     */
+    void getCancelOrder(String orderID,BaseModel model);
 }

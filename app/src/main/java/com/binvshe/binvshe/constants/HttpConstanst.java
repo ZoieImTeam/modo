@@ -60,6 +60,16 @@ public class HttpConstanst {
     public static final String Get_ALIPAYINFO=BASE_URL+"binvsheApp/app/orders/alipay/%1$s";
 
     /**
+     * 微信支付 新
+     */
+    public static final String Get_WECHAT_PayINFO=BASE_URL+"binvsheApp/app/orders/weixinPay/%1$s";
+
+    /**
+     * 取消订单
+     */
+    public static final String GET_CANCEL_ORDER=BASE_URL+"binvsheApp/app/orders/cancel/%1$s";
+
+    /**
      *
      */
     public static final String Get_AttenMore= BASE_URL +"/binvsheApp/app/getShowAttenMore";

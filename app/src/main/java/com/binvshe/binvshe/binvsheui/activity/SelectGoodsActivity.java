@@ -15,6 +15,7 @@ import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
 import com.binvshe.binvshe.entity.ActivityList.SelectDateFirnData;
 import com.binvshe.binvshe.entity.ActivityList.TicketTypeEntity;
+import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.CreateOrderModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
 import com.binvshe.binvshe.http.model.SelectDateFirnModel;
@@ -67,6 +68,8 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     TextView mTvTotalPrice;
     //    @InjectExtra(KEY_ACTIVITY_ID)
     int mActivityId = 90;
+    String userID;
+    String gameID;
 
     private ArrayList<SelectDateFirnData.ChildrenEntity> mGoodDatas = new ArrayList<>();
     private ArrayList<SelectDateFirnData.ChildrenEntity> mFirnDatas = new ArrayList<>();
@@ -93,6 +96,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     @Override
     protected void initGetIntent() {
         Dart.inject(this);
+        userID= AccountManager.getInstance().getUserInfo().getId()+"";
     }
 
     @Override
@@ -170,10 +174,11 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
                     }
                 }
                 mTickMsgAdapter.notifyDataSetChanged();
-                mTickMsgPosition = position;
-                mTotalNum = 1;
-                mUnitPrice = mTickMsgDatas.get(position).getPrice();
-                refreshToatleText();
+//                mTickMsgPosition = position;
+//                mTotalNum = 1;
+//                mUnitPrice = mTickMsgDatas.get(position).getPrice();
+//                refreshToatleText();
+                refreshPriceTotal(position);
             }
 
             @Override
@@ -200,7 +205,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
                 break;
             case R.id.tvNext:
                 mCreateOrderModel.setViewModelInterface(this);
-                mCreateOrderModel.start(mActivityId + "", mTotalNum + "", "157", "8");
+                mCreateOrderModel.start(mActivityId + "", mTotalNum + "", userID, gameID);
                 break;
             case R.id.btnSub:
                 if (mTotalNum - 1 >= 1) {
@@ -374,6 +379,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
         mTickMsgPosition = position;
         mTotalNum = 1;
         mUnitPrice = mTickMsgDatas.get(position).getPrice();
+        gameID=mTickMsgDatas.get(position).getId()+"";
         refreshToatleText();
     }
 }

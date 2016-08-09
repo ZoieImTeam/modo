@@ -1,5 +1,6 @@
 package com.binvshe.binvshe.wxapi;
 
+import com.binvshe.binvshe.app.BaseApp;
 import com.binvshe.binvshe.binvsheui.chen.Utils.Constants;
 import com.tencent.mm.sdk.constants.ConstantsAPI;
 import com.tencent.mm.sdk.modelbase.BaseReq;
@@ -67,6 +68,7 @@ public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
                 Intent intent = new Intent();
                 intent.setAction(Constants.INTENT_BROAD.WECHAR_PAY);
                 sendBroadcast(intent);
+                Toast.makeText(BaseApp.mContext, "支付成功", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }

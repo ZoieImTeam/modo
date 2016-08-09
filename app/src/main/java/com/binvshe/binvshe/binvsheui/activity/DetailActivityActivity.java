@@ -78,7 +78,6 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     private PayTask alipay;
     private DialogSelect dialogSelectPay;
     private DialogSelect dialogisCoupon;
-    private PayReceiver payReceiver;
     int activityID=0;
     private int overTicketCount;
     private boolean isBuyTicket;
@@ -95,9 +94,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
     @Override
     protected void onDestroy() {
-        if (payReceiver != null) {
-            unregisterReceiver(payReceiver);
-        }
+
         super.onDestroy();
     }
     public static void start(Context context,int activityID) {
@@ -114,8 +111,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         msgApi.registerApp(Constants.WETHAR_APPID);
         alipay = new PayTask(this);
 
-        payReceiver = new PayReceiver();
-        registerReceiver(payReceiver, new IntentFilter(Constants.INTENT_BROAD.WECHAR_PAY));
+
         // 请求活动详情数据
         userID = SpUtils.getUserID();
     }
@@ -508,16 +504,5 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         }
     }
 
-    private class PayReceiver extends BroadcastReceiver {
 
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            tv_address.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    getOrderModel.start(orderNo, "1");
-                }
-            }, 500);
-        }
-    }
 }
