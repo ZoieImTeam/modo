@@ -3,7 +3,7 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_gray">
+            android:background="@color/base_bg_gray_color">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,13 +19,16 @@
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:layout_below="@+id/title"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/spacing_lv2">
 
             <TextView
                 android:id="@+id/tvActTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/spacing_lv2"
+                android:textColor="#333333"
+                android:textSize="@dimen/text_big"
                 tools:text="title"
                 />
 
@@ -34,7 +37,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvActTitle"
-                android:paddingLeft="@dimen/spacing_lv2"
+                android:layout_marginTop="27dp"
+                android:drawableLeft="@mipmap/icon_time"
+                android:drawablePadding="@dimen/spacing_lv1"
+                android:textColor="#333333"
                 tools:text="@string/sure_indent_time"
                 />
 
@@ -43,7 +49,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvActTime"
-                android:paddingLeft="@dimen/spacing_lv2"
+                android:layout_marginTop="@dimen/spacing_lv1"
+                android:drawableLeft="@mipmap/icon_location"
+                android:drawablePadding="@dimen/spacing_lv1"
+                android:textColor="#333333"
                 tools:text="@string/sure_indent_addr"/>
 
 
@@ -76,7 +85,7 @@
                 <TextView
                     android:id="@+id/tvTickType"
                     style="@style/actIndentTextContent"
-                    android:text="xxx"
+                    tools:text="xxx"
                     />
             </RelativeLayout>
 
@@ -94,7 +103,7 @@
                 <TextView
                     android:id="@+id/tvTickPrice"
                     style="@style/actIndentTextContent"
-                    android:text="xxx"
+                    tools:text="@string/ticket_price"
                     />
 
             </RelativeLayout>
@@ -108,10 +117,11 @@
                 <TextView
                     style="@style/actSureIndentText"
                     android:text="数量"/>
+
                 <TextView
                     android:id="@+id/tvTickNum"
                     style="@style/actIndentTextContent"
-                    android:text="xxx"
+                    tools:text="xxx"
                     />
 
             </RelativeLayout>
@@ -122,14 +132,16 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
-            <TextView
-                style="@style/actSureIndentText"
-                android:text="订单总价"/>
+
+                <TextView
+                    style="@style/actSureIndentText"
+                    android:text="订单总价"/>
 
                 <TextView
                     android:id="@+id/tvTotal"
                     style="@style/actIndentTextContent"
-                    android:text="xxx"
+                    android:textColor="@color/red"
+                    tools:text="xxx"
                     />
             </RelativeLayout>
 
@@ -145,6 +157,8 @@
             android:layout_marginRight="@dimen/spacing_lv3"
             android:layout_marginTop="25dp"
             android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_btn_blue"
             android:text="确认订单"/>
 
     </RelativeLayout>

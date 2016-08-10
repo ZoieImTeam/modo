@@ -9,15 +9,21 @@
         android:layout_height="182dp"
         android:layout_marginLeft="37dp"
         android:layout_marginRight="37dp"
-        android:background="#F2F0F0">
+        android:background="@drawable/bg_dialog_gray">
 
         <TextView
             android:id="@+id/tvDialogTitle"
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:textColor="#333333"
+            android:textSize="@dimen/text_big"
             android:gravity="center"
-            android:background="#F2F0F0"
             android:text="@string/remind"/>
+
+        <View
+            style="@style/view_line1"
+            android:layout_below="@+id/tvDialogTitle"
+            />
 
         <TextView
             android:id="@+id/delete_dialog_text"
@@ -26,9 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/linearLayout3"
             android:layout_below="@+id/tvDialogTitle"
-            android:background="#F2F0F0"
             android:gravity="center"
             />
+
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -36,30 +42,33 @@
             android:layout_height="43dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_delete_dialog_bottom"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvGetContinue"
                 style="@style/text_color_size_normal"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/base_blue"
                 android:gravity="center"
                 />
+
             <TextView
                 android:id="@+id/tvDialogCancel"
                 style="@style/text_color_size_normal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#F2F0F0"
                 android:gravity="center"
                 />
 
-
         </LinearLayout>
+        <View
+            style="@style/view_line1"
+            android:layout_below="@+id/delete_dialog_text"
+            />
 
     </RelativeLayout>
 </RelativeLayout>

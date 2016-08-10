@@ -364,16 +364,20 @@
     <string name="navi_activity">活动</string>
     <string name="activity_time">时间：%s</string>
 
-    <string name="sure_indent_time">时间:<![CDATA[
-        <font color=\'#28b5f5\'>%1$s</font>
+    <string name="sure_indent_time"><![CDATA[
+    <B>时间:</B>
+        <font color=\'#666666\'>%1$s</font>
         ]]></string>
-    <string name="sure_indent_addr">活动地址:<![CDATA[
-    <font color=\'#28b5f5\'>%1$s</font>
+    <string name="sure_indent_addr"><![CDATA[
+    <B>活动地址:</B>
+    <font color=\'#666666\'>%1$s</font>
     ]]></string>
-    <string name="ticket_total_pr">¥<![CDATA[
-    <font color=\'#FE3131\'>%1$s</font>
+    <string name="ticket_total_pr"><![CDATA[
+    <font color=\'#FE3131\' size=\'5\'>%1$s</font>
     ]]></string>
     <string name="remind">提示</string>
     <string name="item_activity">%1$s\n%2$s</string>
     <string name="activity_tick_msg">%1$s %2$s元</string>
+    <string name="select_goods">选择商品</string>
+    <string name="ticket_price">%1$s 元</string>
 </resources>

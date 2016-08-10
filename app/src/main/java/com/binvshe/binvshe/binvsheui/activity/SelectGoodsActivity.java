@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.entity.ActivityList.CreateOrderEntity;
@@ -106,6 +107,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
 
     @Override
     public void initView() {
+        mTvTitle.setText(R.string.select_goods);
         initRec(mRcDate, mGoodsAdapter);
         initRec(mRcSession, mFirnAdapter);
         mTickMsgAdapter.setData(mTickMsgDatas);
@@ -261,6 +263,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
 
     @Override
     public void onFailLoad(int tag, int code, String codeMsg) {
+        Toast.makeText(_this, codeMsg, Toast.LENGTH_SHORT).show();
     }
 
     @Override

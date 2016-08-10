@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.Html;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -86,6 +87,7 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
     AliPayInfoModel mAliPayInfoModel;
     WeChatPayModel mWeChatPayModel;
     CancelOrderModel mCancelOrderModel;
+    final TipDialog tipDialog = TipDialog.newInstance("是否取消订单", "继续购买", "是");
 
 
     private PayTask alipay;
@@ -135,7 +137,19 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
     @Override
     public void initView() {
         ButterKnife.bind(this);
-        mTvActTime.setText(Html.fromHtml(getResources().getString(R.string.sure_indent_time, "2000000")));
+        mTvTitle.setText("订单确认");
+        tipDialog.setmOnClickable(new TipDialog.TipDialogClickable() {
+            @Override
+            public void btnSureCick() {
+                tipDialog.dismiss();
+            }
+
+            @Override
+            public void btnCancleClick() {
+                mCancelOrderModel.start(mOrderMsg.getId() + "");
+                tipDialog.dismiss();
+            }
+        });
         initModel();
     }
 
@@ -151,20 +165,21 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
     @Override
     public void initData() {
         String title = mOrderMsg.getActivity().getName();
-        String place = mOrderMsg.getActivity().getGatherxy();
+        String place = getString(R.string.sure_indent_addr, mOrderMsg.getActivity().getGatherxy());
         String time = dateForString(mOrderMsg.getActivity().getStartdate());
+        String toTime = dateForString(mOrderMsg.getActivity().getEnddate(), 0);
         String tickName = mOrderMsg.getName();
-        String tickPrice = mOrderMsg.getPrice() + "";
+        String tickPrice = getString(R.string.ticket_price, mOrderMsg.getPrice() + "");
         String tickNum = mOrderMsg.getNum() + "";
         double total = mOrderMsg.getNum() * mOrderMsg.getPrice();
 
         mTvActTitle.setText(title);
-        mTvActTime.setText(time);
-        mTvActPlace.setText(place);
+        mTvActTime.setText(Html.fromHtml(getString(R.string.sure_indent_time, time + " - " + toTime)));
+        mTvActPlace.setText(Html.fromHtml(place));
         mTvTickType.setText(tickName);
         mTvTickPrice.setText(tickPrice);
         mTvTickNum.setText(tickNum);
-        mTvTotal.setText(total + "");
+        mTvTotal.setText(getString(R.string.ticket_price, total + ""));
         initBuyDialog();
     }
 
@@ -183,19 +198,6 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_title_back:
-                final TipDialog tipDialog = TipDialog.newInstance("是否取消订单", "继续购买", "是");
-                tipDialog.setmOnClickable(new TipDialog.TipDialogClickable() {
-                    @Override
-                    public void btnSureCick() {
-                        tipDialog.dismiss();
-                    }
-
-                    @Override
-                    public void btnCancleClick() {
-                        mCancelOrderModel.start(mOrderMsg.getId()+"");
-                        tipDialog.dismiss();
-                    }
-                });
                 tipDialog.show(getFragmentManager(), "tag");
 //                this.finish();
                 break;
@@ -207,6 +209,12 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
 
     public String dateForString(long dateMill) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+        String date = sdf.format(new Date(dateMill));
+        return date;
+    }
+
+    public String dateForString(long dateMill, int i) {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM月dd日");
         String date = sdf.format(new Date(dateMill));
         return date;
     }
@@ -275,6 +283,16 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK )
+        {
+            tipDialog.show(getFragmentManager(),"");
+        }
+
+        return false;
+    }
+
+    @Override
     public void onClickThird(String tag) {
         dialogSelectPay.dismiss();
     }
@@ -287,7 +305,7 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
             String result = payResult.getResult();
             if (TextUtils.equals(resultStatus, "9000")) {
                 Toast.makeText(_this, "支付成功", Toast.LENGTH_SHORT).show();
-                PaySuccessActivity.start(IndentSureActivity.this,mOrderMsg);
+                PaySuccessActivity.start(IndentSureActivity.this, mOrderMsg);
                 IndentSureActivity.this.finish();
 
             } else {
@@ -334,7 +352,7 @@ public class IndentSureActivity extends BaseActivity implements IViewModelInterf
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            PaySuccessActivity.start(IndentSureActivity.this,mOrderMsg);
+            PaySuccessActivity.start(IndentSureActivity.this, mOrderMsg);
             IndentSureActivity.this.finish();
         }
     }
