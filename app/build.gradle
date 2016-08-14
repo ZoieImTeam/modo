@@ -10,6 +10,12 @@ android {
             storeFile file('../files/binvshe.jks')
             storePassword 'binvshe100'
         }
+        release {
+            keyAlias 'binvshe'
+            keyPassword 'binvshe100'
+            storeFile file('../files/binvshe.jks')
+            storePassword 'binvshe100'
+        }
     }
 
     compileSdkVersion 23

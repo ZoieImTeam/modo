@@ -306,7 +306,8 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
                 tv_host.setText(getString(R.string.activity_host_name, host));
             }
             if (!TextUtils.isEmpty(activityName)) {
-                tv_name.setText(getString(R.string.text_activity_title_text, "", activityName));
+//                tv_name.setText(getString(R.string.text_activity_title_text, "", activityName));
+                tv_name.setText(activityName);
             }
             if (!TextUtils.isEmpty(startTime)) {
                 tv_statime.setText(getString(R.string.activity_time, startTime));

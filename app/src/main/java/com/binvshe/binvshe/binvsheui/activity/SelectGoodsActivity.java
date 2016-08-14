@@ -316,7 +316,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
 
         @Override
         public void onBindHolder(VHolder viewHolder, int i, TicketTypeEntity ticketTypeEntity) {
-            viewHolder.mTvContent.setText(getString(R.string.activity_tick_msg, ticketTypeEntity.getName(), ticketTypeEntity.getTotal() + ""));
+            viewHolder.mTvContent.setText(getString(R.string.activity_tick_msg, ticketTypeEntity.getName(), ticketTypeEntity.getPrice() + ""));
             if (ticketTypeEntity.isSelected()) {
                 viewHolder.mTvContent.setBackgroundResource(R.drawable.bg_biankuan_blue);
             } else {
