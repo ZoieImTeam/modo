@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tool="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:tool="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/item_activity_image_titlepage"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/banner1" />
+        android:src="@drawable/banner1"/>
 
     <LinearLayout
         android:layout_width="175dp"
@@ -20,25 +20,26 @@
 
         <TextView
             android:id="@+id/tv_item_activity_title"
+            tool:text="COS"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="bottom"
             android:paddingLeft="@dimen/spacing_lv3"
-            android:text="COS"
             android:textColor="@color/white"
-            android:textSize="28dp" />
+            android:visibility="gone"
+            android:textSize="28dp"/>
 
         <TextView
             android:id="@+id/tv_item_activity_sub"
+            tool:text="二次元空间不容错过"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/spacing_lv3"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_normal"
-            tool:text="二次元空间不容错过" />
+            android:textSize="@dimen/text_normal"/>
 
 
     </LinearLayout>
@@ -55,45 +56,45 @@
 
         <TextView
             android:id="@+id/detail_activity_tv_name"
+            tool:text="@string/text_activity_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            tool:text="@string/text_activity_title_text" />
+            android:textSize="18dp"/>
 
         <TextView
             android:id="@+id/detail_activity_tv_host"
             style="@style/theme_text"
+            tool:text="@string/activity_host_name"
             android:layout_below="@id/detail_activity_tv_name"
             android:layout_marginTop="@dimen/spacing_lv"
             android:drawableLeft="@mipmap/icon_activity_user"
             android:drawablePadding="@dimen/spacing_lv1"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_normal"
-            tool:text="@string/activity_host_name" />
+            android:textSize="@dimen/text_normal"/>
 
         <TextView
             android:id="@+id/detail_activity_tv_address"
             style="@style/theme_text"
+            tool:text="@string/activity_address"
             android:layout_below="@id/detail_activity_tv_host"
             android:layout_marginTop="@dimen/spacing_lv"
             android:drawableLeft="@mipmap/icon_activity_location"
             android:drawablePadding="@dimen/spacing_lv1"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_normal"
-            tool:text="@string/activity_address" />
+            android:textSize="@dimen/text_normal"/>
 
         <TextView
             android:id="@+id/tv_time"
             style="@style/theme_text"
+            tool:text="@string/activity_time"
             android:layout_below="@id/detail_activity_tv_address"
             android:layout_marginTop="@dimen/spacing_lv"
             android:drawableLeft="@mipmap/icon_activity_time"
             android:drawablePadding="@dimen/spacing_lv1"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_normal"
-            tool:text="@string/activity_time" />
+            android:textSize="@dimen/text_normal"/>
 
 
     </RelativeLayout>
@@ -106,13 +107,13 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/item_activity_image_titlepage"
         android:layout_marginTop="-30dp"
-        android:paddingBottom="@dimen/spacing_lv"
         android:background="@mipmap/icon_bg_acitivity"
         android:gravity="center"
+        android:paddingBottom="@dimen/spacing_lv"
         android:paddingLeft="@dimen/spacing_lv2"
         android:paddingStart="@dimen/spacing_lv2"
         android:text="@string/text_see_detail"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_normal" />
+        android:textSize="@dimen/text_normal"/>
 
 </RelativeLayout>
