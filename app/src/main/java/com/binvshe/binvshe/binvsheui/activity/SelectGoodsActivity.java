@@ -97,7 +97,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     @Override
     protected void initGetIntent() {
         Dart.inject(this);
-        userID= AccountManager.getInstance().getUserInfo().getId()+"";
+        userID = AccountManager.getInstance().getUserInfo().getId() + "";
     }
 
     @Override
@@ -250,10 +250,13 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
             GetSelectTicketResponse response = (GetSelectTicketResponse) result;
             mTickMsgDatas.clear();
             mTickMsgDatas.addAll(response.getData());
-            mTickMsgDatas.get(0).setSelected(true);
+            if (mTickMsgDatas.size() > 0) {
+                mTickMsgDatas.get(0).setSelected(true);
+            }
             mTickMsgAdapter.notifyDataSetChanged();
             refreshPriceTotal(0);
-        } if (tag == mCreateOrderModel.getTag()) {
+        }
+        if (tag == mCreateOrderModel.getTag()) {
             CreateOrederResponse response = (CreateOrederResponse) result;
             CreateOrderEntity entity = response.getData();
             IndentSureActivity.start(this, entity);
@@ -379,10 +382,12 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     }
 
     public void refreshPriceTotal(int position) {
-        mTickMsgPosition = position;
-        mTotalNum = 1;
-        mUnitPrice = mTickMsgDatas.get(position).getPrice();
-        gameID=mTickMsgDatas.get(position).getId()+"";
-        refreshToatleText();
+        if (mTickMsgDatas.size() > 0) {
+            mTickMsgPosition = position;
+            mTotalNum = 1;
+            mUnitPrice = mTickMsgDatas.get(position).getPrice();
+            gameID = mTickMsgDatas.get(position).getId() + "";
+            refreshToatleText();
+        }
     }
 }
