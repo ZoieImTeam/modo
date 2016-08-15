@@ -382,12 +382,16 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     }
 
     public void refreshPriceTotal(int position) {
+        mTickMsgPosition = position;
         if (mTickMsgDatas.size() > 0) {
-            mTickMsgPosition = position;
             mTotalNum = 1;
             mUnitPrice = mTickMsgDatas.get(position).getPrice();
             gameID = mTickMsgDatas.get(position).getId() + "";
-            refreshToatleText();
+        }else {
+            gameID="-1";
+            mTotalNum=0;
+            mUnitPrice=0;
         }
+            refreshToatleText();
     }
 }
