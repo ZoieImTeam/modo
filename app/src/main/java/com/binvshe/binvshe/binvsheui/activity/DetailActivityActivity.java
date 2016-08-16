@@ -106,10 +106,10 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     @Override
     protected void initGetIntent() {
         activityID= (int) getIntent().getExtras().get(ACTIVITYID);
-        msgApi = WXAPIFactory.createWXAPI(this, null);
-        // 将该app注册到微信
-        msgApi.registerApp(Constants.WETHAR_APPID);
-        alipay = new PayTask(this);
+//        msgApi = WXAPIFactory.createWXAPI(this, null);
+//        // 将该app注册到微信
+//        msgApi.registerApp(Constants.WETHAR_APPID);
+//        alipay = new PayTask(this);
 
 
         // 请求活动详情数据
@@ -136,7 +136,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         tv_buy = findView(R.id.detail_activity_layout_buy);
         tv_buy.setOnClickListener(this);
 
-        tv_nowmoney = findView(R.id.detail_activity_tv_nowmoney);
+//        tv_nowmoney = findView(R.id.detail_activity_tv_nowmoney);
         tv_name = findView(R.id.detail_activity_tv_name);
         tv_statime = findView(R.id.detail_activity_tv_start_time);
         tv_address = findView(R.id.detail_activity_tv_address);
@@ -287,11 +287,11 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
                 tv_buy.setText("已 经 购 买");
             }
 
-            price = data.getIsMoney();
+//            price = data.getIsMoney();
 
             overTicketCount = data.getScale() - data.getTicketCount();
 
-            tv_nowmoney.setText(price + "");
+//            tv_nowmoney.setText(price + "");
 
             String activityName = data.getName();
             String startTime = data.getStartdate();
