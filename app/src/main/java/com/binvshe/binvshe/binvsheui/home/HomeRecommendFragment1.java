@@ -1,6 +1,7 @@
 package com.binvshe.binvshe.binvsheui.home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,6 +10,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.binvsheui.find.ContentDetailActivity1;
@@ -29,12 +31,16 @@ import org.srr.dev.adapter.QuickDeAdapter.BaseAdapterHelper;
 import org.srr.dev.adapter.QuickDeAdapter.MultiItemTypeSupport;
 import org.srr.dev.adapter.QuickDeAdapter.QuickAdapter;
 import org.srr.dev.base.BaseFragment;
+import org.srr.dev.util.TextUtils;
+import org.srr.dev.util.UIL;
 import org.srr.dev.view.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import it.chengdazhi.decentbanner.DecentBanner;
 
 /**
  * Created by Zoi.
@@ -53,6 +59,8 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
 
     private ArrayList<HomeBean> mAdapterData;
     private ArrayList<Banner> mBanners = new ArrayList<>();
+    private List<View> mBannerView=new ArrayList<>();
+    private List<String> mBannerTitle=new ArrayList<>();
     private GetHomeRecModel mHomeRecModel;
     private QuickAdapter<HomeBean> mQuickAdapter; //创建一个快速开发的adapter
     String id;
@@ -155,7 +163,7 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
                                 }
                             });
                 } else {
-                    ViewPager banner = helper.getView(R.id.banner_viewpager);
+                    DecentBanner banner = helper.getView(R.id.banner_viewpager);
                     startBanner(banner);
                 }
             }
@@ -269,61 +277,36 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
      *
      * @param banner
      */
-    private void startBanner(final ViewPager banner) {
-        banner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                switch (state) {
-                    case ViewPager.SCROLL_STATE_DRAGGING:
-                        isDrag = true;
-                        break;
-                    case ViewPager.SCROLL_STATE_IDLE:
-                        isDrag = false;
-                        break;
-                    case ViewPager.SCROLL_STATE_SETTLING:
-                        isDrag = false;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-
-        banner.setAdapter(new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return new BannerItemFragment(mBanners.get(position % mBanners.size()));
-            }
-
-            @Override
-            public int getCount() {
-                return mBanners.size() * 10000;
-            }
-        });
-        banner.setCurrentItem(mBanners.size() * 5000);
-        if (mStatBool) {
-            banner.postDelayed(new Runnable() {
+    private void startBanner(final DecentBanner banner) {
+        mBannerView.clear();
+        mBannerTitle.clear();
+        for (final Banner bannerdata:mBanners)
+        {
+            View view=View.inflate(getContext(),R.layout.fr_banner_item,null);
+            view.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void run() {
-                    if (!isDrag) {
-                        banner.setCurrentItem(banner.getCurrentItem() + 1);
+                public void onClick(View v) {
+                    if (!TextUtils.isEmpty(bannerdata.getLinke())) {
+                        String linke = bannerdata.getLinke();
+                        if (!linke.startsWith("http")) {
+                            linke = "http://" + linke;
+                        }
+                        Uri uri = Uri.parse(linke);
+                        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(it);
+                    } else {
+                        GamePopupwindow popupwindow=new GamePopupwindow(getContext(),v);
+                        popupwindow.show();
+//                    Toast.makeText(getActivity(), "地址为空", Toast.LENGTH_SHORT).show();
                     }
-                    banner.postDelayed(this, 3000);
                 }
-            }, 3000);
-            mStatBool = false;
+            });
+            UIL.load((ImageView) view, bannerdata.getPhotos());
+            mBannerTitle.add(bannerdata.getName());
+            mBannerView.add(view);
         }
+
+        banner.start(mBannerView,mBannerTitle,2,500);
     }
 
     @Override
