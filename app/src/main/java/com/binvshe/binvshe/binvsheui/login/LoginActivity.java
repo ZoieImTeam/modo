@@ -17,6 +17,7 @@ import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
 import com.binvshe.binvshe.http.model.PostLoginModel;
 import com.binvshe.binvshe.http.response.LoginResponse;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import org.srr.dev.base.BaseSwipeBackActivity;
 import org.srr.dev.util.RegexValidateUtil;
@@ -147,7 +148,8 @@ public class LoginActivity extends BaseSwipeBackActivity implements IViewModelIn
     @Override
     public void onFailLoad(int tag, int code, String codeMsg) {
         dismissLoadingDialog();
-        Toast.makeText(LoginActivity.this, codeMsg, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(LoginActivity.this, codeMsg, Toast.LENGTH_SHORT).show();
+        TastyToast.makeText(this,codeMsg,TastyToast.LENGTH_SHORT,TastyToast.ERROR);
     }
 
     @Override

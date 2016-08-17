@@ -84,7 +84,7 @@
     <dimen name="zantop_mid_hight">40dp</dimen>
     <dimen name="fragment_plaza_title_btn_hight">8dp</dimen>
     <dimen name="edit_pers_line_marleft">14dp</dimen>
-    <dimen name="banner_hight">160dp</dimen>
+    <dimen name="banner_hight">200dp</dimen>
     <dimen name="attention_item_text_size">12dp</dimen>
     <dimen name="map_send_button_hight">40dp</dimen>
     <dimen name="text_margin">16dp</dimen>

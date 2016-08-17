@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.binvshe.binvshe.R;
@@ -241,6 +242,7 @@ public class CoserActivity extends AbsFragmentActivity implements PbTopBar.Mytop
             );
             ViewHolder holder = new ViewHolder(view);
             holder.image = (ImageView) view.findViewById(R.id.selected_image);
+            holder.tvDelete= (TextView) view.findViewById(R.id.tvDelete);
             return holder;
         }
 
@@ -261,10 +263,17 @@ public class CoserActivity extends AbsFragmentActivity implements PbTopBar.Mytop
             ViewHolder holder = (ViewHolder) viewHolder;
             if (position == imgs.size()) {
                 holder.image.setImageResource(R.drawable.release_add_img);
-                // holder.delete_img.setVisibility(View.GONE);
+                holder.tvDelete.setVisibility(View.GONE);
             } else {
                 UIL.load(holder.image, "file://" + imgs.get(position));
-                //holder.delete_img.setVisibility(View.VISIBLE);
+                holder.tvDelete.setVisibility(View.VISIBLE);
+                holder.tvDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        imgs.remove(position);
+                        notifyDataSetChanged();
+                    }
+                });
             }
 
             holder.image.setOnClickListener(new View.OnClickListener() {
@@ -294,10 +303,10 @@ public class CoserActivity extends AbsFragmentActivity implements PbTopBar.Mytop
                         dialog.show(getSupportFragmentManager(), "photo_dialog");
 
                     } else {
-                        Intent intent = new Intent(CoserActivity.this, EditPhotoActivity.class);
-                        intent.putExtra(EDIT_IMAGE_INTENT, imgs.get(position));
-                        edit_img_click_item = position;
-                        startActivityForResult(intent, EDIT_IMAGE);
+//                        Intent intent = new Intent(CoserActivity.this, EditPhotoActivity.class);
+//                        intent.putExtra(EDIT_IMAGE_INTENT, imgs.get(position));
+//                        edit_img_click_item = position;
+//                        startActivityForResult(intent, EDIT_IMAGE);
                     }
 
                 }
@@ -308,7 +317,7 @@ public class CoserActivity extends AbsFragmentActivity implements PbTopBar.Mytop
         //holder
         public class ViewHolder extends RecyclerView.ViewHolder {
             public ImageView image;
-
+            public TextView tvDelete;
             public ViewHolder(View v) {
                 super(v);
             }
