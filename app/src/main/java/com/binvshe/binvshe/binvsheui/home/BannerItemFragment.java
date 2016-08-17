@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.binvshe.binvshe.R;
 import com.binvshe.binvshe.entity.Banner;
 
+import org.srr.dev.util.TextUtils;
 import org.srr.dev.util.UIL;
 
 public class BannerItemFragment extends Fragment {
@@ -36,7 +37,7 @@ public class BannerItemFragment extends Fragment {
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (banner.getLinke() != null) {
+                if (!TextUtils.isEmpty(banner.getLinke())) {
                     String linke = banner.getLinke();
                     if (!linke.startsWith("http")) {
                         linke = "http://" + linke;

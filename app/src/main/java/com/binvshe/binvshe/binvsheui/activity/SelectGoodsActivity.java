@@ -67,8 +67,8 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     TextView mBtnAdd;
     @Bind(R.id.tvTotalPrice)
     TextView mTvTotalPrice;
-    //    @InjectExtra(KEY_ACTIVITY_ID)
-    int mActivityId = 90;
+     @InjectExtra(KEY_ACTIVITY_ID)
+    int mActivityId = 0;
     String userID;
     String gameID;
 
