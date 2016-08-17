@@ -88,15 +88,18 @@ public class LoginActivity extends BaseSwipeBackActivity implements IViewModelIn
                 String user = etAccount.getText().toString();
                 String pwd = etPassword.getText().toString();
                 if ("".equals(user)) {
-                    Toast.makeText(LoginActivity.this, "请输入您的手机号", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, "请输入您的手机号", Toast.LENGTH_SHORT).show();
+                    TastyToast.makeText(this,"请输入您的手机号",TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     return;
                 }
                 if ("".equals(pwd)) {
-                    Toast.makeText(LoginActivity.this, "请输入您的密码", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, "请输入您的密码", Toast.LENGTH_SHORT).show();
+                    TastyToast.makeText(this,"请输入您的密码",TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     return;
                 }
                 if (!RegexValidateUtil.checkMobileNumber(user)) {
-                    Toast.makeText(LoginActivity.this, "请输入正确的手机格式", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, "请输入正确的手机格式", Toast.LENGTH_SHORT).show();
+                    TastyToast.makeText(this,"请输入正确的手机格式",TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     return;
                 }
                 mPassword = pwd;
@@ -127,6 +130,7 @@ public class LoginActivity extends BaseSwipeBackActivity implements IViewModelIn
     public void onSuccessLoad(int tag, Object result) {
         dismissLoadingDialog();
         if (postLoginModel.getTag() == tag) {
+            TastyToast.makeText(this,"登录成功",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
             LoginResponse response = (LoginResponse) result;
             UserLogin userLogin = response.getData();
             User user = userLogin.getUser();
