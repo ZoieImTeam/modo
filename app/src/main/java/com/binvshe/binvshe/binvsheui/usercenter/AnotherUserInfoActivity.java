@@ -1,33 +1,27 @@
 package com.binvshe.binvshe.binvsheui.usercenter;
 
-import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.binvshe.binvshe.R;
-import com.binvshe.binvshe.binvsheui.NaviActivity;
 import com.binvshe.binvshe.binvsheui.base.AbsFragmentActivity;
 import com.binvshe.binvshe.binvsheui.find.UserSubjectListFragment;
 import com.binvshe.binvshe.binvsheui.message.ConversationActivity;
-import com.binvshe.binvshe.entity.UserLogin.User;
-import com.binvshe.binvshe.entity.psnhomedata.GetUserdata;
 import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.AddAttentionUserModel;
 import com.binvshe.binvshe.http.model.CancelAttentionUserModel;
 import com.binvshe.binvshe.http.model.GetUserCenterModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
-import com.binvshe.binvshe.http.response.GetPsnhomeResponse;
 import com.binvshe.binvshe.http.response.GetUserCenterResponse;
 import com.binvshe.binvshe.http.response.data.GetUserCenterData;
 import com.binvshe.binvshe.util.LoginUtils;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import org.srr.dev.util.UIL;
 import org.srr.dev.view.CircleImageView;
-import org.w3c.dom.Text;
 
 /**
  * 用户资料Activity
@@ -192,7 +186,7 @@ public class AnotherUserInfoActivity extends AbsFragmentActivity {
 
                         @Override
                         public void onFailLoad(int tag, int code, String codeMsg) {
-                            Toast.makeText(getApplicationContext(), "呀呀呀，程序出错，未能添加成功...", Toast.LENGTH_SHORT).show();
+                            TastyToast.makeText(AnotherUserInfoActivity.this,codeMsg,TastyToast.LENGTH_SHORT,TastyToast.ERROR);
                         }
 
                         @Override
@@ -223,7 +217,7 @@ public class AnotherUserInfoActivity extends AbsFragmentActivity {
 
                         @Override
                         public void onFailLoad(int tag, int code, String codeMsg) {
-                            Toast.makeText(getApplicationContext(),"呀呀呀，程序出错，未能添加成功...",Toast.LENGTH_SHORT).show();
+                            TastyToast.makeText(AnotherUserInfoActivity.this,codeMsg,TastyToast.LENGTH_SHORT,TastyToast.ERROR);
                         }
 
                         @Override

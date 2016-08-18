@@ -12,6 +12,7 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;

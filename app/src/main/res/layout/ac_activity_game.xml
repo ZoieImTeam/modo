@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/base_bg_gray_color"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/rtlytTop"
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
+
+
+        <ImageView
+            android:id="@+id/ivActivityImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#22000000"
+            />
+
+        <TextView
+            android:id="@+id/tvActivityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="萌都动漫节"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_big"
+            />
+
+        <TextView
+            android:id="@+id/tvActivityTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvActivityTitle"
+            android:layout_marginTop="@dimen/spacing_lv2"
+            android:gravity="center"
+            android:text="7月10号-8月10号"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_tiny"
+            />
+
+        <TextView
+            android:id="@+id/btnUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvActivityTime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_lv2"
+            android:background="@drawable/btn_bg_oval"
+            android:paddingBottom="@dimen/spacing_lv"
+            android:paddingLeft="@dimen/spacing_lv3"
+            android:paddingRight="@dimen/spacing_lv3"
+            android:paddingTop="@dimen/spacing_lv"
+            android:text="上传作品"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_small"/>
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/wvActivityContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rtlytTop"
+        android:layout_marginTop="@dimen/spacing_lv1"/>
+
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/include_title_back"/>
+</RelativeLayout>

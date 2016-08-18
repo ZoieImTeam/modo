@@ -24,6 +24,7 @@ import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.GetHomeRecModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
 import com.binvshe.binvshe.http.response.HomeRecResponse;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import org.srr.dev.adapter.QuickDeAdapter.BaseAdapterHelper;
 import org.srr.dev.adapter.QuickDeAdapter.MultiItemTypeSupport;
@@ -255,7 +256,7 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
 
     @Override
     public void onFailLoad(int tag, int code, String codeMsg) {
-
+        TastyToast.makeText(getContext(),codeMsg,TastyToast.LENGTH_SHORT,TastyToast.ERROR);
     }
 
     @Override

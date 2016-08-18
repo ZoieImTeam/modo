@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.binvshe.binvshe.R;
+import com.binvshe.binvshe.binvsheui.activity.ActivityGameActivity;
 import com.binvshe.binvshe.entity.Banner;
 
 import org.srr.dev.util.TextUtils;
@@ -46,8 +47,7 @@ public class BannerItemFragment extends Fragment {
                     Intent it = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(it);
                 } else {
-                    GamePopupwindow popupwindow=new GamePopupwindow(getContext(),v);
-                    popupwindow.show();
+                    ActivityGameActivity.start(getContext());
 //                    Toast.makeText(getActivity(), "地址为空", Toast.LENGTH_SHORT).show();
                 }
             }
