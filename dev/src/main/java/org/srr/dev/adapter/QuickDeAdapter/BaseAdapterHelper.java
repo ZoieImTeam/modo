@@ -72,14 +72,14 @@ public class BaseAdapterHelper extends RecyclerView.ViewHolder {
 
     /**
      * 加载图片
+     *
      * @param viewId
      * @param value
      * @return
      */
-    public BaseAdapterHelper setImage(int viewId,String value)
-    {
-        ImageView view=retrieveView(viewId);
-        UIL.load(view,value);
+    public BaseAdapterHelper setImage(int viewId, String value) {
+        ImageView view = retrieveView(viewId);
+        UIL.load(view, value);
         return this;
     }
 
@@ -167,6 +167,13 @@ public class BaseAdapterHelper extends RecyclerView.ViewHolder {
     public BaseAdapterHelper setImageBitmap(int viewId, Bitmap bitmap) {
         ImageView view = retrieveView(viewId);
         view.setImageBitmap(bitmap);
+        return this;
+    }
+
+    public BaseAdapterHelper setTextDrawableLeft(int viewId, Drawable drawable) {
+        TextView view = retrieveView(viewId);
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+        view.setCompoundDrawables(drawable, null, null, null);
         return this;
     }
 
@@ -394,6 +401,7 @@ public class BaseAdapterHelper extends RecyclerView.ViewHolder {
         view.setAdapter(adapter);
         return this;
     }
+
 
     /**
      * Retrieve the convertView

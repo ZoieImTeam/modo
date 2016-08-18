@@ -12,7 +12,7 @@ import org.srr.dev.util.Loger;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public abstract class RecyclerViewDataAdapter<E,T extends ViewHolder> extends
+public abstract class RecyclerViewDataAdapter<E, T extends ViewHolder> extends
         RecyclerView.Adapter<ViewHolder> {
 
     private ArrayList<E> mData;
@@ -30,9 +30,11 @@ public abstract class RecyclerViewDataAdapter<E,T extends ViewHolder> extends
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
-
-        E e = mData.get(i);
         T t = (T) viewHolder;
+        E e = null;
+        if (mData.size() > 0 && i < mData.size()) {
+            e = mData.get(i);
+        }
         onBindHolder(t, i, e);
         if (l != null) {
             viewHolder.itemView.setOnClickListener(new OnClickListener() {
@@ -48,7 +50,6 @@ public abstract class RecyclerViewDataAdapter<E,T extends ViewHolder> extends
                     return isclick;
                 }
             });
-
         }
     }
 

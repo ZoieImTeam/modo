@@ -30,6 +30,7 @@ import org.srr.dev.adapter.QuickDeAdapter.BaseAdapterHelper;
 import org.srr.dev.adapter.QuickDeAdapter.MultiItemTypeSupport;
 import org.srr.dev.adapter.QuickDeAdapter.QuickAdapter;
 import org.srr.dev.base.BaseFragment;
+import org.srr.dev.util.TextUtils;
 import org.srr.dev.view.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
@@ -128,6 +129,14 @@ public class HomeRecommendFragment1 extends BaseFragment implements IViewModelIn
                             getContext().startActivity(intent);
                         }
                     });
+                    if(android.text.TextUtils.equals(item.getTitleEntly().getStyle(),"1"))
+                    {
+                        helper.setVisible(R.id.ivFire,true);
+                        helper.setTextDrawableLeft(R.id.tv_item_type_name,getResources().getDrawable(R.mipmap.icon_left_y));
+                    }else {
+                        helper.setTextDrawableLeft(R.id.tv_item_type_name,getResources().getDrawable(R.mipmap.icon_left));
+                        helper.setVisible(R.id.ivFire,false);
+                    }
                 } else if (helper.getItemViewType() == ViewType.content.ordinal()) {
                     final String iconId=item.getSubjectEntity().getUser();
                     helper

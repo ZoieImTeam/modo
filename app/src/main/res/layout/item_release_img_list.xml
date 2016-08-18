@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="78dp"
-    android:layout_height="78dp">
+    android:layout_height="78dp"
+    >
 
 
     <ImageView
@@ -11,14 +13,14 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/text_avator" />
+        android:src="@drawable/text_avator"/>
 
     <ImageView
         android:id="@+id/item_release_delete_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/item_release_img"
         android:layout_alignRight="@+id/item_release_img"
-        android:src="@drawable/release_delete_img" />
+        android:layout_alignTop="@+id/item_release_img"
+        android:src="@drawable/release_delete_img"/>
 
 </RelativeLayout>

@@ -16,6 +16,17 @@ public class SysTypeEntitiy implements Parcelable {
     private String photos;
     private String is_del;
     private String createdate;
+
+    private String style;
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
     private ArrayList<SubjectEntity> list;
 
     public String getId() {
@@ -88,6 +99,7 @@ public class SysTypeEntitiy implements Parcelable {
         dest.writeString(this.is_del);
         dest.writeString(this.createdate);
         dest.writeList(this.list);
+        dest.writeString(this.style);
     }
 
     public SysTypeEntitiy() {
@@ -101,6 +113,7 @@ public class SysTypeEntitiy implements Parcelable {
         this.is_del = in.readString();
         this.createdate = in.readString();
         this.list = new ArrayList<SubjectEntity>();
+        this.style = in.readString();
         in.readList(this.list, List.class.getClassLoader());
     }
 

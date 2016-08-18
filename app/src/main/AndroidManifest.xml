@@ -661,6 +661,10 @@
                   android:screenOrientation="portrait"
                   android:windowSoftInputMode="adjustPan"
                   android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".binvsheui.release.ReleaseGameActivity"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustPan"
+                  android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

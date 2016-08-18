@@ -12,7 +12,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.binvshe.binvshe.R;
-
+import com.binvshe.binvshe.binvsheui.release.ReleaseGameActivity;
 
 
 import butterknife.OnClick;
@@ -71,8 +71,10 @@ public class GamePopupwindow extends PopupWindow implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnDrawGame:
+                ReleaseGameActivity.start(mContext,"34");//萌都动漫大赛 id 34
                 break;
             case R.id.btnClothGame:
+                ReleaseGameActivity.start(mContext,"35");//萌都二次元服装设计大赛 id 35
                 break;
             case R.id.btnSleepGame:
                 break;

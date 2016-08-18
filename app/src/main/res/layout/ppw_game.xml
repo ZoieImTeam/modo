@@ -48,6 +48,7 @@
             android:text="服装设计大赛"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/btnSleepGame"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
