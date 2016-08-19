@@ -22,10 +22,12 @@ public class BaseApp extends BaseApplication {
             RongIM.init(this);
             /**
              * 检测内存泄漏
-                    */
-         }
+             */
+        }
 
         ShareSDK.initSDK(BaseApp.mContext);
     }
+
+
 
 }

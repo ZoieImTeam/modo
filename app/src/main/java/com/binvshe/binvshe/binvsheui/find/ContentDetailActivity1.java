@@ -73,7 +73,7 @@ public class ContentDetailActivity1 extends BaseActivity implements ContentCallB
     private AddAttentionUserModel mAddAttentionUserModel;
     private CancelAttentionUserModel mCancelAttentionUserModel;
     private AddLikeModel mAddLikeModel;
-    private CancelLikeModel mCancelLikeModel;
+//    private CancelLikeModel mCancelLikeModel;
 
     public static void newInstance(Context activity, SubjectEntity entity) {
         Intent intent = new Intent(activity, ContentDetailActivity1.class);
@@ -153,9 +153,9 @@ public class ContentDetailActivity1 extends BaseActivity implements ContentCallB
         mAddAttentionUserModel.setViewModelInterface(this);
         mCancelAttentionUserModel.setViewModelInterface(this);
         mAddLikeModel = new AddLikeModel();
-        mCancelLikeModel = new CancelLikeModel();
+//        mCancelLikeModel = new CancelLikeModel();
         mAddLikeModel.setViewModelInterface(this);
-        mCancelLikeModel.setViewModelInterface(this);
+//        mCancelLikeModel.setViewModelInterface(this);
     }
 
 
@@ -229,7 +229,7 @@ public class ContentDetailActivity1 extends BaseActivity implements ContentCallB
                     mAddLikeModel.start(mId, mUserId);
                 } else {
 
-                    mCancelLikeModel.start(mId, mUserId);
+//                    mCancelLikeModel.start(mId, mUserId);
 
                 }
                 break;
@@ -249,7 +249,7 @@ public class ContentDetailActivity1 extends BaseActivity implements ContentCallB
 
     @Override
     public void onSuccessLoad(int tag, Object result) {
-        if (tag == mCancelLikeModel.getTag()) {
+        if (/**tag == mCancelLikeModel.getTag()**/false) {
             likeCount--;
             tvZanNum.setText(likeCount + "");
             likeable = AddLikeModel.ADD_LIKE_FALSE;
@@ -289,7 +289,7 @@ public class ContentDetailActivity1 extends BaseActivity implements ContentCallB
     @Override
     public void onFailLoad(int tag, int code, String codeMsg) {
         if (tag == mAddLikeModel.getTag() && codeMsg.equals(getString(R.string.already_zan))) {
-            mCancelLikeModel.start(mId, mUserId);
+//            mCancelLikeModel.start(mId, mUserId);
         } else Toast.makeText(BaseApp.mContext, codeMsg, Toast.LENGTH_SHORT).show();
     }
 

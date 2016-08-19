@@ -182,9 +182,9 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         ArrayList<Fragment> detailPage = new ArrayList<>();
         ArrayList<String> detailTitles = new ArrayList<>();
         detailPage.add(webFr);
-        detailPage.add(webFr2);
+//        detailPage.add(webFr2);
         detailTitles.add("现场图片");
-        detailTitles.add("销售记录");
+//        detailTitles.add("销售记录");
         detailPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),
                 detailPage, detailTitles));
         detailTab.setViewPager(detailPager);
@@ -278,7 +278,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
             GetActivityDetailResponse response = (GetActivityDetailResponse) result;
             ActivityData data = response.getData();
             int isBuy = data.getIsBuy();
-            final String html = data.getIntroduces();
+            final String html = data.getDetail();
             webFr.setHtml(html);
             String photos = data.getPhotos();
             if (photos != null) {
@@ -307,7 +307,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
             activityName = data.getName();
             String startTime = data.getStartdate();
             String endTime = data.getEnddate();
-            String address = data.getXy() + data.getGatherxy();
+            String address = data.getXy();
             String host = data.getShare();
 
             if (!TextUtils.isEmpty(address)) {

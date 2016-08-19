@@ -145,7 +145,7 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
                 spe.setName(mTitle);
                 spe.setDesc("");
                 spe.setPhotos(listBanner.get(0));
-                ShareDialog dialog = new ShareDialog();
+                ShareDialog dialog = ShareDialog.newInstance(spe);
                 dialog.setOnDialogLisetener(new ShareDialog.OnDialogLisetener() {
                     @Override
                     public void shareStutas(String message) {

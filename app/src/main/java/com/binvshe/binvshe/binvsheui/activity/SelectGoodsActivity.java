@@ -67,7 +67,7 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
     TextView mBtnAdd;
     @Bind(R.id.tvTotalPrice)
     TextView mTvTotalPrice;
-     @InjectExtra(KEY_ACTIVITY_ID)
+    @InjectExtra(KEY_ACTIVITY_ID)
     int mActivityId = 0;
     String userID;
     String gameID;
@@ -216,8 +216,10 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
                 }
                 break;
             case R.id.btnAdd:
-                mTotalNum++;
-                refreshToatleText();
+                if (mTotalNum < 3) {
+                    mTotalNum++;
+                    refreshToatleText();
+                }
                 break;
         }
     }
@@ -387,11 +389,11 @@ public class SelectGoodsActivity extends BaseActivity implements IViewModelInter
             mTotalNum = 1;
             mUnitPrice = mTickMsgDatas.get(position).getPrice();
             gameID = mTickMsgDatas.get(position).getId() + "";
-        }else {
-            gameID="-1";
-            mTotalNum=0;
-            mUnitPrice=0;
+        } else {
+            gameID = "-1";
+            mTotalNum = 0;
+            mUnitPrice = 0;
         }
-            refreshToatleText();
+        refreshToatleText();
     }
 }

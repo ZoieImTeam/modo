@@ -349,6 +349,11 @@ public class ActivityData {
     private String photos;
     @Expose
     private String introduces;
+
+
+
+    @Expose
+    private String detail;
     @Expose
     private String trip;
     @Expose
@@ -945,6 +950,14 @@ public class ActivityData {
 
     public void setPriceInterval(String priceInterval) {
         this.priceInterval = priceInterval;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     @Override

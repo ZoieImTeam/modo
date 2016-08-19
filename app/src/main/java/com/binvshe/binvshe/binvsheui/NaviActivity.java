@@ -45,10 +45,12 @@ import org.srr.dev.util.UIL;
 
 import java.util.ArrayList;
 
+import cn.hugeterry.updatefun.UpdateFunGO;
+import cn.hugeterry.updatefun.config.UpdateKey;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.UserInfo;
 
-public class NaviActivity extends AbsFragmentActivity implements IViewModelInterface{
+public class NaviActivity extends AbsFragmentActivity implements IViewModelInterface {
 
     public static final String TOME = "tome";
     public static boolean isWuser;
@@ -68,8 +70,27 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
     private ImageView iv_navi_sendstate, iv_navi_new_message;
     private ImageView image_head;
     private EditUserdataReceiver receiver;
-    private GetVersionModel getVersionModel=new GetVersionModel();
+    private GetVersionModel getVersionModel = new GetVersionModel();
     private TextView tvTitle;
+
+    @Override
+    protected void onCreate(Bundle arg0) {
+        if (arg0 != null) {
+            Intent ii = new Intent(this, HelloActivity.class);
+            startActivity(ii);
+
+        }
+        super.onCreate(arg0);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (receiver != null) {
+            unregisterReceiver(receiver);
+            receiver = null;
+        }
+        super.onDestroy();
+    }
 
     @Override
     protected void initGetIntent() {
@@ -128,6 +149,7 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
 
         return fragmentTransaction;
     }
+
     /**
      * 获取当前Fragment
      *
@@ -187,17 +209,6 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
     }
 
     @Override
-    protected void onCreate(Bundle arg0) {
-        if(arg0 !=null)
-        {
-            Intent ii=new Intent(this,HelloActivity.class);
-            startActivity(ii);
-
-        }
-        super.onCreate(arg0);
-    }
-
-    @Override
     public int getLayoutId() {
         return R.layout.heragency_main_layout;
     }
@@ -248,10 +259,20 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
         getVersionModel.setViewModelInterface(this);
 
         //getWindows wide
-        if(SharedPreferencesHelper.getSpInt(GlobalConfig.SCREEN_VALUE_KEY,0)==0)
-        {
+        if (SharedPreferencesHelper.getSpInt(GlobalConfig.SCREEN_VALUE_KEY, 0) == 0) {
             saveScreen();
         }
+        //测试版本检测更新功能
+        initFirUpdate();
+    }
+
+    private void initFirUpdate() {
+        UpdateKey.API_TOKEN = "933125999ad3c5702213b10523b41e36";
+        UpdateKey.APP_ID = "com.binvshe.binvshe";
+//下载方式:
+        UpdateKey.DialogOrNotification = UpdateKey.WITH_DIALOG;//通过Dialog来进行下载
+//UpdateKey.DialogOrNotification=UpdateKey.WITH_NOTIFITION;通过通知栏来进行下载(默认)
+        UpdateFunGO.init(this);
     }
 
     @Override
@@ -266,6 +287,18 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
             replaceFragment(mWillChangeTab);
             mWillChangeTab = -1;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        UpdateFunGO.onResume(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        UpdateFunGO.onStop(this);
     }
 
     @Override
@@ -285,10 +318,10 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
             User user = AccountManager.getInstance().getUserInfo();
             String headUrl = user.getHead();
             UIL.load(image_head, headUrl);
-            RongIM.getInstance().setCurrentUserInfo(new UserInfo(user.getId()+"",user.getName(), Uri.parse(headUrl)));
+            RongIM.getInstance().setCurrentUserInfo(new UserInfo(user.getId() + "", user.getName(), Uri.parse(headUrl)));
         } else {
             UIL.load(image_head, "http://114.215.119.51:80//binvsheApp/resources/images/defauthead.png");
-            Intent ii=new Intent(this,ChooseActivity.class);
+            Intent ii = new Intent(this, ChooseActivity.class);
             startActivity(ii);
         }
     }
@@ -324,7 +357,7 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
             case R.id.civ_user_icon:
                 if (AccountManager.getInstance().isLogin()) {
                     startActivity(new Intent(NaviActivity.this, UserCenterActivity.class));
-                }else{
+                } else {
                     intent = new Intent(NaviActivity.this, LoginActivity.class);
                     intent.putExtra(TOME, true);
                     startActivity(intent);
@@ -358,15 +391,6 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
     }
 
     @Override
-    protected void onDestroy() {
-        if (receiver != null) {
-            unregisterReceiver(receiver);
-            receiver = null;
-        }
-        super.onDestroy();
-    }
-
-    @Override
     public Handler getHandler() {
         return null;
     }
@@ -378,19 +402,17 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
 
     @Override
     public void onSuccessLoad(int tag, Object result) {
-        if (tag==getVersionModel.getTag())
-        {
-            GetVersionResponse response= (GetVersionResponse) result;
-            GetVersionData data=response.getData();
-            String version= CheckVersion.getVersion();
-            if(!version.equals(data.getVerNo()))
-            {
+        if (tag == getVersionModel.getTag()) {
+            GetVersionResponse response = (GetVersionResponse) result;
+            GetVersionData data = response.getData();
+            String version = CheckVersion.getVersion();
+            if (!version.equals(data.getVerNo())) {
 
                 //check
 //                Toast.makeText(getApplicationContext(),"您当前不是最新版本，请更新",Toast.LENGTH_SHORT).show();
 //                NaviActivity.this.finish();
-                CheckVerDialog checkVerDialog = CheckVerDialog.newInstance(data);
-                checkVerDialog.show(getSupportFragmentManager(),"");
+//                CheckVerDialog checkVerDialog = CheckVerDialog.newInstance(data);
+//                checkVerDialog.show(getSupportFragmentManager(),"");
             }
 
 
@@ -419,9 +441,8 @@ public class NaviActivity extends AbsFragmentActivity implements IViewModelInter
         }
     }
 
-    private void saveScreen()
-    {
-        int w=getWindow().getWindowManager().getDefaultDisplay().getWidth();
-        SharedPreferencesHelper.savespint(GlobalConfig.SCREEN_VALUE_KEY,w);
+    private void saveScreen() {
+        int w = getWindow().getWindowManager().getDefaultDisplay().getWidth();
+        SharedPreferencesHelper.savespint(GlobalConfig.SCREEN_VALUE_KEY, w);
     }
 }

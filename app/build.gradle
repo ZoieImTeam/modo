@@ -24,8 +24,8 @@ android {
             applicationId "com.binvshe.binvshe"
             minSdkVersion 16
             targetSdkVersion 22
-            versionCode 1
-            versionName "1.0.1"
+            versionCode 3
+            versionName "1.0.5"
         multiDexEnabled true
     }
     buildTypes {
@@ -33,6 +33,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 
 }
@@ -58,6 +61,8 @@ dependencies {
     compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
     provided 'com.f2prateek.dart:dart-processor:2.0.0'
     compile 'com.f2prateek.dart:dart:2.0.0'
+    compile 'cn.hugeterry.updatefun:updatefun:1.6.6'
+    compile 'top.zibin:Luban:1.0.8'
 }
 apt {
     arguments {

@@ -138,7 +138,7 @@ public class PhotoUtils {
         List<String> paths = new ArrayList<>();
         for (int i = 0; i < path.size(); i++) {
             Bitmap bitmap = decodeSampledBitmapFromPath(path.get(i), width, height);
-            String save_path = files + "img" + i + System.currentTimeMillis() + ".jpg";
+            String save_path = files + "img" + i + ".jpg";
             paths.add(save_path);
             File file = new File(save_path);//将要保存图片的路径
 //            bitmap = rotateBitmapByDegree(bitmap, path.get(i));  //对图片进行旋转

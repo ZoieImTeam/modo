@@ -34,6 +34,8 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import top.zibin.luban.Luban;
+import top.zibin.luban.OnCompressListener;
 
 /**
  * Created by Zoi.
@@ -77,9 +79,9 @@ public class ReleaseGameActivity extends BaseActivity implements IViewModelInter
     public ArrayList<String> totalimage = new ArrayList<String>();
     private PhotoAdapter mPhotoAdapter;
 
-    public static void start(Context context,String systemType) {
+    public static void start(Context context, String systemType) {
         Intent starter = new Intent(context, ReleaseGameActivity.class);
-        starter.putExtra(KEY_SYSTEM_TYPE,systemType);
+        starter.putExtra(KEY_SYSTEM_TYPE, systemType);
 //        SubjectTypeEntity
         context.startActivity(starter);
     }
@@ -119,12 +121,12 @@ public class ReleaseGameActivity extends BaseActivity implements IViewModelInter
                 switch (group.getCheckedRadioButtonId()) {
                     case R.id.rbtnColleagues:
                         mEtDerivation.setVisibility(View.VISIBLE);
-                        mType="1";
+                        mType = "1";
                         break;
                     default:
                         mEtDerivation.setText("");
                         mEtDerivation.setVisibility(View.GONE);
-                        mType="3";
+                        mType = "3";
                         break;
                 }
             }
@@ -160,11 +162,12 @@ public class ReleaseGameActivity extends BaseActivity implements IViewModelInter
                     totalimage.addAll(coverImage);
                     totalimage.addAll(mImgs);
                     ArrayList<File> files = new ArrayList<File>();
-                    List<String> filesString = PhotoUtils.saveBitmapFileList(totalimage, com.binvshe.binvshe.constants.Constants.FILE.FILE_CACHE, 720, 720);
+                    List<String> filesString = PhotoUtils.saveBitmapFileList(totalimage, com.binvshe.binvshe.constants.Constants.FILE.FILE_CACHE, 600, 600);
                     for (String temp : filesString) {
                         File imageFile = new File(temp);
                         files.add(imageFile);
                     }
+//                    luBanBitmap(files);
                     mAddSpecialModel.start("", mName, mUserID, mType, mSystemType, mDesc, mOriginal,
                             "", "", "0", files, "", "1", "");
                     TastyToast.makeText(this, getString(R.string.releaseing), TastyToast.LENGTH_SHORT, TastyToast.DEFAULT);
@@ -183,8 +186,8 @@ public class ReleaseGameActivity extends BaseActivity implements IViewModelInter
 
     private boolean judgePara() {
         mName = mEtTitle.getText().toString();
-        mOriginal=mEtDerivation.getText().toString();
-        mDesc=mEtContent.getText().toString();
+        mOriginal = mEtDerivation.getText().toString();
+        mDesc = mEtContent.getText().toString();
 
 
         if (TextUtils.isEmpty(mName)) {
@@ -251,6 +254,36 @@ public class ReleaseGameActivity extends BaseActivity implements IViewModelInter
         dismissLoadingDialog();
         TastyToast.makeText(this, exception.toString(), TastyToast.LENGTH_SHORT, TastyToast.ERROR);
     }
+
+    List<File> upFiles = new ArrayList<>();
+
+    public void luBanBitmap(List<File> files) {
+        upFiles.clear();
+        for (File file : files) {
+            Luban.get(this)
+                    .load(file)                   //传人要压缩的图片
+                    .putGear(Luban.THIRD_GEAR)      //设定压缩档次，默认三挡
+                    .setCompressListener(new OnCompressListener() { //设置回调
+
+                        @Override
+                        public void onStart() {
+                            //TODO 压缩开始前调用，可以在方法内启动 loading UI
+                        }
+
+                        @Override
+                        public void onSuccess(File file) {
+                            //TODO 压缩成功后调用，返回压缩后的图片文件
+                            upFiles.add(file);
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            //TODO 当压缩过去出现问题时调用
+                        }
+                    }).launch();    //启动压缩
+        }
+    }
+
 
     public class PhotoAdapter extends RecyclerViewDataAdapter<String, PhotoAdapter.VH> {
 
