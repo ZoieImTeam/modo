@@ -73,14 +73,14 @@
                             <!--android:textColor="@color/white"-->
                             <!--android:textSize="@dimen/text_small"/>-->
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/detail_activity_tv_nowmoney"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="bottom"-->
-                            <!--android:text="96"-->
-                            <!--android:textColor="#f75964"-->
-                            <!--android:textSize="24dp"/>-->
+                        <TextView
+                        android:id="@+id/detail_activity_tv_nowmoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        tools:text="96"
+                        android:textColor="#f75964"
+                        android:textSize="24dp"/>
 
                         <!--<TextView-->
                             <!--android:layout_width="wrap_content"-->

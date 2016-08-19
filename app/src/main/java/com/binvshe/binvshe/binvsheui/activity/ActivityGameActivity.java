@@ -15,6 +15,7 @@ import com.binvshe.binvshe.binvsheui.dialog.ShareDialog;
 import com.binvshe.binvshe.binvsheui.home.GamePopupwindow;
 import com.binvshe.binvshe.binvsheui.login.ChooseActivity;
 import com.binvshe.binvshe.entity.ActivityList.ActivityData;
+import com.binvshe.binvshe.entity.dynamic.DynamicSpe;
 import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.GetActivityDetailModel;
 import com.binvshe.binvshe.http.model.IViewModelInterface;
@@ -66,6 +67,8 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
     int activityID=0;
 
     private String userID;
+
+    private String mTitle=null;
 
 
     private GetActivityDetailModel getActivityDetailModel;
@@ -131,11 +134,15 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
                 this.finish();
                 break;
             case R.id.iv_title_more:
+                DynamicSpe spe=new DynamicSpe();
+                spe.setName(mTitle);
+                spe.setDesc("");
+                spe.setPhotos(listBanner.get(0));
                 ShareDialog dialog = new ShareDialog();
                 dialog.setOnDialogLisetener(new ShareDialog.OnDialogLisetener() {
                     @Override
                     public void shareStutas(String message) {
-
+                        TastyToast.makeText(ActivityGameActivity.this,message,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
                     }
 
                     @Override
@@ -166,6 +173,8 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
             final String html = data.getIntroduces();
             mWebFr.setHtml(html);
             String photos = data.getPhotos();
+            mTitle=data.getName();
+            mTvActivityTitle.setText(mTitle);
             if (photos != null) {
                 String[] split = photos.split(",");
 //                listBanner.toArray(split);

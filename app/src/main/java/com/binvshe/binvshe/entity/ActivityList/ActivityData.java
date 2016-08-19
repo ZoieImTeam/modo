@@ -384,6 +384,12 @@ public class ActivityData {
     @Expose
     private Integer isBuy;
 
+
+
+    @SerializedName("price_interval")
+    @Expose
+    private String priceInterval;
+
     public Integer getIsBuy() {
         return isBuy;
     }
@@ -930,6 +936,15 @@ public class ActivityData {
      */
     public void setTicketCount(Integer ticketCount) {
         this.ticketCount = ticketCount;
+    }
+
+
+    public String getPriceInterval() {
+        return priceInterval;
+    }
+
+    public void setPriceInterval(String priceInterval) {
+        this.priceInterval = priceInterval;
     }
 
     @Override

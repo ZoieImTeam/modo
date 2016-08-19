@@ -30,6 +30,7 @@ import com.binvshe.binvshe.entity.ActivityList.ActivityData;
 import com.binvshe.binvshe.entity.AliPayInfo;
 import com.binvshe.binvshe.entity.GetOrder;
 import com.binvshe.binvshe.entity.WechatPay;
+import com.binvshe.binvshe.entity.dynamic.DynamicSpe;
 import com.binvshe.binvshe.helper.AccountManager;
 import com.binvshe.binvshe.http.model.GetActivityDetailModel;
 import com.binvshe.binvshe.http.model.GetOrderModel;
@@ -81,7 +82,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     private DialogSelect dialogSelectPay;
     private DialogSelect dialogisCoupon;
     @InjectExtra(ACTIVITYID)
-    int activityID=0;
+    int activityID = 0;
     private int overTicketCount;
     private boolean isBuyTicket;
     private ImageView topBg;
@@ -95,6 +96,8 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     private PostFreeBuyModel freeBuyModel;
     private DetailWebFr webFr;
 
+    String activityName;
+
     @Override
     protected void onDestroy() {
 
@@ -102,9 +105,9 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     }
 
 
-    public static void start(Context context,int activityID) {
+    public static void start(Context context, int activityID) {
         Intent starter = new Intent(context, DetailActivityActivity.class);
-        starter.putExtra(ACTIVITYID,activityID);
+        starter.putExtra(ACTIVITYID, activityID);
         context.startActivity(starter);
     }
 
@@ -142,7 +145,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
         tv_buy = findView(R.id.detail_activity_layout_buy);
         tv_buy.setOnClickListener(this);
 
-//        tv_nowmoney = findView(R.id.detail_activity_tv_nowmoney);
+        tv_nowmoney = findView(R.id.detail_activity_tv_nowmoney);
         tv_name = findView(R.id.detail_activity_tv_name);
         tv_statime = findView(R.id.detail_activity_tv_start_time);
         tv_address = findView(R.id.detail_activity_tv_address);
@@ -197,8 +200,6 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     }
 
 
-
-
     @Override
     public void onClickView(View view, int id) {
         switch (id) {
@@ -213,7 +214,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 //                    return;
 //                }
 
-                SelectGoodsActivity.start(this,activityID);
+                SelectGoodsActivity.start(this, activityID);
 
 //                dialogBuy.show(getSupportFragmentManager(), "");
                 /*
@@ -234,11 +235,15 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
                 finish();
                 break;
             case R.id.iv_title_more:
-                ShareDialog dialog = new ShareDialog();
+                DynamicSpe spe = new DynamicSpe();
+                spe.setName(activityName);
+                spe.setDesc("");
+                spe.setPhotos(listBanner.get(0));
+                ShareDialog dialog = ShareDialog.newInstance(spe);
                 dialog.setOnDialogLisetener(new ShareDialog.OnDialogLisetener() {
                     @Override
                     public void shareStutas(String message) {
-
+                        Toast.makeText(DetailActivityActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -297,9 +302,9 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
             overTicketCount = data.getScale() - data.getTicketCount();
 
-//            tv_nowmoney.setText(price + "");
+            tv_nowmoney.setText(data.getPriceInterval());
 
-            String activityName = data.getName();
+            activityName = data.getName();
             String startTime = data.getStartdate();
             String endTime = data.getEnddate();
             String address = data.getXy() + data.getGatherxy();
@@ -392,7 +397,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
         getActivityDetailModel = new GetActivityDetailModel();
         getActivityDetailModel.setViewModelInterface(this);
-        getActivityDetailModel.start(userID, activityID+"");
+        getActivityDetailModel.start(userID, activityID + "");
 
         freeBuyModel = new PostFreeBuyModel();
         freeBuyModel.setViewModelInterface(this);
@@ -447,13 +452,13 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
             @Override
             public void onClickFirst(String str1, String tag) {
                 // 支付宝支付
-                postAliPayInfoModel.start(userID, price + "", "0", activityID+"", discount);
+                postAliPayInfoModel.start(userID, price + "", "0", activityID + "", discount);
             }
 
             @Override
             public void onClickSecond(String str2, String tag) {
                 // 微信支付
-                postWPayInfoModel.start(userID, price + "", "0", activityID+"", discount);
+                postWPayInfoModel.start(userID, price + "", "0", activityID + "", discount);
             }
 
             @Override
@@ -500,13 +505,13 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
                 if (TextUtils.equals(resultStatus, "8000")) {
 //                    Toast.makeText(DetailActivityActivity.this, "支付结果确认中",
 //                            Toast.LENGTH_SHORT).show();
-                    TastyToast.makeText(DetailActivityActivity.this,"支付结果确认中", TastyToast.LENGTH_SHORT,TastyToast.INFO);
+                    TastyToast.makeText(DetailActivityActivity.this, "支付结果确认中", TastyToast.LENGTH_SHORT, TastyToast.INFO);
 
                 } else {
                     // 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误
 //                    Toast.makeText(DetailActivityActivity.this, "支付失败",
 //                            Toast.LENGTH_SHORT).show();
-                    TastyToast.makeText(DetailActivityActivity.this,"支付失败",TastyToast.LENGTH_SHORT,TastyToast.ERROR);
+                    TastyToast.makeText(DetailActivityActivity.this, "支付失败", TastyToast.LENGTH_SHORT, TastyToast.ERROR);
 
                 }
             }
