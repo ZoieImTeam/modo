@@ -20,11 +20,10 @@
 
     <ImageView
         android:id="@+id/iv_title_left"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/spacing_lv7"
+        android:layout_height="20dp"
         android:layout_centerVertical="true"
         android:textSize="16dp"
-        android:layout_marginLeft="8dp"
         android:src="@mipmap/btn_back"
         android:visibility="gone"
         />

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
@@ -27,7 +29,11 @@ import com.sdsmdg.tastytoast.TastyToast;
 import org.srr.dev.base.BaseActivity;
 import org.srr.dev.util.UIL;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -64,19 +70,19 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
     DetailWebFr mWebFr;
 
     @InjectExtra(KEY_ACTIVITY_ID)
-    int activityID=0;
+    int activityID = 0;
 
     private String userID;
 
-    private String mTitle=null;
+    private String mTitle = null;
 
 
     private GetActivityDetailModel getActivityDetailModel;
     private ArrayList<String> listBanner = new ArrayList<>();
 
-    public static void start(Context context,int activityID) {
+    public static void start(Context context, int activityID) {
         Intent starter = new Intent(context, ActivityGameActivity.class);
-        starter.putExtra(KEY_ACTIVITY_ID,activityID);
+        starter.putExtra(KEY_ACTIVITY_ID, activityID);
         context.startActivity(starter);
     }
 
@@ -96,6 +102,7 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
         mRlBackTitle.setAlpha(0f);
         mIvTitleMore.setVisibility(View.VISIBLE);
         mIvTitleMore.setImageResource(R.mipmap.icon_share);
+        mTvTitle.setText("活动详情");
 
         if (AccountManager.getInstance().isLogin()) {
             userID = AccountManager.getInstance().getUserLogin().getUser().getId() + "";
@@ -108,9 +115,9 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
 
         getActivityDetailModel = new GetActivityDetailModel();
         getActivityDetailModel.setViewModelInterface(this);
-        getActivityDetailModel.start(userID, activityID+"");
-        mWebFr=DetailWebFr.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.wvActivityContent,mWebFr).commit();
+        getActivityDetailModel.start(userID, activityID + "");
+        mWebFr = DetailWebFr.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.wvActivityContent, mWebFr).commit();
     }
 
     @Override
@@ -134,7 +141,7 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
                 this.finish();
                 break;
             case R.id.iv_title_more:
-                DynamicSpe spe=new DynamicSpe();
+                DynamicSpe spe = new DynamicSpe();
                 spe.setName(mTitle);
                 spe.setDesc("");
                 spe.setPhotos(listBanner.get(0));
@@ -142,7 +149,7 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
                 dialog.setOnDialogLisetener(new ShareDialog.OnDialogLisetener() {
                     @Override
                     public void shareStutas(String message) {
-                        TastyToast.makeText(ActivityGameActivity.this,message,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
+                        TastyToast.makeText(ActivityGameActivity.this, message, TastyToast.LENGTH_SHORT, TastyToast.WARNING);
                     }
 
                     @Override
@@ -173,8 +180,11 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
             final String html = data.getIntroduces();
             mWebFr.setHtml(html);
             String photos = data.getPhotos();
-            mTitle=data.getName();
+            mTitle = data.getName();
             mTvActivityTitle.setText(mTitle);
+            String date=getString(R.string.activityTime,StringParDate(data.getStartdate()),StringParDate(data.getEnddate()));
+            Log.d("kyluzoi", date);
+            mTvActivityTime.setText(date);
             if (photos != null) {
                 String[] split = photos.split(",");
 //                listBanner.toArray(split);
@@ -190,11 +200,24 @@ public class ActivityGameActivity extends BaseActivity implements IViewModelInte
 
     @Override
     public void onFailLoad(int tag, int code, String codeMsg) {
-        TastyToast.makeText(this,codeMsg,TastyToast.LENGTH_SHORT,TastyToast.ERROR);
+        TastyToast.makeText(this, codeMsg, TastyToast.LENGTH_SHORT, TastyToast.ERROR);
     }
 
     @Override
     public void onExceptionLoad(int tag, Exception exception) {
+    }
 
+    public String StringParDate(String date) {
+        DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+            Date date1 = fmt.parse(date);
+            DateFormat fmt1 = new SimpleDateFormat("MM-dd");
+            String dateString = fmt1.format(date1);
+            return dateString;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

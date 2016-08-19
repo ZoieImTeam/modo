@@ -97,11 +97,11 @@ public class LoginActivity extends BaseSwipeBackActivity implements IViewModelIn
                     TastyToast.makeText(this,"请输入您的密码",TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     return;
                 }
-                if (!RegexValidateUtil.checkMobileNumber(user)) {
-//                    Toast.makeText(LoginActivity.this, "请输入正确的手机格式", Toast.LENGTH_SHORT).show();
-                    TastyToast.makeText(this,"请输入正确的手机格式",TastyToast.LENGTH_SHORT,TastyToast.INFO);
-                    return;
-                }
+//                if (!RegexValidateUtil.checkMobileNumber(user)) {
+////                    Toast.makeText(LoginActivity.this, "请输入正确的手机格式", Toast.LENGTH_SHORT).show();
+//                    TastyToast.makeText(this,"请输入正确的手机格式",TastyToast.LENGTH_SHORT,TastyToast.INFO);
+//                    return;
+//                }
                 mPassword = pwd;
                 postLoginModel.start(user, pwd);
                 break;

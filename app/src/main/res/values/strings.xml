@@ -381,4 +381,5 @@
     <string name="select_goods">选择商品</string>
     <string name="ticket_price">%1$s 元</string>
     <string name="releaseing">发布中...</string>
+    <string name="activityTime">%1$s~%2$s</string>
 </resources>
