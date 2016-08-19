@@ -58,6 +58,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
     public static int DETAILACTIVITY = 1;
     public static final String ACTIVITYID = "activityid";
+    private static final String KEY_PAGE_TYPE = "PAGE_TYPE";
     private static final int ORDER_SUCCESS = 1;
 
     private double price;
@@ -79,6 +80,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     private PayTask alipay;
     private DialogSelect dialogSelectPay;
     private DialogSelect dialogisCoupon;
+    @InjectExtra(ACTIVITYID)
     int activityID=0;
     private int overTicketCount;
     private boolean isBuyTicket;
@@ -98,6 +100,8 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
         super.onDestroy();
     }
+
+
     public static void start(Context context,int activityID) {
         Intent starter = new Intent(context, DetailActivityActivity.class);
         starter.putExtra(ACTIVITYID,activityID);
@@ -106,7 +110,8 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
 
     @Override
     protected void initGetIntent() {
-        activityID= (int) getIntent().getExtras().get(ACTIVITYID);
+//        activityID= (int) getIntent().getExtras().get(ACTIVITYID);
+        Dart.inject(this);
 //        msgApi = WXAPIFactory.createWXAPI(this, null);
 //        // 将该app注册到微信
 //        msgApi.registerApp(Constants.WETHAR_APPID);
@@ -192,7 +197,7 @@ public class DetailActivityActivity extends AbsFragmentActivity implements IView
     }
 
 
-    
+
 
     @Override
     public void onClickView(View view, int id) {

@@ -20,7 +20,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#22000000"
+            android:background="#44000000"
             />
 
         <TextView
@@ -63,7 +63,7 @@
 
     </RelativeLayout>
 
-    <WebView
+    <FrameLayout
         android:id="@+id/wvActivityContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -121,7 +121,7 @@ public class HttpConstanst {
     /**
      * 发布一个资源（动态）详情
      */
-    public static final String POST_ADD_SPECIAL = BASE_URL + "binvsheApp/app/addSpecial1";
+    public static final String POST_ADD_SPECIAL = BASE_URL + "binvsheApp/app/addSpecial";
     /**
      * 发布一个内容详情在某一个资源下
      */

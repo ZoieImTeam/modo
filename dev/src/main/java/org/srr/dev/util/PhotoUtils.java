@@ -138,7 +138,7 @@ public class PhotoUtils {
         List<String> paths = new ArrayList<>();
         for (int i = 0; i < path.size(); i++) {
             Bitmap bitmap = decodeSampledBitmapFromPath(path.get(i), width, height);
-            String save_path = files + "img" + i + ".jpg";
+            String save_path = files + "img" + i + System.currentTimeMillis() + ".jpg";
             paths.add(save_path);
             File file = new File(save_path);//将要保存图片的路径
 //            bitmap = rotateBitmapByDegree(bitmap, path.get(i));  //对图片进行旋转
@@ -146,12 +146,9 @@ public class PhotoUtils {
             try {
                 bos = new BufferedOutputStream(new FileOutputStream(file));
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
-            }
-            catch (NullPointerException e)
-            {
+            } catch (NullPointerException e) {
                 e.printStackTrace();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
                 return null;
             } finally {
@@ -170,6 +167,7 @@ public class PhotoUtils {
 
     /**
      * 把相册或相机拍下照片的本地路径传入，即可压缩并且返回压缩后的路径
+     *
      * @param path   图片路径
      * @param files  存储文件夹
      * @param width  压缩宽
